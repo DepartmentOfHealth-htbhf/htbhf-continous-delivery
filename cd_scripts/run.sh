@@ -18,6 +18,7 @@ check_variable_is_set APP_URL
 check_variable_is_set MANIFEST_URL
 check_variable_is_set DEPLOY_SCRIPTS_URL
 check_variable_is_set DEPLOY_SCRIPT_VERSION
+check_variable_is_set BIN_DIR
 
 wget -O artefact ${APP_URL}
 wget -O manifest.jar ${MANIFEST_URL}

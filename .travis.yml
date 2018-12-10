@@ -1,2 +1,5 @@
 language: generic
 script: cd_scripts/run.sh
+env:
+  global:
+    - BIN_DIR=./bin
