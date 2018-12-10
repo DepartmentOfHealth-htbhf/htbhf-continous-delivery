@@ -1,0 +1,31 @@
+#!/bin/bash
+
+check_variable_is_set(){
+    if [[ -z ${!1} ]]; then
+        echo "$1 must be set and non empty"
+        exit 1
+    fi
+}
+
+check_variable_is_set APP_URL
+check_variable_is_set MANIFEST_URL
+check_variable_is_set DEPLOY_SCRIPTS_URL
+check_variable_is_set DEPLOY_SCRIPT_VERSION
+
+wget -O artefact ${APP_URL}
+wget -O manifest.jar ${MANIFEST_URL}
+jar -xf manifest.jar
+
+export APP_PATH=artefact
+export CF_SPACE=staging
+
+echo "Installing deploy scripts"
+if [[ ! -e ${BIN_DIR}/deploy_scripts_${DEPLOY_SCRIPT_VERSION} ]]; then
+    mkdir -p ${BIN_DIR}
+    cd ${BIN_DIR}
+    wget "${DEPLOY_SCRIPTS_URL}/${DEPLOY_SCRIPT_VERSION}.zip" -q -O deploy_scripts.zip && unzip -j -o deploy_scripts.zip && rm deploy_scripts.zip
+    touch deploy_scripts_${DEPLOY_SCRIPT_VERSION}
+    cd ..
+fi
+
+/bin/bash ${BIN_DIR}/deploy.sh
