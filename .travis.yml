@@ -1,6 +1,2 @@
-language: generic
+language: minimal
 script: cd_scripts/run.sh
-env:
-  global:
-    - BIN_DIR=./bin
-    - SMOKE_TESTS=./cd_scripts/deploy_smoke_test.sh

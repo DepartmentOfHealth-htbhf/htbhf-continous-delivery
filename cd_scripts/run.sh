@@ -20,11 +20,11 @@ check_variable_is_set DEPLOY_SCRIPTS_URL
 check_variable_is_set DEPLOY_SCRIPT_VERSION
 check_variable_is_set BIN_DIR
 
-wget -O artefact ${APP_URL}
-wget -O manifest.jar ${MANIFEST_URL}
+wget -q -O artefact.jar ${APP_URL}
+wget -q -O manifest.jar ${MANIFEST_URL}
 jar -xf manifest.jar
 
-export APP_PATH=artefact
+export APP_PATH=artefact.jar
 export CF_SPACE=staging
 
 echo "Installing deploy scripts"
