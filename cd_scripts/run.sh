@@ -79,4 +79,4 @@ if [[ ! -e ${PERF_TESTS_DIRECTORY}/performance_tests_${PERF_TESTS_VERSION} ]]; t
 fi
 
 echo "Running performance tests"
-/bin/bash ${PERF_TEST_DIRECTORY}/run_performance_tests.sh
+/bin/bash ${PERF_TESTS_DIRECTORY}/run_performance_tests.sh
