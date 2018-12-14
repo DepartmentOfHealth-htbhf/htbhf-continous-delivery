@@ -1,2 +1,1 @@
 language: java
-script: cd_scripts/run.sh
