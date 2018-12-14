@@ -17,11 +17,14 @@ check_variable_is_set(){
 check_variable_is_set DEPLOY_SCRIPTS_URL
 check_variable_is_set DEPLOY_SCRIPT_VERSION
 check_variable_is_set BIN_DIR
+check_variable_is_set PERF_TESTS_URL
+check_variable_is_set PERF_TESTS_VERSION
+check_variable_is_set PERF_TESTS_DIRECTORY
 
 export BIN_DIR=$(readlink -f ${BIN_DIR})
 
-echo "Installing deploy scripts"
 if [[ ! -e ${BIN_DIR}/deploy_scripts_${DEPLOY_SCRIPT_VERSION} ]]; then
+  echo "Installing deploy scripts"
     mkdir -p ${BIN_DIR}
     cd ${BIN_DIR}
     wget "${DEPLOY_SCRIPTS_URL}/${DEPLOY_SCRIPT_VERSION}.zip" -q -O deploy_scripts.zip && unzip -j -o deploy_scripts.zip && rm deploy_scripts.zip
@@ -59,3 +62,21 @@ fi
 export CF_SPACE=staging
 
 /bin/bash ${BIN_DIR}/deploy.sh
+DEPLOY_RESULT=$?
+
+if [[ ${DEPLOY_RESULT} != 0 ]]; then
+  echo "Deployment failed, exiting."
+  exit ${DEPLOY_RESULT}
+fi
+
+if [[ ! -e ${PERF_TESTS_DIRECTORY}/performance_tests_${PERF_TESTS_VERSION} ]]; then
+  echo "Downloading performance tests"
+  mkdir -p ${PERF_TESTS_DIRECTORY}
+  cd ${PERF_TEST_DIRECTORY}
+  wget "${PERF_TESTS_URL}/${PERF_TESTS_VERSION}/htbhf-performance-tests-${PERF_TESTS_VERSION}-sources.jar" -q -O perf_tests.jar && jar -xf perf_tests.jar && rm perf_tests.jar
+  touch performance_tests_${PERF_TESTS_VERSION}
+  cd ..
+fi
+
+echo "Running performance tests"
+/bin/bash ${PERF_TEST_DIRECTORY}/run_performance_tests.sh

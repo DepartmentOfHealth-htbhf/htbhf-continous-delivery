@@ -1,2 +1,2 @@
 language: java
-script: cd_scripts/run.sh
+script: echo "Not running CD build on code change"
