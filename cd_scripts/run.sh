@@ -14,8 +14,6 @@ check_variable_is_set(){
     fi
 }
 
-check_variable_is_set APP_URL
-check_variable_is_set MANIFEST_URL
 check_variable_is_set DEPLOY_SCRIPTS_URL
 check_variable_is_set DEPLOY_SCRIPT_VERSION
 check_variable_is_set BIN_DIR
@@ -23,11 +21,7 @@ check_variable_is_set PERF_TESTS_URL
 check_variable_is_set PERF_TESTS_VERSION
 check_variable_is_set PERF_TESTS_DIRECTORY
 
-wget -q -O artefact.jar ${APP_URL}
-wget -q -O manifest.jar ${MANIFEST_URL}
-jar -xf manifest.jar
-
-export APP_PATH=artefact.jar
+export BIN_DIR=$(readlink -f ${BIN_DIR})
 
 if [[ ! -e ${BIN_DIR}/deploy_scripts_${DEPLOY_SCRIPT_VERSION} ]]; then
   echo "Installing deploy scripts"
@@ -37,6 +31,35 @@ if [[ ! -e ${BIN_DIR}/deploy_scripts_${DEPLOY_SCRIPT_VERSION} ]]; then
     touch deploy_scripts_${DEPLOY_SCRIPT_VERSION}
     cd ..
 fi
+
+
+echo "Determining whether to deploy node or java application (Node if ZIP_URL is set: '$ZIP_URL')"
+if [[ ${ZIP_URL} ]]; then
+    echo "Deploying Node.js app from '${ZIP_URL}'"
+    # download and extract the archive
+    mkdir -p application && cd application
+    wget -q -O application.zip ${ZIP_URL} && unzip -o application.zip && rm application.zip
+    # the archive should have a single folder - step into it to get the path
+    cd *
+    export APP_PATH=$(pwd)
+    if [[ ! -e manifest.yml ]]; then
+        echo "Error - cannot find manifest file in ${APP_PATH}"
+        exit 1
+    fi
+else
+    echo "Deploying Java app from '${APP_URL}' using manifest from '${MANIFEST_URL}'"
+    check_variable_is_set APP_URL
+    check_variable_is_set MANIFEST_URL
+
+    wget -q -O artefact.jar ${APP_URL}
+    wget -q -O manifest.jar ${MANIFEST_URL}
+    # extract the manifest into the current directory
+    jar -xf manifest.jar
+    export APP_PATH=artefact.jar
+fi
+
+
+export CF_SPACE=staging
 
 /bin/bash ${BIN_DIR}/deploy.sh
 DEPLOY_RESULT=$?
