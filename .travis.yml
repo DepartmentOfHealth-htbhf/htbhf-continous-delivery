@@ -1,1 +1,2 @@
 language: java
+script: echo "Not running CD build on code change"
