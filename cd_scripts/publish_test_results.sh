@@ -1,11 +1,11 @@
 #!/bin/bash
 
 git checkout gh-pages
-rm -r -f ${ROOT_PATH}/docs/*
+rm -r -f ${WORKING_DIR}/docs/*
 
 # move test results to docs directory
 for f in ${RESULTS_DIRECTORY}/*simulation*; do
-  mv ${f}/* ${ROOT_PATH}/docs/performance_results;
+  mv ${f}/* ${WORKING_DIR}/docs/performance_results;
 done
 
 git add docs/

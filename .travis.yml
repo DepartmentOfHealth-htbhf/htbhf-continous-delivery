@@ -1,2 +1,6 @@
-language: java
+language: generic
 script: echo "Not running CD build on code change"
+
+cache:
+  directories:
+    - bin/
