@@ -10,6 +10,7 @@ fi
 export WORKING_DIR=$(pwd)
 export PERF_TESTS_DIR=${WORKING_DIR}/performance_tests
 export CD_SCRIPTS_DIR=${WORKING_DIR}/cd_scripts
+export COMPATIBILITY_TESTS_DIR=${WORKING_DIR}/compatibility_tests
 
 source ${CD_SCRIPTS_DIR}/cd_functions.sh
 
