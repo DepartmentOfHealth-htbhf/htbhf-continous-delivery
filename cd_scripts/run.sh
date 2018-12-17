@@ -8,13 +8,13 @@ if [[ "$TRAVIS_PULL_REQUEST" != "false"  || "$TRAVIS_BRANCH" != "master" ]]; the
 fi
 
 export WORKING_DIR=$(pwd)
+export BIN_DIR=${WORKING_DIR}/bin
 export PERF_TESTS_DIR=${WORKING_DIR}/performance_tests
 export CD_SCRIPTS_DIR=${WORKING_DIR}/cd_scripts
 export COMPATIBILITY_TESTS_DIR=${WORKING_DIR}/compatibility_tests
 
 source ${CD_SCRIPTS_DIR}/cd_functions.sh
 
-check_variable_is_set BIN_DIR
 check_variable_is_set DEPLOY_SCRIPTS_URL
 check_variable_is_set DEPLOY_SCRIPT_VERSION
 check_variable_is_set PERF_TESTS_URL
@@ -23,9 +23,7 @@ check_variable_is_set COMPATIBILITY_TESTS_URL
 check_variable_is_set COMPATIBILITY_TESTS_VERSION
 check_variable_is_set GH_WRITE_TOKEN
 check_variable_is_set TRAVIS_REPO_SLUG
-
-# if the bin directory is a relative path, convert it to absolute
-export BIN_DIR=$(readlink -f ${BIN_DIR})
+check_variable_is_set APP_HOST_STAGING
 
 download_deploy_scripts
 
@@ -39,6 +37,9 @@ else
 fi
 
 export CF_SPACE=staging
+export SMOKE_TESTS=${CD_SCRIPTS_DIR}/deploy_smoke_test.sh
+export APP_HOST=${APP_HOST_STAGING}
+
 source ${BIN_DIR}/deploy.sh
 check_exit_status $? "Deployment"
 
