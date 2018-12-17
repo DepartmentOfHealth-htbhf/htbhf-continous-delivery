@@ -48,7 +48,7 @@ download_compatibility_tests
 
 echo "Running compatibility tests"
 cd ${COMPATIBILITY_TESTS_DIR}
-npm run test:compatiblity
+npm run test:compatibility
 check_exit_status $? "Browser compatibility tests"
 cd ${WORKING_DIR}
 
