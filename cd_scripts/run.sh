@@ -74,7 +74,7 @@ fi
 if [[ ! -e ${PERF_TESTS_DIRECTORY}/performance_tests_${PERF_TESTS_VERSION} ]]; then
   echo "Downloading performance tests"
   mkdir -p ${PERF_TESTS_DIRECTORY}
-  cd ${PERF_TEST_DIRECTORY}
+  cd ${PERF_TESTS_DIRECTORY}
   wget "${PERF_TESTS_URL}/${PERF_TESTS_VERSION}/htbhf-performance-tests-${PERF_TESTS_VERSION}-sources.jar" -q -O perf_tests.jar && jar -xf perf_tests.jar && rm perf_tests.jar
   touch performance_tests_${PERF_TESTS_VERSION}
   cd ..
