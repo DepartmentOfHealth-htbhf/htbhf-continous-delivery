@@ -9,4 +9,4 @@ git add docs/
 git config --local user.email "travis@travis-ci.org"
 git config --local user.name "Travis CI"
 git commit -m "Publishing test results"
-git push -u gh-pages https://${GH_WRITE_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
+git push -u origin gh-pages https://${GH_WRITE_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
