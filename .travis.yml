@@ -4,3 +4,5 @@ script: echo "Not running CD build on code change"
 cache:
   directories:
     - bin/
+    - performance_tests/
+    - compatibility_tests/

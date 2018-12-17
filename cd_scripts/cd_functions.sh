@@ -27,7 +27,7 @@ download_deploy_scripts(){
 }
 
 download_compatibility_tests(){
-    if [[ ! -e ${COMPATIBILITY_TESTS_DIR}/performance_tests_${COMPATIBILITY_TESTS_VERSION} ]]; then
+    if [[ ! -e ${COMPATIBILITY_TESTS_DIR}/compatibility_tests_${COMPATIBILITY_TESTS_VERSION} ]]; then
         echo "Downloading compatibility tests"
         mkdir -p ${COMPATIBILITY_TESTS_DIR}
         cd ${COMPATIBILITY_TESTS_DIR}
