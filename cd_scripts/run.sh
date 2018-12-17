@@ -7,80 +7,55 @@ if [[ "$TRAVIS_PULL_REQUEST" != "false"  || "$TRAVIS_BRANCH" != "master" ]]; the
    exit
 fi
 
-check_variable_is_set(){
-    if [[ -z ${!1} ]]; then
-        echo "$1 must be set and non empty"
-        exit 1
-    fi
-}
+export WORKING_DIR=$(pwd)
+export PERF_TESTS_DIR=${WORKING_DIR}/performance_tests
+export CD_SCRIPTS_DIR=${WORKING_DIR}/cd_scripts
+export COMPATIBILITY_TESTS_DIR=${WORKING_DIR}/compatibility_tests
 
+source ${CD_SCRIPTS_DIR}/cd_functions.sh
+
+check_variable_is_set BIN_DIR
 check_variable_is_set DEPLOY_SCRIPTS_URL
 check_variable_is_set DEPLOY_SCRIPT_VERSION
-check_variable_is_set BIN_DIR
 check_variable_is_set PERF_TESTS_URL
 check_variable_is_set PERF_TESTS_VERSION
-check_variable_is_set PERF_TESTS_DIRECTORY
+check_variable_is_set COMPATIBILITY_TESTS_URL
+check_variable_is_set COMPATIBILITY_TESTS_VERSION
 check_variable_is_set GH_WRITE_TOKEN
 check_variable_is_set TRAVIS_REPO_SLUG
 
+# if the bin directory is a relative path, convert it to absolute
 export BIN_DIR=$(readlink -f ${BIN_DIR})
 
-if [[ ! -e ${BIN_DIR}/deploy_scripts_${DEPLOY_SCRIPT_VERSION} ]]; then
-  echo "Installing deploy scripts"
-    mkdir -p ${BIN_DIR}
-    cd ${BIN_DIR}
-    wget "${DEPLOY_SCRIPTS_URL}/${DEPLOY_SCRIPT_VERSION}.zip" -q -O deploy_scripts.zip && unzip -j -o deploy_scripts.zip && rm deploy_scripts.zip
-    touch deploy_scripts_${DEPLOY_SCRIPT_VERSION}
-    cd ..
-fi
+download_deploy_scripts
 
-
-echo "Determining whether to deploy node or java application (Node if ZIP_URL is set: '$ZIP_URL')"
+echo "Determining whether to deploy node or java application (will be node if ZIP_URL is set: '$ZIP_URL')"
 if [[ ${ZIP_URL} ]]; then
     echo "Deploying Node.js app from '${ZIP_URL}'"
-    # download and extract the archive
-    mkdir -p application && cd application
-    wget -q -O application.zip ${ZIP_URL} && unzip -o application.zip && rm application.zip
-    # the archive should have a single folder - step into it to get the path
-    cd *
-    export APP_PATH=$(pwd)
-    if [[ ! -e manifest.yml ]]; then
-        echo "Error - cannot find manifest file in ${APP_PATH}"
-        exit 1
-    fi
+    prepare_node_app_for_deploy
 else
     echo "Deploying Java app from '${APP_URL}' using manifest from '${MANIFEST_URL}'"
-    check_variable_is_set APP_URL
-    check_variable_is_set MANIFEST_URL
-
-    wget -q -O artefact.jar ${APP_URL}
-    wget -q -O manifest.jar ${MANIFEST_URL}
-    # extract the manifest into the current directory
-    jar -xf manifest.jar
-    export APP_PATH=artefact.jar
+    prepare_java_app_for_deploy
 fi
-
 
 export CF_SPACE=staging
+source ${BIN_DIR}/deploy.sh
+check_exit_status $? "Deployment"
 
-/bin/bash ${BIN_DIR}/deploy.sh
-DEPLOY_RESULT=$?
+cd ${WORKING_DIR}
 
-if [[ ${DEPLOY_RESULT} != 0 ]]; then
-  echo "Deployment failed, exiting."
-  exit ${DEPLOY_RESULT}
-fi
+download_compatibility_tests
 
-if [[ ! -e ${PERF_TESTS_DIRECTORY}/performance_tests_${PERF_TESTS_VERSION} ]]; then
-  echo "Downloading performance tests"
-  mkdir -p ${PERF_TESTS_DIRECTORY}
-  cd ${PERF_TESTS_DIRECTORY}
-  wget "${PERF_TESTS_URL}/${PERF_TESTS_VERSION}/htbhf-performance-tests-${PERF_TESTS_VERSION}-sources.jar" -q -O perf_tests.jar && jar -xf perf_tests.jar && rm perf_tests.jar
-  touch performance_tests_${PERF_TESTS_VERSION}
-  cd ..
-fi
+echo "Running compatibility tests"
+cd ${COMPATIBILITY_TESTS_DIR}
+npm run test:compatiblity
+check_exit_status $? "Browser compatibility tests"
+cd ${WORKING_DIR}
 
-export ROOT_PATH=`pwd`
+download_performance_tests
+
 echo "Running performance tests"
-/bin/bash ${PERF_TESTS_DIRECTORY}/run_performance_tests.sh
-/bin/bash ./cd_scripts/publish_test_results.sh
+source ${PERF_TESTS_DIR}/run_performance_tests.sh
+
+echo "Publishing test results"
+source ${CD_SCRIPTS_DIR}/publish_test_results.sh

@@ -10,7 +10,6 @@ To run the script locally, the following environment variables must be set
 * DEPLOY_SCRIPT_VERSION
 * BIN_DIR (directory to install deploy scripts)
 * SMOKE_TESTS (path to smoke tests script used to test that deployment was successful)
-* PERF_TESTS_DIRECTORY (directory to install the performance tests to)
 * PERF_TESTS_URL 
 * PERF_TESTS_VERSION
 
