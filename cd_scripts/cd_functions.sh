@@ -31,7 +31,7 @@ download_compatibility_tests(){
         echo "Downloading compatibility tests"
         mkdir -p ${COMPATIBILITY_TESTS_DIR}
         cd ${COMPATIBILITY_TESTS_DIR}
-        wget "${COMPATIBILITY_SCRIPTS_URL}/${COMPATIBILITY_SCRIPT_VERSION}.zip" -q -O compatibility_scripts.zip && unzip -j -o compatibility_scripts.zip && rm compatibility_scripts.zip
+        wget "${COMPATIBILITY_TESTS_URL}/${COMPATIBILITY_TESTS_VERSION}.zip" -q -O compatibility_scripts.zip && unzip -j -o compatibility_scripts.zip && rm compatibility_scripts.zip
         touch compatibility_tests_${COMPATIBILITY_TESTS_VERSION}
         cd ..
     fi
