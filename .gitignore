@@ -9,4 +9,4 @@ bin/
 *.ipr
 /out/
 .idea/
-/docs
+/docs/
