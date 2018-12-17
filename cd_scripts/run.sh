@@ -20,6 +20,8 @@ check_variable_is_set BIN_DIR
 check_variable_is_set PERF_TESTS_URL
 check_variable_is_set PERF_TESTS_VERSION
 check_variable_is_set PERF_TESTS_DIRECTORY
+check_variable_is_set GH_WRITE_TOKEN
+check_variable_is_set TRAVIS_REPO_SLUG
 
 export BIN_DIR=$(readlink -f ${BIN_DIR})
 
@@ -80,3 +82,4 @@ fi
 
 echo "Running performance tests"
 /bin/bash ${PERF_TESTS_DIRECTORY}/run_performance_tests.sh
+/bin/bash ./cd_scripts/public_test_results.sh
