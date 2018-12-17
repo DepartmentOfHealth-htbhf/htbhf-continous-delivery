@@ -22,18 +22,21 @@ download_deploy_scripts(){
         cd ${BIN_DIR}
         wget "${DEPLOY_SCRIPTS_URL}/${DEPLOY_SCRIPT_VERSION}.zip" -q -O deploy_scripts.zip && unzip -j -o deploy_scripts.zip && rm deploy_scripts.zip
         touch deploy_scripts_${DEPLOY_SCRIPT_VERSION}
-        cd ..
+        cd ${WORKING_DIR}
     fi
 }
 
 download_compatibility_tests(){
     if [[ ! -e ${COMPATIBILITY_TESTS_DIR}/compatibility_tests_${COMPATIBILITY_TESTS_VERSION} ]]; then
         echo "Downloading compatibility tests"
-        mkdir -p ${COMPATIBILITY_TESTS_DIR}
-        cd ${COMPATIBILITY_TESTS_DIR}
-        wget "${COMPATIBILITY_TESTS_URL}/${COMPATIBILITY_TESTS_VERSION}.zip" -q -O compatibility_scripts.zip && unzip -j -o compatibility_scripts.zip && rm compatibility_scripts.zip
+        mkdir -p ${COMPATIBILITY_TESTS_DIR}/tmp
+        cd ${COMPATIBILITY_TESTS_DIR}/tmp
+        wget "${COMPATIBILITY_TESTS_URL}/${COMPATIBILITY_TESTS_VERSION}.zip" -q -O compatibility_scripts.zip && unzip -o compatibility_scripts.zip && rm compatibility_scripts.zip
+        cd *
+        mv * ../..
+        cd ../.. && rm -rf tmp
         touch compatibility_tests_${COMPATIBILITY_TESTS_VERSION}
-        cd ..
+        cd ${WORKING_DIR}
     fi
 }
 
@@ -44,7 +47,7 @@ download_performance_tests(){
         cd ${PERF_TESTS_DIR}
         wget "${PERF_TESTS_URL}/${PERF_TESTS_VERSION}/htbhf-performance-tests-${PERF_TESTS_VERSION}-sources.jar" -q -O perf_tests.jar && jar -xf perf_tests.jar && rm perf_tests.jar
         touch performance_tests_${PERF_TESTS_VERSION}
-        cd ..
+        cd ${WORKING_DIR}
     fi
 }
 
