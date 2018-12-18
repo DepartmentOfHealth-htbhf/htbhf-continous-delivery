@@ -6,3 +6,8 @@ cache:
     - bin/
     - performance_tests/
     - compatibility_tests/
+
+branches:
+  only:
+    - master
+    - gh-pages
