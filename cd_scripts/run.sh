@@ -60,4 +60,5 @@ echo "Running performance tests"
 source ${PERF_TESTS_DIR}/run_performance_tests.sh
 
 echo "Publishing test results"
+export RESULTS_DIRECTORY=`pwd`/performance_tests_results
 source ${CD_SCRIPTS_DIR}/publish_test_results.sh
