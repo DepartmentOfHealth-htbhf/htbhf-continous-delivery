@@ -1,5 +1,6 @@
 #!/bin/bash
 
+git fetch
 git checkout gh-pages
 rm -r -f ${WORKING_DIR}/docs/*
 
