@@ -45,14 +45,14 @@ check_exit_status $? "Deployment"
 
 cd ${WORKING_DIR}
 
-download_compatibility_tests
-
-echo "Running compatibility tests"
-cd ${COMPATIBILITY_TESTS_DIR}
-npm install
-npm run test:compatibility
-check_exit_status $? "Browser compatibility tests"
-cd ${WORKING_DIR}
+#download_compatibility_tests
+#
+#echo "Running compatibility tests"
+#cd ${COMPATIBILITY_TESTS_DIR}
+#npm install
+#npm run test:compatibility
+#check_exit_status $? "Browser compatibility tests"
+#cd ${WORKING_DIR}
 
 download_performance_tests
 
