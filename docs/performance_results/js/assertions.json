@@ -1,7 +1,7 @@
 {
   "simulation": "uk.gov.dhsc.htbhf.ClaimSimulation",
   "simulationId": "claimsimulation",
-  "start": 1546538011617,
+  "start": 1546853654328,
   "description": "Performance tests",
   "scenarios": ["ClaimSimulation"],
   "assertions": [
