@@ -16,14 +16,19 @@ check_exit_status(){
 }
 
 download_deploy_scripts(){
-    if [[ ! -e ${BIN_DIR}/deploy_scripts_${DEPLOY_SCRIPT_VERSION} ]]; then
-        echo "Installing deploy scripts"
-        mkdir -p ${BIN_DIR}
-        cd ${BIN_DIR}
-        wget "${DEPLOY_SCRIPTS_URL}/${DEPLOY_SCRIPT_VERSION}.zip" -q -O deploy_scripts.zip && unzip -j -o deploy_scripts.zip && rm deploy_scripts.zip
-        touch deploy_scripts_${DEPLOY_SCRIPT_VERSION}
-        cd ${WORKING_DIR}
-    fi
+    # download the latest release of deployment scripts and extract to ${BIN_DIR}/deployment-scripts
+    mkdir -p ${BIN_DIR}
+    rm -rf ${BIN_DIR}/deployment-scripts
+    mkdir ${BIN_DIR}/deployment-scripts
+    curl -H "Authorization: token ${GH_WRITE_TOKEN}" -s https://api.github.com/repos/DepartmentOfHealth-htbhf/htbhf-deployment-scripts/releases/latest \
+        | grep zipball_url \
+        | cut -d'"' -f4 \
+        | wget -qO deployment-scripts.zip -i -
+    unzip deployment-scripts.zip
+    mv -f DepartmentOfHealth-htbhf-htbhf-deployment-scripts-*/* ${BIN_DIR}/deployment-scripts
+    rm -rf DepartmentOfHealth-htbhf-htbhf-deployment-scripts-*
+    rm deployment-scripts.zip
+    export SCRIPT_DIR=${BIN_DIR}/deployment-scripts
 }
 
 download_compatibility_tests(){

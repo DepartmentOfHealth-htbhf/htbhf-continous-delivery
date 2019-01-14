@@ -27,6 +27,9 @@ check_variable_is_set APP_HOST_STAGING
 
 download_deploy_scripts
 
+# SCRIPT_DIR should be set by download_deploy_scripts
+check_variable_is_set SCRIPT_DIR
+
 echo "Determining whether to deploy node or java application (will be node if ZIP_URL is set: '$ZIP_URL')"
 if [[ ${ZIP_URL} ]]; then
     echo "Deploying Node.js app from '${ZIP_URL}'"
@@ -40,7 +43,7 @@ export CF_SPACE=staging
 export SMOKE_TESTS=${CD_SCRIPTS_DIR}/deploy_smoke_test.sh
 export APP_HOST=${APP_HOST_STAGING}
 
-source ${BIN_DIR}/deploy.sh
+source ${SCRIPT_DIR}/deploy.sh
 check_exit_status $? "Deployment"
 
 cd ${WORKING_DIR}
