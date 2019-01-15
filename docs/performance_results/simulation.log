@@ -1,251 +1,251 @@
-RUN	uk.gov.dhsc.htbhf.ClaimSimulation	claimsimulation	1547557736677	Performance tests	3.0.1.1
-USER	ClaimSimulation	1	START	1547557738382	1547557738382
-USER	ClaimSimulation	2	START	1547557738436	1547557738436
-USER	ClaimSimulation	3	START	1547557738438	1547557738438
-USER	ClaimSimulation	4	START	1547557738440	1547557738440
-USER	ClaimSimulation	5	START	1547557738441	1547557738441
-USER	ClaimSimulation	6	START	1547557738442	1547557738442
-USER	ClaimSimulation	7	START	1547557738443	1547557738443
-USER	ClaimSimulation	8	START	1547557738443	1547557738443
-USER	ClaimSimulation	9	START	1547557738449	1547557738449
-USER	ClaimSimulation	10	START	1547557738450	1547557738450
-USER	ClaimSimulation	11	START	1547557738464	1547557738464
-USER	ClaimSimulation	12	START	1547557738466	1547557738466
-USER	ClaimSimulation	13	START	1547557738467	1547557738467
-USER	ClaimSimulation	14	START	1547557738471	1547557738471
-USER	ClaimSimulation	15	START	1547557738472	1547557738472
-USER	ClaimSimulation	16	START	1547557738473	1547557738473
-USER	ClaimSimulation	17	START	1547557738476	1547557738476
-USER	ClaimSimulation	18	START	1547557738478	1547557738478
-USER	ClaimSimulation	19	START	1547557738480	1547557738480
-USER	ClaimSimulation	20	START	1547557738482	1547557738482
-USER	ClaimSimulation	21	START	1547557738484	1547557738484
-USER	ClaimSimulation	22	START	1547557738486	1547557738486
-USER	ClaimSimulation	23	START	1547557738487	1547557738487
-USER	ClaimSimulation	24	START	1547557738489	1547557738489
-USER	ClaimSimulation	25	START	1547557738491	1547557738491
-USER	ClaimSimulation	26	START	1547557738493	1547557738493
-USER	ClaimSimulation	27	START	1547557738494	1547557738494
-USER	ClaimSimulation	28	START	1547557738497	1547557738497
-USER	ClaimSimulation	29	START	1547557738499	1547557738499
-USER	ClaimSimulation	30	START	1547557738501	1547557738501
-USER	ClaimSimulation	31	START	1547557738505	1547557738505
-USER	ClaimSimulation	32	START	1547557738507	1547557738507
-USER	ClaimSimulation	33	START	1547557738508	1547557738508
-USER	ClaimSimulation	34	START	1547557738510	1547557738510
-USER	ClaimSimulation	35	START	1547557738512	1547557738512
-USER	ClaimSimulation	36	START	1547557738514	1547557738514
-USER	ClaimSimulation	37	START	1547557738515	1547557738515
-USER	ClaimSimulation	38	START	1547557738518	1547557738518
-USER	ClaimSimulation	39	START	1547557738522	1547557738522
-USER	ClaimSimulation	40	START	1547557738526	1547557738526
-USER	ClaimSimulation	41	START	1547557738527	1547557738527
-USER	ClaimSimulation	42	START	1547557738529	1547557738529
-USER	ClaimSimulation	43	START	1547557738530	1547557738530
-USER	ClaimSimulation	44	START	1547557738531	1547557738531
-USER	ClaimSimulation	45	START	1547557738532	1547557738532
-USER	ClaimSimulation	46	START	1547557738542	1547557738542
-USER	ClaimSimulation	47	START	1547557738544	1547557738544
-USER	ClaimSimulation	48	START	1547557738547	1547557738547
-USER	ClaimSimulation	49	START	1547557738548	1547557738548
-USER	ClaimSimulation	50	START	1547557738550	1547557738550
-REQUEST	3		home_page	1547557738438	1547557738930	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-REQUEST	8		home_page	1547557738448	1547557738934	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-REQUEST	9		home_page	1547557738450	1547557738934	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-REQUEST	42		home_page	1547557738529	1547557738934	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739015
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739015
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739017
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739031
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739031
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739031
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739032
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739031
-USER	ClaimSimulation	3	END	1547557738438	1547557739036
-USER	ClaimSimulation	8	END	1547557738443	1547557739037
-USER	ClaimSimulation	9	END	1547557738449	1547557739038
-USER	ClaimSimulation	42	END	1547557738529	1547557739040
-REQUEST	31		home_page	1547557738506	1547557739037	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739043
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739043
-REQUEST	33		home_page	1547557738509	1547557739046	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739052
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739053
-USER	ClaimSimulation	31	END	1547557738505	1547557739053
-REQUEST	24		home_page	1547557738490	1547557739037	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739056
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739056
-REQUEST	19		home_page	1547557738481	1547557739053	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739059
-REQUEST	6		home_page	1547557738442	1547557739052	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-USER	ClaimSimulation	24	END	1547557738489	1547557739056
-USER	ClaimSimulation	33	END	1547557738508	1547557739060
-REQUEST	25		home_page	1547557738491	1547557739061	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739080
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739081
-REQUEST	4		home_page	1547557738440	1547557739057	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739082
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739082
-USER	ClaimSimulation	25	END	1547557738491	1547557739081
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739060
-REQUEST	36		home_page	1547557738514	1547557739083	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-REQUEST	11		home_page	1547557738465	1547557739094	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739096
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739096
-USER	ClaimSimulation	4	END	1547557738440	1547557739082
-USER	ClaimSimulation	19	END	1547557738480	1547557739094
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739080
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739099
-USER	ClaimSimulation	6	END	1547557738442	1547557739099
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739101
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739102
-USER	ClaimSimulation	36	END	1547557738514	1547557739102
-REQUEST	21		home_page	1547557738485	1547557739098	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739103
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739104
-USER	ClaimSimulation	21	END	1547557738484	1547557739104
-REQUEST	45		home_page	1547557738541	1547557739105	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739106
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739106
-USER	ClaimSimulation	45	END	1547557738532	1547557739107
-USER	ClaimSimulation	11	END	1547557738464	1547557739108
-REQUEST	2		home_page	1547557738437	1547557739109	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739111
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739112
-REQUEST	40		home_page	1547557738527	1547557739103	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739113
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739114
-USER	ClaimSimulation	40	END	1547557738526	1547557739114
-REQUEST	43		home_page	1547557738530	1547557739108	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739117
-REQUEST	32		home_page	1547557738507	1547557739115	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739117
-REQUEST	1		home_page	1547557738427	1547557739107	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-USER	ClaimSimulation	43	END	1547557738530	1547557739119
-USER	ClaimSimulation	2	END	1547557738436	1547557739120
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739124
-REQUEST	14		home_page	1547557738471	1547557739124	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739125
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739125
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739119
-USER	ClaimSimulation	1	END	1547557738382	1547557739126
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739127
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739125
-USER	ClaimSimulation	14	END	1547557738471	1547557739128
-USER	ClaimSimulation	32	END	1547557738507	1547557739129
-REQUEST	16		home_page	1547557738474	1547557739129	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739130
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739130
-USER	ClaimSimulation	16	END	1547557738473	1547557739131
-REQUEST	47		home_page	1547557738544	1547557739126	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739131
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739131
-USER	ClaimSimulation	47	END	1547557738544	1547557739132
-REQUEST	38		home_page	1547557738518	1547557739134	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-REQUEST	27		home_page	1547557738495	1547557739135	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739136
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739136
-USER	ClaimSimulation	27	END	1547557738494	1547557739136
-REQUEST	15		home_page	1547557738472	1547557739137	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739138
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739138
-USER	ClaimSimulation	15	END	1547557738472	1547557739139
-REQUEST	7		home_page	1547557738443	1547557739139	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739140
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739140
-REQUEST	49		home_page	1547557738548	1547557739132	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-USER	ClaimSimulation	38	END	1547557738518	1547557739141
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739142
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739144
-REQUEST	48		home_page	1547557738547	1547557739148	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-USER	ClaimSimulation	49	END	1547557738548	1547557739147
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739149
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739149
-USER	ClaimSimulation	48	END	1547557738547	1547557739150
-REQUEST	44		home_page	1547557738531	1547557739151	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-REQUEST	22		home_page	1547557738486	1547557739151	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739152
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739152
-USER	ClaimSimulation	22	END	1547557738486	1547557739153
-REQUEST	18		home_page	1547557738479	1547557739155	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739156
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739156
-USER	ClaimSimulation	18	END	1547557738478	1547557739157
-REQUEST	34		home_page	1547557738511	1547557739157	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739158
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739159
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739159
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739159
-USER	ClaimSimulation	44	END	1547557738531	1547557739160
-REQUEST	20		home_page	1547557738483	1547557739161	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739161
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739162
-USER	ClaimSimulation	20	END	1547557738482	1547557739162
-REQUEST	28		home_page	1547557738497	1547557739163	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-REQUEST	5		home_page	1547557738442	1547557739153	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739174
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739174
-USER	ClaimSimulation	5	END	1547557738441	1547557739175
-REQUEST	17		home_page	1547557738477	1547557739176	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739178
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739178
-USER	ClaimSimulation	28	END	1547557738497	1547557739179
-REQUEST	12		home_page	1547557738467	1547557739179	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739180
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739180
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739178
-USER	ClaimSimulation	12	END	1547557738466	1547557739181
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739182
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739182
-USER	ClaimSimulation	7	END	1547557738443	1547557739183
-REQUEST	39		home_page	1547557738525	1547557739184	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739184
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739185
-REQUEST	35		home_page	1547557738512	1547557739186	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-USER	ClaimSimulation	39	END	1547557738522	1547557739185
-USER	ClaimSimulation	34	END	1547557738510	1547557739187
-REQUEST	10		home_page	1547557738461	1547557739188	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739189
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739189
-USER	ClaimSimulation	10	END	1547557738450	1547557739189
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739187
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739190
-USER	ClaimSimulation	35	END	1547557738512	1547557739191
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739191
-USER	ClaimSimulation	17	END	1547557738476	1547557739192
-REQUEST	26		home_page	1547557738493	1547557739190	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739192
-REQUEST	23		home_page	1547557738488	1547557739193	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739194
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739194
-USER	ClaimSimulation	23	END	1547557738487	1547557739194
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739193
-USER	ClaimSimulation	26	END	1547557738493	1547557739197
-REQUEST	30		home_page	1547557738502	1547557739199	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739209
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739223
-USER	ClaimSimulation	30	END	1547557738501	1547557739224
-REQUEST	46		home_page	1547557738542	1547557739224	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739225
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739226
-USER	ClaimSimulation	46	END	1547557738542	1547557739226
-REQUEST	50		home_page	1547557738550	1547557739227	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739228
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739228
-REQUEST	13		home_page	1547557738468	1547557739200	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-USER	ClaimSimulation	50	END	1547557738550	1547557739229
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739232
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739233
-USER	ClaimSimulation	13	END	1547557738467	1547557739233
-REQUEST	41		home_page	1547557738528	1547557739234	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739235
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739235
-USER	ClaimSimulation	41	END	1547557738527	1547557739235
-REQUEST	37		home_page	1547557738517	1547557739236	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739237
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739238
-USER	ClaimSimulation	37	END	1547557738515	1547557739239
-REQUEST	29		home_page	1547557738499	1547557739240	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
-ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739250
-ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547557739252
-USER	ClaimSimulation	29	END	1547557738499	1547557739258
+RUN	uk.gov.dhsc.htbhf.ClaimSimulation	claimsimulation	1547558449970	Performance tests	3.0.1.1
+USER	ClaimSimulation	1	START	1547558451652	1547558451652
+USER	ClaimSimulation	2	START	1547558451704	1547558451704
+USER	ClaimSimulation	3	START	1547558451707	1547558451707
+USER	ClaimSimulation	4	START	1547558451708	1547558451708
+USER	ClaimSimulation	5	START	1547558451710	1547558451710
+USER	ClaimSimulation	6	START	1547558451712	1547558451712
+USER	ClaimSimulation	7	START	1547558451713	1547558451713
+USER	ClaimSimulation	8	START	1547558451714	1547558451714
+USER	ClaimSimulation	9	START	1547558451717	1547558451717
+USER	ClaimSimulation	10	START	1547558451718	1547558451718
+USER	ClaimSimulation	11	START	1547558451719	1547558451719
+USER	ClaimSimulation	12	START	1547558451720	1547558451720
+USER	ClaimSimulation	13	START	1547558451728	1547558451728
+USER	ClaimSimulation	14	START	1547558451730	1547558451730
+USER	ClaimSimulation	15	START	1547558451733	1547558451733
+USER	ClaimSimulation	16	START	1547558451735	1547558451735
+USER	ClaimSimulation	17	START	1547558451736	1547558451736
+USER	ClaimSimulation	18	START	1547558451739	1547558451739
+USER	ClaimSimulation	19	START	1547558451740	1547558451740
+USER	ClaimSimulation	20	START	1547558451743	1547558451743
+USER	ClaimSimulation	21	START	1547558451745	1547558451745
+USER	ClaimSimulation	22	START	1547558451748	1547558451748
+USER	ClaimSimulation	23	START	1547558451749	1547558451749
+USER	ClaimSimulation	24	START	1547558451751	1547558451751
+USER	ClaimSimulation	25	START	1547558451754	1547558451754
+USER	ClaimSimulation	26	START	1547558451755	1547558451755
+USER	ClaimSimulation	27	START	1547558451757	1547558451757
+USER	ClaimSimulation	28	START	1547558451758	1547558451758
+USER	ClaimSimulation	29	START	1547558451760	1547558451760
+USER	ClaimSimulation	30	START	1547558451762	1547558451762
+USER	ClaimSimulation	31	START	1547558451764	1547558451764
+USER	ClaimSimulation	32	START	1547558451766	1547558451766
+USER	ClaimSimulation	33	START	1547558451768	1547558451768
+USER	ClaimSimulation	34	START	1547558451770	1547558451770
+USER	ClaimSimulation	35	START	1547558451772	1547558451772
+USER	ClaimSimulation	36	START	1547558451774	1547558451774
+USER	ClaimSimulation	37	START	1547558451776	1547558451776
+USER	ClaimSimulation	38	START	1547558451778	1547558451778
+USER	ClaimSimulation	39	START	1547558451780	1547558451780
+USER	ClaimSimulation	40	START	1547558451782	1547558451782
+USER	ClaimSimulation	41	START	1547558451783	1547558451783
+USER	ClaimSimulation	42	START	1547558451784	1547558451784
+USER	ClaimSimulation	43	START	1547558451785	1547558451785
+USER	ClaimSimulation	44	START	1547558451786	1547558451786
+USER	ClaimSimulation	45	START	1547558451788	1547558451788
+USER	ClaimSimulation	46	START	1547558451790	1547558451790
+USER	ClaimSimulation	47	START	1547558451791	1547558451791
+USER	ClaimSimulation	48	START	1547558451794	1547558451794
+USER	ClaimSimulation	49	START	1547558451801	1547558451801
+USER	ClaimSimulation	50	START	1547558451805	1547558451805
+REQUEST	3		home_page	1547558451708	1547558452196	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+REQUEST	41		home_page	1547558451784	1547558452198	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+REQUEST	20		home_page	1547558451743	1547558452225	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452286
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452286
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452290
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452291
+REQUEST	6		home_page	1547558451712	1547558452196	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452301
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452304
+USER	ClaimSimulation	3	END	1547558451707	1547558452304
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452315
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452318
+USER	ClaimSimulation	6	END	1547558451712	1547558452321
+REQUEST	2		home_page	1547558451706	1547558452322	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+REQUEST	7		home_page	1547558451714	1547558452317	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452323
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452324
+USER	ClaimSimulation	7	END	1547558451713	1547558452324
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452326
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452327
+USER	ClaimSimulation	20	END	1547558451743	1547558452326
+USER	ClaimSimulation	41	END	1547558451783	1547558452327
+USER	ClaimSimulation	2	END	1547558451704	1547558452330
+REQUEST	15		home_page	1547558451734	1547558452325	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+REQUEST	44		home_page	1547558451787	1547558452327	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452334
+REQUEST	33		home_page	1547558451769	1547558452328	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452334
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452334
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452335
+USER	ClaimSimulation	44	END	1547558451786	1547558452337
+REQUEST	36		home_page	1547558451775	1547558452341	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452350
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452351
+REQUEST	10		home_page	1547558451719	1547558452330	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452353
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452353
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452355
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452355
+USER	ClaimSimulation	15	END	1547558451733	1547558452351
+USER	ClaimSimulation	10	END	1547558451718	1547558452354
+USER	ClaimSimulation	33	END	1547558451768	1547558452355
+USER	ClaimSimulation	36	END	1547558451774	1547558452356
+REQUEST	27		home_page	1547558451757	1547558452352	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452364
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452365
+USER	ClaimSimulation	27	END	1547558451757	1547558452365
+REQUEST	18		home_page	1547558451739	1547558452354	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452366
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452367
+USER	ClaimSimulation	18	END	1547558451739	1547558452367
+REQUEST	13		home_page	1547558451729	1547558452355	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452368
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452368
+USER	ClaimSimulation	13	END	1547558451728	1547558452369
+REQUEST	28		home_page	1547558451759	1547558452356	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452372
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452372
+REQUEST	17		home_page	1547558451737	1547558452369	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452375
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452375
+REQUEST	23		home_page	1547558451750	1547558452366	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452378
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452378
+USER	ClaimSimulation	28	END	1547558451758	1547558452379
+USER	ClaimSimulation	23	END	1547558451749	1547558452380
+REQUEST	30		home_page	1547558451763	1547558452373	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+USER	ClaimSimulation	17	END	1547558451736	1547558452381
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452382
+REQUEST	8		home_page	1547558451715	1547558452381	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+REQUEST	9		home_page	1547558451717	1547558452385	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452385
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452385
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452385
+USER	ClaimSimulation	9	END	1547558451717	1547558452386
+REQUEST	11		home_page	1547558451720	1547558452383	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452387
+REQUEST	21		home_page	1547558451746	1547558452387	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452387
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452387
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452388
+USER	ClaimSimulation	11	END	1547558451719	1547558452388
+USER	ClaimSimulation	30	END	1547558451762	1547558452389
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452387
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452395
+REQUEST	42		home_page	1547558451785	1547558452389	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+USER	ClaimSimulation	8	END	1547558451714	1547558452396
+USER	ClaimSimulation	21	END	1547558451745	1547558452397
+REQUEST	48		home_page	1547558451797	1547558452397	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452398
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452399
+USER	ClaimSimulation	48	END	1547558451794	1547558452399
+REQUEST	29		home_page	1547558451761	1547558452398	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+REQUEST	16		home_page	1547558451736	1547558452400	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452400
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452401
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452401
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452401
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452402
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452401
+USER	ClaimSimulation	42	END	1547558451784	1547558452403
+REQUEST	35		home_page	1547558451772	1547558452390	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452403
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452403
+USER	ClaimSimulation	29	END	1547558451760	1547558452404
+USER	ClaimSimulation	35	END	1547558451772	1547558452404
+REQUEST	43		home_page	1547558451786	1547558452404	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452405
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452405
+USER	ClaimSimulation	43	END	1547558451785	1547558452406
+REQUEST	39		home_page	1547558451781	1547558452406	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452407
+REQUEST	22		home_page	1547558451748	1547558452407	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452408
+REQUEST	5		home_page	1547558451711	1547558452408	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452409
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452410
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452410
+USER	ClaimSimulation	5	END	1547558451710	1547558452412
+USER	ClaimSimulation	22	END	1547558451748	1547558452413
+REQUEST	49		home_page	1547558451802	1547558452414	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452419
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452419
+USER	ClaimSimulation	16	END	1547558451735	1547558452422
+USER	ClaimSimulation	49	END	1547558451801	1547558452422
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452425
+REQUEST	45		home_page	1547558451788	1547558452425	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+REQUEST	12		home_page	1547558451728	1547558452425	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452431
+REQUEST	34		home_page	1547558451770	1547558452417	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452432
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452431
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452433
+USER	ClaimSimulation	34	END	1547558451770	1547558452438
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452437
+REQUEST	46		home_page	1547558451790	1547558452439	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452440
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452440
+USER	ClaimSimulation	45	END	1547558451788	1547558452440
+USER	ClaimSimulation	46	END	1547558451790	1547558452441
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452440
+USER	ClaimSimulation	39	END	1547558451780	1547558452441
+USER	ClaimSimulation	12	END	1547558451720	1547558452442
+REQUEST	47		home_page	1547558451792	1547558452442	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+REQUEST	37		home_page	1547558451777	1547558452442	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452443
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452443
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452443
+USER	ClaimSimulation	37	END	1547558451776	1547558452444
+REQUEST	25		home_page	1547558451754	1547558452444	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452457
+REQUEST	26		home_page	1547558451756	1547558452457	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452458
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452458
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452458
+REQUEST	14		home_page	1547558451731	1547558452460	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452444
+USER	ClaimSimulation	26	END	1547558451755	1547558452459
+USER	ClaimSimulation	25	END	1547558451754	1547558452459
+USER	ClaimSimulation	47	END	1547558451791	1547558452461
+REQUEST	4		home_page	1547558451710	1547558452446	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+REQUEST	31		home_page	1547558451764	1547558452461	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452462
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452462
+USER	ClaimSimulation	31	END	1547558451764	1547558452463
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452463
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452464
+REQUEST	19		home_page	1547558451741	1547558452463	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452464
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452464
+USER	ClaimSimulation	19	END	1547558451740	1547558452465
+USER	ClaimSimulation	4	END	1547558451708	1547558452465
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452465
+REQUEST	40		home_page	1547558451783	1547558452466	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452466
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452466
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452467
+USER	ClaimSimulation	14	END	1547558451730	1547558452467
+USER	ClaimSimulation	40	END	1547558451782	1547558452467
+REQUEST	32		home_page	1547558451767	1547558452468	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+REQUEST	50		home_page	1547558451806	1547558452469	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452474
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452475
+USER	ClaimSimulation	50	END	1547558451805	1547558452476
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452476
+REQUEST	1		home_page	1547558451699	1547558452473	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+REQUEST	38		home_page	1547558451779	1547558452477	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452478
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452478
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452478
+USER	ClaimSimulation	38	END	1547558451778	1547558452479
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452479
+USER	ClaimSimulation	32	END	1547558451766	1547558452483
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452484
+USER	ClaimSimulation	1	END	1547558451652	1547558452486
+REQUEST	24		home_page	1547558451752	1547558452486	KO	regex(<input type="hidden" name="_csrf" value="(.*)").find.exists, found nothing
+ERROR	send_name: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452492
+ERROR	confirm: Failed to build request: No attribute named 'csrf_token' is defined 	1547558452492
+USER	ClaimSimulation	24	END	1547558451751	1547558452504
