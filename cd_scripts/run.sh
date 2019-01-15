@@ -15,14 +15,12 @@ export COMPATIBILITY_TESTS_DIR=${WORKING_DIR}/compatibility_tests
 
 source ${CD_SCRIPTS_DIR}/cd_functions.sh
 
-check_variable_is_set DEPLOY_SCRIPTS_URL
-check_variable_is_set DEPLOY_SCRIPT_VERSION
+check_variable_is_set APP_VERSION
 check_variable_is_set PERF_TESTS_URL
 check_variable_is_set PERF_TESTS_VERSION
-check_variable_is_set COMPATIBILITY_TESTS_URL
-check_variable_is_set COMPATIBILITY_TESTS_VERSION
 check_variable_is_set GH_WRITE_TOKEN
 check_variable_is_set TRAVIS_REPO_SLUG
+check_variable_is_set GITHUB_REPO_SLUG
 check_variable_is_set APP_HOST_STAGING
 
 download_deploy_scripts
@@ -65,3 +63,8 @@ source ${PERF_TESTS_DIR}/run_performance_tests.sh
 
 echo "Publishing test results"
 source ${CD_SCRIPTS_DIR}/publish_test_results.sh
+
+
+echo "Staging build successful - Creating a release in GitHub for ${GITHUB_REPO_SLUG}"
+body="{\"tag_name\": \"${APP_VERSION}\", \"name\": \"${APP_VERSION}\"}"
+curl -H "Authorization: token ${GH_WRITE_TOKEN}" -H "Content-Type: application/json" -d "${body}" https://api.github.com/repos/${GITHUB_REPO_SLUG}/releases

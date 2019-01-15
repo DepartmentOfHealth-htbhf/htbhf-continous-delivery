@@ -17,6 +17,7 @@ check_exit_status(){
 
 download_deploy_scripts(){
     # download the latest release of deployment scripts and extract to ${BIN_DIR}/deployment-scripts
+    echo "Downloading deployment scripts"
     mkdir -p ${BIN_DIR}
     rm -rf ${BIN_DIR}/deployment-scripts
     mkdir ${BIN_DIR}/deployment-scripts
@@ -32,17 +33,19 @@ download_deploy_scripts(){
 }
 
 download_compatibility_tests(){
-    if [[ ! -e ${COMPATIBILITY_TESTS_DIR}/compatibility_tests_${COMPATIBILITY_TESTS_VERSION} ]]; then
-        echo "Downloading compatibility tests"
-        mkdir -p ${COMPATIBILITY_TESTS_DIR}/tmp
-        cd ${COMPATIBILITY_TESTS_DIR}/tmp
-        wget "${COMPATIBILITY_TESTS_URL}/${COMPATIBILITY_TESTS_VERSION}.zip" -q -O compatibility_scripts.zip && unzip -o compatibility_scripts.zip && rm compatibility_scripts.zip
-        cd *
-        mv * ../..
-        cd ../.. && rm -rf tmp
-        touch compatibility_tests_${COMPATIBILITY_TESTS_VERSION}
-        cd ${WORKING_DIR}
-    fi
+    # download the latest release of the compatibility tests and extract to ${COMPATIBILITY_TESTS_DIR} (the directory will be deleted first)
+    check_variable_is_set COMPATIBILITY_TESTS_DIR
+    echo "Downloading compatibility tests"
+    rm -rf ${COMPATIBILITY_TESTS_DIR}
+    mkdir ${COMPATIBILITY_TESTS_DIR}
+    curl -H "Authorization: token ${GH_WRITE_TOKEN}" -s https://api.github.com/repos/DepartmentOfHealth-htbhf/htbhf-compatibility-tests/releases/latest \
+        | grep zipball_url \
+        | cut -d'"' -f4 \
+        | wget -qO compatibility-tests-tmp.zip -i -
+    unzip compatibility-tests-tmp.zip
+    mv -f DepartmentOfHealth-htbhf-htbhf-compatibility-tests-*/* ${COMPATIBILITY_TESTS_DIR}
+    rm -rf DepartmentOfHealth-htbhf-htbhf-compatibility-tests-*
+    rm compatibility-tests-tmp.zip
 }
 
 download_performance_tests(){

@@ -5,7 +5,6 @@ cache:
   directories:
     - bin/
     - performance_tests/
-    - compatibility_tests/
 
 install:
   - git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
