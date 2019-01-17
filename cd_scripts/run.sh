@@ -21,6 +21,15 @@ check_variable_is_set GH_WRITE_TOKEN
 check_variable_is_set TRAVIS_REPO_SLUG
 check_variable_is_set APP_HOST_STAGING
 
+download_deploy_scripts
+
+# SCRIPT_DIR should be set by download_deploy_scripts
+check_variable_is_set SCRIPT_DIR
+
+source ${SCRIPT_DIR}/cf_deployment_functions.sh
+export CF_SPACE=staging
+
+
 if [ -z "$GITHUB_REPO_SLUG" ]; then
     echo "GITHUB_REPO_SLUG is empty/not set - not deploying any app";
 
@@ -28,11 +37,6 @@ else
     echo "Deploying $GITHUB_REPO_SLUG";
     check_variable_is_set APP_NAME
     check_variable_is_set APP_VERSION
-
-    download_deploy_scripts
-
-    # SCRIPT_DIR should be set by download_deploy_scripts
-    check_variable_is_set SCRIPT_DIR
 
     echo "Determining whether to deploy node or java application (will be node if ZIP_URL is set: '$ZIP_URL')"
     if [[ ${ZIP_URL} ]]; then
@@ -43,7 +47,6 @@ else
         prepare_java_app_for_deploy
     fi
 
-    export CF_SPACE=staging
     export SMOKE_TESTS=${CD_SCRIPTS_DIR}/deploy_smoke_test.sh
     export APP_HOST=${APP_HOST_STAGING}
 
@@ -56,11 +59,22 @@ fi
 
 download_compatibility_tests
 
+echo "Creating temporary route for compatibility tests"
+create_random_route_name
+HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
+cf map-route ${HTBHF_APP} ${CF_PUBLIC_DOMAIN} --hostname ${ROUTE}
+
 echo "Running compatibility tests"
+export APP_BASE_URL="https://${ROUTE}.${CF_PUBLIC_DOMAIN}"
 cd ${COMPATIBILITY_TESTS_DIR}
 npm install
 npm run test:compatibility
-check_exit_status $? "Browser compatibility tests"
+RESULT=$?
+
+echo "Removing temporary route"
+remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
+
+check_exit_status $RESULT "Browser compatibility tests"
 cd ${WORKING_DIR}
 
 download_performance_tests
