@@ -37,7 +37,7 @@
                         <div class="item "><a href="index.html">GLOBAL</a></div>
                         <div class="item ouvert"><a id="details_link" href="#">DETAILS</a></div>
                         <script type="text/javascript">
-                          var timestamp = 1547827849237;
+                          var timestamp = 1547831399771;
                           var runStartHumanDate = moment(timestamp).format("YYYY-MM-DD HH:mm:ss Z");
                           document.writeln("<p class='sim_desc' title='"+ runStartHumanDate +", duration : 3 seconds' data-content='Performance tests'>");
                           document.writeln("<b>" + runStartHumanDate + ", duration : 3 seconds Performance tests</b>");
@@ -306,7 +306,7 @@ var responseTimeDistributionChart = new Highcharts.Chart({
     text: 'A title to let highcharts reserve the place for the title set later'
   },
   xAxis: {
-    categories: ['108', '112', '113', '114', '116', '117', '118', '119', '120', '121', '123', '124', '126', '128', '132', '133', '134', '135', '136', '137', '138', '139', '140', '143', '145', '148'],
+    categories: ['102', '103', '104', '105', '106', '108', '109', '110', '111', '112', '114', '115', '116', '117', '118', '120', '121', '122', '123', '124', '126', '127', '128', '129', '130', '132', '133', '134', '135', '136', '138', '139', '140', '141', '142', '144', '145', '146', '147', '148', '150', '151', '152', '153', '154', '156', '157', '158', '159', '160', '162', '163', '164', '165', '166', '168', '169', '170', '171', '172', '174', '175', '176', '177', '178', '180', '181', '182', '183', '184', '186', '187', '188', '189', '190', '192', '193', '194', '195', '196', '198', '199', '200', '201', '202', '204', '205', '206', '207', '208', '210', '211', '212', '213', '214', '216', '217', '218', '219', '220'],
     tickInterval: 20
   },
   yAxis: {
@@ -335,7 +335,7 @@ type: 'column',
 color: '#4572A7',
 name: 'OK',
 data: [
-  2.0,12.0,8.0,10.0,2.0,2.0,8.0,2.0,2.0,2.0,2.0,2.0,4.0,2.0,2.0,4.0,4.0,2.0,8.0,4.0,2.0,4.0,4.0,2.0,2.0,2.0
+  4.0,6.0,6.0,4.0,2.0,4.0,0.0,10.0,18.0,4.0,18.0,4.0,2.0,4.0,2.0,2.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0
 ],
 tooltip: { yDecimals: 0, ySuffix: 'ms' }
 },
@@ -344,7 +344,7 @@ type: 'column',
 color: '#FF0000',
 name: 'KO',
 data: [
-  
+  0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 ],
 tooltip: { yDecimals: 0, ySuffix: 'ms' }
 }
@@ -356,7 +356,7 @@ responseTimeDistributionChart.setTitle({
   useHTML: true
 });
 
-var responseTimePercentiles = unpack([[1547827851,null],[1547827852,[108,114,122,136,136,137,139,141,146,148]]]);
+var responseTimePercentiles = unpack([[1547831401,null],[1547831402,[101,108,111,114,115,117,120,149,196,221]]]);
 
 var responseTimeChart = new Highcharts.StockChart({
   chart: {
@@ -551,7 +551,7 @@ responseTimeChart.setTitle({
   useHTML: true
 });
 
-var container_requests = unpack([[1547827851,[0,0, 0]],[1547827852,[50,0, 50]]]);
+var container_requests = unpack([[1547831401,[0,0, 0]],[1547831402,[50,0, 50]]]);
 
 var requestsChart = new Highcharts.StockChart({
   chart: {
@@ -660,7 +660,7 @@ requestsChart.setTitle({
   useHTML: true
 });
 
-var container_responses = unpack([[1547827851,[0,0, 0]],[1547827852,[50,0, 50]]]);
+var container_responses = unpack([[1547831401,[0,0, 0]],[1547831402,[50,0, 50]]]);
 
 var requestsChart = new Highcharts.StockChart({
   chart: {
@@ -863,7 +863,7 @@ type: 'scatter',
 color: 'rgba(69, 114, 167, .2)',
 name: 'OK',
 data: [
-[250,141]
+[250,149]
 ]},
 	  {
 type: 'scatter',
