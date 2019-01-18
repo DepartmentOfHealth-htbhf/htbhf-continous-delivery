@@ -17,7 +17,7 @@
 <script type="text/javascript" src="js/highcharts-more.js"></script>
 <script type="text/javascript" src="js/theme.js"></script>
 <script type="text/javascript" src="js/unpack.js"></script>
-<title>Gatling Stats - send_name</title>
+<title>Gatling Stats - enter_nino_page</title>
 </head>
 <body>
 <div class="frise"></div>
@@ -45,7 +45,7 @@
                         </script>
                     </div>
                     <div class="content-in">
-                        <h1><span>> </span>send_name</h1>
+                        <h1><span>> </span>enter_nino_page</h1>
                         <div class="article">
                             
                         <div class="infos">
@@ -177,7 +177,7 @@
     <a href="https://gatling.io" title="Gatling Home Page"><img alt="Gatling" src="style/logo-gatling.jpg"/></a>
 </div>
 <script type="text/javascript">
-    var pageStats = stats.contents['req_send-name-f4dbe'].stats;
+    var pageStats = stats.contents['req_enter-nino-page-67f19'].stats;
     $(document).ready(function() {
         $('.sim_desc').popover({trigger:'hover', placement:'bottom'});
         setDetailsLinkUrl();
@@ -306,7 +306,7 @@ var responseTimeDistributionChart = new Highcharts.Chart({
     text: 'A title to let highcharts reserve the place for the title set later'
   },
   xAxis: {
-    categories: ['102', '103', '105', '106', '107', '108', '109', '110', '111', '112', '113', '114', '115', '116', '117', '118', '119', '120', '122', '127', '131'],
+    categories: ['460', '463', '466', '469', '472', '475', '479', '482', '485', '488', '491', '494', '498', '501', '504', '507', '510', '513', '517', '520', '523', '526', '529', '532', '536', '539', '542', '545', '548', '552', '555', '558', '561', '564', '567', '571', '574', '577', '580', '583', '586', '590', '593', '596', '599', '602', '605', '609', '612', '615', '618', '621', '624', '628', '631', '634', '637', '640', '643', '647', '650', '653', '656', '659', '662', '666', '669', '672', '675', '678', '681', '685', '688', '691', '694', '697', '701', '704', '707', '710', '713', '716', '720', '723', '726', '729', '732', '735', '739', '742', '745', '748', '751', '754', '758', '761', '764', '767', '770', '773'],
     tickInterval: 20
   },
   yAxis: {
@@ -335,7 +335,7 @@ type: 'column',
 color: '#4572A7',
 name: 'OK',
 data: [
-  4.0,4.0,4.0,4.0,2.0,4.0,6.0,8.0,2.0,4.0,4.0,8.0,6.0,8.0,12.0,8.0,2.0,2.0,2.0,4.0,2.0
+  2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,4.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,4.0,0.0,4.0,2.0,2.0,4.0,2.0,2.0,0.0,0.0,2.0,2.0,2.0,2.0,2.0,0.0,2.0,2.0,0.0,0.0,0.0,4.0,2.0,4.0,4.0,2.0,6.0,2.0,0.0,4.0,2.0,0.0,6.0,2.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,4.0,6.0,0.0,0.0,0.0,2.0
 ],
 tooltip: { yDecimals: 0, ySuffix: 'ms' }
 },
@@ -344,7 +344,7 @@ type: 'column',
 color: '#FF0000',
 name: 'KO',
 data: [
-  
+  0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 ],
 tooltip: { yDecimals: 0, ySuffix: 'ms' }
 }
@@ -356,7 +356,7 @@ responseTimeDistributionChart.setTitle({
   useHTML: true
 });
 
-var responseTimePercentiles = unpack([[1547811782,null],[1547811783,[102,109,114,117,117,118,119,124,129,131]]]);
+var responseTimePercentiles = unpack([[1547811782,[458,638,691,716,725,728,756,760,768,775]],[1547811783,null]]);
 
 var responseTimeChart = new Highcharts.StockChart({
   chart: {
@@ -551,7 +551,7 @@ responseTimeChart.setTitle({
   useHTML: true
 });
 
-var container_requests = unpack([[1547811782,[0,0, 0]],[1547811783,[50,0, 50]]]);
+var container_requests = unpack([[1547811782,[50,0, 50]],[1547811783,[0,0, 0]]]);
 
 var requestsChart = new Highcharts.StockChart({
   chart: {
@@ -863,7 +863,7 @@ type: 'scatter',
 color: 'rgba(69, 114, 167, .2)',
 name: 'OK',
 data: [
-[225,124]
+[50,760]
 ]},
 	  {
 type: 'scatter',

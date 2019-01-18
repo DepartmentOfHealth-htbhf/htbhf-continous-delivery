@@ -17,7 +17,7 @@
 <script type="text/javascript" src="js/highcharts-more.js"></script>
 <script type="text/javascript" src="js/theme.js"></script>
 <script type="text/javascript" src="js/unpack.js"></script>
-<title>Gatling Stats - send_name</title>
+<title>Gatling Stats - send_nino</title>
 </head>
 <body>
 <div class="frise"></div>
@@ -45,7 +45,7 @@
                         </script>
                     </div>
                     <div class="content-in">
-                        <h1><span>> </span>send_name</h1>
+                        <h1><span>> </span>send_nino</h1>
                         <div class="article">
                             
                         <div class="infos">
@@ -177,7 +177,7 @@
     <a href="https://gatling.io" title="Gatling Home Page"><img alt="Gatling" src="style/logo-gatling.jpg"/></a>
 </div>
 <script type="text/javascript">
-    var pageStats = stats.contents['req_send-name-f4dbe'].stats;
+    var pageStats = stats.contents['req_send-nino-07cab'].stats;
     $(document).ready(function() {
         $('.sim_desc').popover({trigger:'hover', placement:'bottom'});
         setDetailsLinkUrl();
@@ -306,7 +306,7 @@ var responseTimeDistributionChart = new Highcharts.Chart({
     text: 'A title to let highcharts reserve the place for the title set later'
   },
   xAxis: {
-    categories: ['102', '103', '105', '106', '107', '108', '109', '110', '111', '112', '113', '114', '115', '116', '117', '118', '119', '120', '122', '127', '131'],
+    categories: ['102', '103', '104', '105', '106', '107', '108', '110', '111', '112', '113', '114', '115', '118', '119', '120', '121', '123', '125', '126', '129', '134', '136', '137', '138', '140', '142', '143', '152', '157', '171', '181', '195'],
     tickInterval: 20
   },
   yAxis: {
@@ -335,7 +335,7 @@ type: 'column',
 color: '#4572A7',
 name: 'OK',
 data: [
-  4.0,4.0,4.0,4.0,2.0,4.0,6.0,8.0,2.0,4.0,4.0,8.0,6.0,8.0,12.0,8.0,2.0,2.0,2.0,4.0,2.0
+  2.0,2.0,2.0,4.0,6.0,2.0,2.0,2.0,2.0,2.0,8.0,4.0,6.0,4.0,2.0,2.0,4.0,10.0,2.0,2.0,2.0,4.0,2.0,2.0,2.0,2.0,4.0,2.0,2.0,2.0,2.0,2.0,2.0
 ],
 tooltip: { yDecimals: 0, ySuffix: 'ms' }
 },
@@ -356,7 +356,7 @@ responseTimeDistributionChart.setTitle({
   useHTML: true
 });
 
-var responseTimePercentiles = unpack([[1547811782,null],[1547811783,[102,109,114,117,117,118,119,124,129,131]]]);
+var responseTimePercentiles = unpack([[1547811782,null],[1547811783,[102,112,119,134,137,141,143,164,188,195]]]);
 
 var responseTimeChart = new Highcharts.StockChart({
   chart: {
@@ -863,7 +863,7 @@ type: 'scatter',
 color: 'rgba(69, 114, 167, .2)',
 name: 'OK',
 data: [
-[225,124]
+[225,164]
 ]},
 	  {
 type: 'scatter',
