@@ -27,6 +27,7 @@ download_deploy_scripts
 check_variable_is_set SCRIPT_DIR
 
 source ${SCRIPT_DIR}/cf_deployment_functions.sh
+export PATH=$PATH:${SCRIPT_DIR}
 export CF_SPACE=staging
 
 
@@ -57,34 +58,46 @@ else
 fi
 
 
-download_compatibility_tests
+if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
+    download_compatibility_tests
 
-echo "Creating temporary route for compatibility tests"
-create_random_route_name
-HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
-cf map-route ${HTBHF_APP} ${CF_PUBLIC_DOMAIN} --hostname ${ROUTE}
+    echo "Creating temporary route for compatibility tests"
+    create_random_route_name
+    HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
+    cf map-route ${HTBHF_APP} ${CF_PUBLIC_DOMAIN} --hostname ${ROUTE}
 
-echo "Running compatibility tests"
-export APP_BASE_URL="https://${ROUTE}.${CF_PUBLIC_DOMAIN}"
-cd ${COMPATIBILITY_TESTS_DIR}
-npm install
-npm run test:compatibility
-RESULT=$?
+    echo "Running compatibility tests"
+    export APP_BASE_URL="https://${ROUTE}.${CF_PUBLIC_DOMAIN}"
+    cd ${COMPATIBILITY_TESTS_DIR}
+    npm install
+    npm run test:compatibility
+    RESULT=$?
 
-echo "Removing temporary route"
-remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
+    echo "Removing temporary route"
+    remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
 
-check_exit_status $RESULT "Browser compatibility tests"
-cd ${WORKING_DIR}
+    check_exit_status $RESULT "Browser compatibility tests"
+    cd ${WORKING_DIR}
 
-download_performance_tests
+else
+    echo "RUN_COMPATIBILITY_TESTS=$RUN_COMPATIBILITY_TESTS - skipping compatibility tests"
+fi
 
-echo "Running performance tests"
-export RESULTS_DIRECTORY=`pwd`/performance_tests_results
-source ${PERF_TESTS_DIR}/run_performance_tests.sh
 
-echo "Publishing test results"
-source ${CD_SCRIPTS_DIR}/publish_test_results.sh
+if [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
+    download_performance_tests
+
+    echo "Running performance tests"
+    export RESULTS_DIRECTORY=`pwd`/performance_tests_results
+    source ${PERF_TESTS_DIR}/run_performance_tests.sh
+
+    echo "Publishing test results"
+    source ${CD_SCRIPTS_DIR}/publish_test_results.sh
+
+else
+    echo "RUN_PERFORMANCE_TESTS=$RUN_PERFORMANCE_TESTS - skipping performance tests"
+fi
+
 
 if [ -z "$GITHUB_REPO_SLUG" ]; then
     echo "Staging build successful";

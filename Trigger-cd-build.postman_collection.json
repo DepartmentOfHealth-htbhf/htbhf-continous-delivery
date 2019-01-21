@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "362d83ef-0e4b-4e65-a2b7-949deb7e7958",
+		"name": "HTBHF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Trigger-CD-build-without-deploy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Travis-API-Version",
+						"type": "text",
+						"value": "3"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "token ${TRAVIS_AUTH_TOKEN}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"request\": {\n    \"branch\": \"master\",\n    \"config\": {\n      \"env\": {\n        \"RUN_COMPATIBILITY_TESTS\": \"true\",\n        \"RUN_PERFORMANCE_TESTS\": \"true\"\n      },\n      \"script\": \"cd_scripts/run.sh\"\n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "https://api.travis-ci.com/repo/DepartmentOfHealth-htbhf%2Fhtbhf-continous-delivery/requests",
+					"protocol": "https",
+					"host": [
+						"api",
+						"travis-ci",
+						"com"
+					],
+					"path": [
+						"repo",
+						"DepartmentOfHealth-htbhf%2Fhtbhf-continous-delivery",
+						"requests"
+					]
+				},
+				"description": "Triggers a build of the CD pipeline. Requires a TRAVIS_AUTH_TOKEN environment variable."
+			},
+			"response": []
+		}
+	]
+}
