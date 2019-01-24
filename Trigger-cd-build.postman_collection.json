@@ -34,7 +34,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"request\": {\n    \"branch\": \"master\",\n    \"config\": {\n      \"env\": {\n        \"RUN_COMPATIBILITY_TESTS\": \"true\",\n        \"RUN_PERFORMANCE_TESTS\": \"true\"\n      },\n      \"script\": \"cd_scripts/run.sh\"\n    }\n  }\n}"
+					"raw": "{\n  \"request\": {\n    \"branch\": \"master\",\n    \"config\": {\n      \"env\": {\n        \"RUN_COMPATIBILITY_TESTS\": \"true\",\n        \"RUN_PERFORMANCE_TESTS\": \"true\",\n        \"TRAVIS_COMMIT_MESSAGE\": \"Manual build\"\n      },\n      \"script\": \"cd_scripts/run.sh\"\n    }\n  }\n}"
 				},
 				"url": {
 					"raw": "https://api.travis-ci.com/repo/DepartmentOfHealth-htbhf%2Fhtbhf-continous-delivery/requests",
