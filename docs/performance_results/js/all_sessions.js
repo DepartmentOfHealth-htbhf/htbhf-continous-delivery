@@ -3,7 +3,7 @@ allUsersData = {
 color: '#FF9D00',
 name: 'Active Users',
 data: [
-  [1548329556000,50],[1548329557000,50],[1548329558000,2]
+  [1548329913000,50],[1548329914000,50]
 ],
 tooltip: { yDecimals: 0, ySuffix: '', valueDecimals: 0 }
     , zIndex: 20
