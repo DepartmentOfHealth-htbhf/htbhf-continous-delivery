@@ -43,8 +43,8 @@ download_compatibility_tests(){
         | cut -d'"' -f4 \
         | wget -qO compatibility-tests-tmp.zip -i -
     unzip compatibility-tests-tmp.zip
-    mv -f DepartmentOfHealth-htbhf-htbhf-compatibility-tests-*/* ${COMPATIBILITY_TESTS_DIR}
-    rm -rf DepartmentOfHealth-htbhf-htbhf-compatibility-tests-*
+    mv -f DepartmentOfHealth-htbhf-htbhf-applicant-web-ui-*/* ${COMPATIBILITY_TESTS_DIR}
+    rm -rf DepartmentOfHealth-htbhf-htbhf-applicant-web-ui-*
     rm compatibility-tests-tmp.zip
 }
 
