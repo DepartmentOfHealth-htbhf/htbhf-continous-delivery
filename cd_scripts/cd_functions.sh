@@ -33,12 +33,12 @@ download_deploy_scripts(){
 }
 
 download_compatibility_tests(){
-    # download the latest release of the compatibility tests and extract to ${COMPATIBILITY_TESTS_DIR} (the directory will be deleted first)
+    # download the latest release of web ui (containing the compatibility tests) and extract to ${COMPATIBILITY_TESTS_DIR} (the directory will be deleted first)
     check_variable_is_set COMPATIBILITY_TESTS_DIR
     echo "Downloading compatibility tests"
     rm -rf ${COMPATIBILITY_TESTS_DIR}
     mkdir ${COMPATIBILITY_TESTS_DIR}
-    curl -H "Authorization: token ${GH_WRITE_TOKEN}" -s https://api.github.com/repos/DepartmentOfHealth-htbhf/htbhf-compatibility-tests/releases/latest \
+    curl -H "Authorization: token ${GH_WRITE_TOKEN}" -s https://api.github.com/repos/DepartmentOfHealth-htbhf/htbhf-applicant-web-ui/releases/latest \
         | grep zipball_url \
         | cut -d'"' -f4 \
         | wget -qO compatibility-tests-tmp.zip -i -
