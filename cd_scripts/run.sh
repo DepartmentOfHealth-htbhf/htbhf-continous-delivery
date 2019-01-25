@@ -59,7 +59,7 @@ fi
 
 
 if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
-    download_compatibility_tests
+    prepare_compatibility_tests
 
     echo "Creating temporary route for compatibility tests"
     create_random_route_name
@@ -104,7 +104,7 @@ if [ -z "$GITHUB_REPO_SLUG" ]; then
 
 else
     echo "Staging build successful - Creating a release in GitHub for ${GITHUB_REPO_SLUG}"
-    body="{\"tag_name\": \"${APP_VERSION}\", \"name\": \"${APP_VERSION}\"}"
+    body="{\"tag_name\": \"v${APP_VERSION}\", \"name\": \"v${APP_VERSION}\"}"
     curl -H "Authorization: token ${GH_WRITE_TOKEN}" -H "Content-Type: application/json" -d "${body}" https://api.github.com/repos/${GITHUB_REPO_SLUG}/releases
 fi
 

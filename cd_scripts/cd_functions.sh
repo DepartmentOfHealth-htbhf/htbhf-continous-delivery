@@ -32,10 +32,19 @@ download_deploy_scripts(){
     export SCRIPT_DIR=${BIN_DIR}/deployment-scripts
 }
 
+prepare_compatibility_tests(){
+    if [ "$GITHUB_REPO_SLUG" == "DepartmentOfHealth-htbhf/htbhf-applicant-web-ui" ]; then
+        echo "Deploying $GITHUB_REPO_SLUG - using the version of the compatibility tests in $APP_VERSION"
+        export COMPATIBILITY_TESTS_DIR=${APP_PATH}
+    else
+        download_compatibility_tests
+    fi
+}
+
 download_compatibility_tests(){
     # download the latest release of web ui (containing the compatibility tests) and extract to ${COMPATIBILITY_TESTS_DIR} (the directory will be deleted first)
     check_variable_is_set COMPATIBILITY_TESTS_DIR
-    echo "Downloading compatibility tests"
+    echo "Downloading latest release of compatibility tests"
     rm -rf ${COMPATIBILITY_TESTS_DIR}
     mkdir ${COMPATIBILITY_TESTS_DIR}
     curl -H "Authorization: token ${GH_WRITE_TOKEN}" -s https://api.github.com/repos/DepartmentOfHealth-htbhf/htbhf-applicant-web-ui/releases/latest \
