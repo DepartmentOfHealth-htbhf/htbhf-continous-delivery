@@ -11,6 +11,10 @@ check_variable_is_set(){
 check_exit_status(){
     if [[ ${1} != 0 ]]; then
         echo "$2 failed, exiting"
+        if [ "$RUN_COMPATIBILITY_TESTS" == "true" ] || [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
+            echo "(publishing test results first)"
+            source ${CD_SCRIPTS_DIR}/publish_test_results.sh
+        fi
         exit ${1}
     fi
 }
