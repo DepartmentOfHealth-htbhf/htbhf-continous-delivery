@@ -6,43 +6,43 @@
         "ko": 0
     },
     "minResponseTime": {
-        "total": 102,
-        "ok": 102,
+        "total": 101,
+        "ok": 101,
         "ko": 0
     },
     "maxResponseTime": {
-        "total": 755,
-        "ok": 755,
+        "total": 661,
+        "ok": 661,
         "ko": 0
     },
     "meanResponseTime": {
-        "total": 236,
-        "ok": 236,
+        "total": 208,
+        "ok": 208,
         "ko": 0
     },
     "standardDeviation": {
+        "total": 144,
+        "ok": 144,
+        "ko": 0
+    },
+    "percentiles1": {
         "total": 162,
         "ok": 162,
         "ko": 0
     },
-    "percentiles1": {
-        "total": 183,
-        "ok": 183,
-        "ko": 0
-    },
     "percentiles2": {
-        "total": 211,
-        "ok": 211,
+        "total": 185,
+        "ok": 185,
         "ko": 0
     },
     "percentiles3": {
-        "total": 662,
-        "ok": 662,
+        "total": 591,
+        "ok": 591,
         "ko": 0
     },
     "percentiles4": {
-        "total": 727,
-        "ok": 727,
+        "total": 615,
+        "ok": 615,
         "ko": 0
     },
     "group1": {
