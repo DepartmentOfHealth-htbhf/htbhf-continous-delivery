@@ -37,10 +37,10 @@
                         <div class="item "><a href="index.html">GLOBAL</a></div>
                         <div class="item ouvert"><a id="details_link" href="#">DETAILS</a></div>
                         <script type="text/javascript">
-                          var timestamp = 1548927387398;
+                          var timestamp = 1548930322773;
                           var runStartHumanDate = moment(timestamp).format("YYYY-MM-DD HH:mm:ss Z");
-                          document.writeln("<p class='sim_desc' title='"+ runStartHumanDate +", duration : 4 seconds' data-content='Performance tests'>");
-                          document.writeln("<b>" + runStartHumanDate + ", duration : 4 seconds Performance tests</b>");
+                          document.writeln("<p class='sim_desc' title='"+ runStartHumanDate +", duration : 3 seconds' data-content='Performance tests'>");
+                          document.writeln("<b>" + runStartHumanDate + ", duration : 3 seconds Performance tests</b>");
                           document.writeln("</p>");
                         </script>
                     </div>
@@ -306,7 +306,7 @@ var responseTimeDistributionChart = new Highcharts.Chart({
     text: 'A title to let highcharts reserve the place for the title set later'
   },
   xAxis: {
-    categories: ['104', '107', '110', '113', '117', '120', '123', '127', '130', '133', '136', '140', '143', '146', '150', '153', '156', '159', '163', '166', '169', '173', '176', '179', '182', '186', '189', '192', '195', '199', '202', '205', '209', '212', '215', '218', '222', '225', '228', '232', '235', '238', '241', '245', '248', '251', '255', '258', '261', '264', '268', '271', '274', '277', '281', '284', '287', '291', '294', '297', '300', '304', '307', '310', '314', '317', '320', '323', '327', '330', '333', '337', '340', '343', '346', '350', '353', '356', '359', '363', '366', '369', '373', '376', '379', '382', '386', '389', '392', '396', '399', '402', '405', '409', '412', '415', '419', '422', '425', '428'],
+    categories: ['105', '106', '107', '108', '109', '110', '111', '112', '113', '114', '115', '116', '117', '118', '119', '120', '121', '122', '123', '124', '125', '126', '127', '128', '130', '136', '138', '140', '141', '142', '153', '164'],
     tickInterval: 20
   },
   yAxis: {
@@ -335,7 +335,7 @@ type: 'column',
 color: '#4572A7',
 name: 'OK',
 data: [
-  18.0,14.0,24.0,16.0,12.0,2.0,2.0,2.0,2.0,4.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0
+  6.0,2.0,2.0,2.0,2.0,2.0,4.0,8.0,2.0,4.0,2.0,6.0,4.0,2.0,6.0,4.0,2.0,2.0,4.0,4.0,4.0,4.0,2.0,2.0,4.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
 ],
 tooltip: { yDecimals: 0, ySuffix: 'ms' }
 },
@@ -344,7 +344,7 @@ type: 'column',
 color: '#FF0000',
 name: 'KO',
 data: [
-  0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+  
 ],
 tooltip: { yDecimals: 0, ySuffix: 'ms' }
 }
@@ -356,7 +356,7 @@ responseTimeDistributionChart.setTitle({
   useHTML: true
 });
 
-var responseTimePercentiles = unpack([[1548927389,null],[1548927390,[102,107,110,116,117,118,128,133,313,430]],[1548927391,null]]);
+var responseTimePercentiles = unpack([[1548930324,null],[1548930325,[105,112,119,125,127,130,138,141,158,164]]]);
 
 var responseTimeChart = new Highcharts.StockChart({
   chart: {
@@ -551,7 +551,7 @@ responseTimeChart.setTitle({
   useHTML: true
 });
 
-var container_requests = unpack([[1548927389,[0,0, 0]],[1548927390,[50,0, 50]],[1548927391,[0,0, 0]]]);
+var container_requests = unpack([[1548930324,[0,0, 0]],[1548930325,[50,0, 50]]]);
 
 var requestsChart = new Highcharts.StockChart({
   chart: {
@@ -660,7 +660,7 @@ requestsChart.setTitle({
   useHTML: true
 });
 
-var container_responses = unpack([[1548927389,[0,0, 0]],[1548927390,[50,0, 50]],[1548927391,[0,0, 0]]]);
+var container_responses = unpack([[1548930324,[0,0, 0]],[1548930325,[50,0, 50]]]);
 
 var requestsChart = new Highcharts.StockChart({
   chart: {
@@ -863,7 +863,7 @@ type: 'scatter',
 color: 'rgba(69, 114, 167, .2)',
 name: 'OK',
 data: [
-[313,133]
+[350,141]
 ]},
 	  {
 type: 'scatter',
