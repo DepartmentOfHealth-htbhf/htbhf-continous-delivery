@@ -93,6 +93,9 @@ if [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
     echo "Running performance tests"
     export PERFORMANCE_RESULTS_DIRECTORY=`pwd`/performance_tests_results
     source ${PERF_TESTS_DIR}/run_performance_tests.sh
+    RESULT=$?
+
+    check_exit_status $RESULT "Performance tests"
 
 else
     echo "RUN_PERFORMANCE_TESTS=$RUN_PERFORMANCE_TESTS - skipping performance tests"
