@@ -76,6 +76,9 @@ if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
     echo "Removing temporary route"
     remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
 
+    npm run test:compatibility:report
+    export COMPATIBILITY_RESULTS_DIRECTORY=${COMPATIBILITY_TESTS_DIR}/build/reports/compatibility-report
+
     check_exit_status $RESULT "Browser compatibility tests"
     cd ${WORKING_DIR}
 
@@ -88,14 +91,17 @@ if [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
     download_performance_tests
 
     echo "Running performance tests"
-    export RESULTS_DIRECTORY=`pwd`/performance_tests_results
+    export PERFORMANCE_RESULTS_DIRECTORY=`pwd`/performance_tests_results
     source ${PERF_TESTS_DIR}/run_performance_tests.sh
-
-    echo "Publishing test results"
-    source ${CD_SCRIPTS_DIR}/publish_test_results.sh
 
 else
     echo "RUN_PERFORMANCE_TESTS=$RUN_PERFORMANCE_TESTS - skipping performance tests"
+fi
+
+
+if [ "$RUN_COMPATIBILITY_TESTS" == "true" ] || [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
+    echo "Publishing test results"
+    source ${CD_SCRIPTS_DIR}/publish_test_results.sh
 fi
 
 
