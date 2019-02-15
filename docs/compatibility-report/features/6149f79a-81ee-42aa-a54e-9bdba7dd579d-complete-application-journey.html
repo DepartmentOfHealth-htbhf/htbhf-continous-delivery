@@ -563,7 +563,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                 Passed
                             </p>
                         </td>
-                        <td class="percentage">0.00 %</td>
+                        <td class="percentage">100.00 %</td>
                     </tr>
                     <tr>
                         <td>
@@ -572,7 +572,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                 Failed
                             </p>
                         </td>
-                        <td class="percentage">100.00 %</td>
+                        <td class="percentage">0.00 %</td>
                     
                     
                     </tr>
@@ -620,7 +620,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             </li>
             <li>
                 <span class="meta-data-title">Device</span>
-                <span class="meta-data-data">OS X</span>
+                <span class="meta-data-data">Windows</span>
             </li>
             <li>
                 <span class="meta-data-title">OS</span>
@@ -629,10 +629,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                     
                     
-                    <i class="fa fa-apple fa-lg">
-                        <span>apple</span>
+                    <i class="fa fa-windows fa-lg">
+                        <span>windows</span>
                     </i>
-                    Mojave
+                    10
                 </span>
             </li>
             
@@ -670,7 +670,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
               
                       
         </div>
-        <h2>Scenario: <small>Valid application details can be checked (BrowserStack session id: 1f9ecfdd5bf0afecf81d77b0408d33980ed8bd42)</small></h2>
+        <h2>Scenario: <small>Valid application details can be checked (BrowserStack session id: 99ee778a1f5517d84cd5278e7d931af858500f15)</small></h2>
 
             <ul class="nav navbar-right panel_toolbox">
                 <li>
@@ -681,23 +681,11 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
           
               
                   
-                    <li>
-                      <span class="step skipped-background" data-toggle="tooltip" title="Scenario is skipped">
-                        1
-                    </span>
-                    </li>
-                    
                       
-                        <li>
-                          <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">
-                        1
-                    </span>
-                        </li>
-                        
                           
                             <li>
                               <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">
-                        3
+                        5
                     </span>
                             </li>
                             
@@ -875,10 +863,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             <div class="scenario-step-container">
               
                 
-                    <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed">
-                      <i class="fa fa-exclamation-circle fa-2x failed-color"></i>
-                    </div>
-                    
+                  <div class="label" title="Success">
+                    <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
+                  </div>
+                  
                               
 
                 <div class="text">
@@ -891,8 +879,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                   
 
                                       
-                                        <a href="#error04-error" data-toggle="collapse">+ Show Error</a>
-                                        
 
                                           
 
@@ -906,13 +892,6 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
 
             
               
-                <div id="error04-error" class="scenario-step-collapse collapse">
-                  <pre class=info>Error: connect ECONNREFUSED 127.0.0.1:8090
-    at Object._errnoException (util.js:1024:11)
-    at _exceptionWithHostPort (util.js:1046:20)
-    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1182:14)</pre>
-                </div>
-                
 
                   
 
@@ -935,10 +914,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             <div class="scenario-step-container">
               
                 
-                      <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
-                        <i class="fa fa-arrow-circle-right fa-2x skipped-color"></i>
-                      </div>
-                      
+                  <div class="label" title="Success">
+                    <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
+                  </div>
+                  
                               
 
                 <div class="text">
@@ -1031,8 +1010,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     ],
                     datasets: [{
                         data: [
-                            0,
                             1,
+                            0,
                             0,
                             0,
                             0,
