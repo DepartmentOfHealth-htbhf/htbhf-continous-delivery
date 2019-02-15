@@ -563,7 +563,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                 Passed
                             </p>
                         </td>
-                        <td class="percentage">100.00 %</td>
+                        <td class="percentage">0.00 %</td>
                     </tr>
                     <tr>
                         <td>
@@ -572,7 +572,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                 Failed
                             </p>
                         </td>
-                        <td class="percentage">0.00 %</td>
+                        <td class="percentage">100.00 %</td>
                     
                     
                     </tr>
@@ -613,14 +613,14 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                     
                     
-                    <i class="fa fa-mobile fa-lg">
-                        <span>mobile</span>
+                    <i class="fa fa-desktop fa-lg">
+                        <span>desktop</span>
                     </i>
                 </span>
             </li>
             <li>
                 <span class="meta-data-title">Device</span>
-                <span class="meta-data-data">Google Pixel 3</span>
+                <span class="meta-data-data">Windows</span>
             </li>
             <li>
                 <span class="meta-data-title">OS</span>
@@ -629,10 +629,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                     
                     
-                    <i class="fa fa-android fa-lg">
-                        <span>android</span>
+                    <i class="fa fa-windows fa-lg">
+                        <span>windows</span>
                     </i>
-                    9.0
+                    10
                 </span>
             </li>
             
@@ -644,10 +644,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                     
                     
-                    <i class="fa fa-question-circle not-defined-color fa-lg">
-                        <span>android</span>
+                    <i class="fa fa-internet-explorer fa-lg">
+                        <span>internet explorer</span>
                     </i>
-                    
+                    11.0
                 </span>
             </li>
             
@@ -670,7 +670,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
               
                       
         </div>
-        <h2>Scenario: <small>Valid application details can be checked (BrowserStack session id: 95ce0b82bb1e6af4de13814b0b86726aa1ec561c)</small></h2>
+        <h2>Scenario: <small>Valid application details can be checked (BrowserStack session id: 45b5fa528c979c8d42628272042e662f4527fd0a)</small></h2>
 
             <ul class="nav navbar-right panel_toolbox">
                 <li>
@@ -681,11 +681,23 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
           
               
                   
+                    <li>
+                      <span class="step skipped-background" data-toggle="tooltip" title="Scenario is skipped">
+                        1
+                    </span>
+                    </li>
+                    
                       
+                        <li>
+                          <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">
+                        1
+                    </span>
+                        </li>
+                        
                           
                             <li>
                               <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">
-                        4
+                        3
                     </span>
                             </li>
                             
@@ -820,7 +832,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
 
                 <div class="text">
                     <span class="keyword highlight">Then </span>
-                    I am shown the check details page
+                    I am shown the check details page with correct page content
                     
                 </div>
 
@@ -863,15 +875,75 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             <div class="scenario-step-container">
               
                 
-                  <div class="label" title="Success">
-                    <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                  </div>
-                  
+                    <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed">
+                      <i class="fa fa-exclamation-circle fa-2x failed-color"></i>
+                    </div>
+                    
                               
 
                 <div class="text">
                     <span class="keyword highlight">And </span>
-                    all page content is present on the check details page
+                    I submit my application
+                    
+                </div>
+
+                                
+                                  
+
+                                      
+                                        <a href="#error04-error" data-toggle="collapse">+ Show Error</a>
+                                        
+
+                                          
+
+                                             
+
+                                                  
+
+                                                      
+                                                                  
+            </div>
+
+            
+              
+                <div id="error04-error" class="scenario-step-collapse collapse">
+                  <pre class=info>Error: connect ECONNREFUSED 127.0.0.1:8090
+    at Object._errnoException (util.js:1024:11)
+    at _exceptionWithHostPort (util.js:1046:20)
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1182:14)</pre>
+                </div>
+                
+
+                  
+
+                     
+
+                      
+
+
+                          
+                                  
+
+                                    
+                                      
+                                              
+
+                                                
+                                                  
+
+          
+            <div class="scenario-step-container">
+              
+                
+                      <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+                        <i class="fa fa-arrow-circle-right fa-2x skipped-color"></i>
+                      </div>
+                      
+                              
+
+                <div class="text">
+                    <span class="keyword highlight">And </span>
+                    I am shown a successful confirmation page
                     
                 </div>
 
@@ -959,8 +1031,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     ],
                     datasets: [{
                         data: [
-                            1,
                             0,
+                            1,
                             0,
                             0,
                             0,
