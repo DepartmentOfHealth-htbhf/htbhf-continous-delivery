@@ -20,6 +20,7 @@ check_variable_is_set PERF_TESTS_VERSION
 check_variable_is_set GH_WRITE_TOKEN
 check_variable_is_set TRAVIS_REPO_SLUG
 check_variable_is_set APP_HOST_STAGING
+check_variable_is_set APP_HOST_PRODUCTION
 
 download_deploy_scripts
 
@@ -28,34 +29,11 @@ check_variable_is_set SCRIPT_DIR
 
 source ${SCRIPT_DIR}/cf_deployment_functions.sh
 export PATH=$PATH:${SCRIPT_DIR}
+
+echo "****** Deploy to staging ******"
 export CF_SPACE=staging
-
-
-if [ -z "$GITHUB_REPO_SLUG" ]; then
-    echo "GITHUB_REPO_SLUG is empty/not set - not deploying any app";
-
-else
-    echo "Deploying $GITHUB_REPO_SLUG";
-    check_variable_is_set APP_NAME
-    check_variable_is_set APP_VERSION
-
-    echo "Determining whether to deploy node or java application (will be node if ZIP_URL is set: '$ZIP_URL')"
-    if [[ ${ZIP_URL} ]]; then
-        echo "Deploying Node.js app from '${ZIP_URL}'"
-        prepare_node_app_for_deploy
-    else
-        echo "Deploying Java app from '${APP_URL}' using manifest from '${MANIFEST_URL}'"
-        prepare_java_app_for_deploy
-    fi
-
-    export SMOKE_TESTS=${CD_SCRIPTS_DIR}/deploy_smoke_test.sh
-    export APP_HOST=${APP_HOST_STAGING}
-
-    source ${SCRIPT_DIR}/deploy.sh
-    check_exit_status $? "Deployment"
-
-    cd ${WORKING_DIR}
-fi
+export APP_HOST=${APP_HOST_STAGING}
+deploy_application
 
 
 if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
@@ -117,3 +95,9 @@ else
     curl -H "Authorization: token ${GH_WRITE_TOKEN}" -H "Content-Type: application/json" -d "${body}" https://api.github.com/repos/${GITHUB_REPO_SLUG}/releases
 fi
 
+
+echo "****** Deploy to production ******"
+export CF_SPACE=production
+export APP_HOST=${APP_HOST_PRODUCTION}
+deploy_application
+echo "Production build successful"
