@@ -96,8 +96,12 @@ else
 fi
 
 
-echo "****** Deploy to production ******"
-export CF_SPACE=production
-export APP_HOST=${APP_HOST_PRODUCTION}
-deploy_application
-echo "Production build successful"
+if [ "$DEPLOY_TO_PROD" == "true" ]; then
+    echo "****** Deploy to production ******"
+    export CF_SPACE=production
+    export APP_HOST=${APP_HOST_PRODUCTION}
+    deploy_application
+    echo "Production build successful"
+else
+    echo "DEPLOY_TO_PROD='$DEPLOY_TO_PROD' - not deploying to production"
+fi
