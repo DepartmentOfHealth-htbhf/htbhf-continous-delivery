@@ -36,6 +36,31 @@ download_deploy_scripts(){
     export SCRIPT_DIR=${BIN_DIR}/deployment-scripts
 }
 
+deploy_application(){
+    if [ -z "$GITHUB_REPO_SLUG" ]; then
+        echo "GITHUB_REPO_SLUG is empty/not set - not deploying any app";
+    else
+        echo "Deploying $GITHUB_REPO_SLUG ${APP_VERSION} to ${CF_SPACE}";
+        check_variable_is_set APP_NAME
+        check_variable_is_set APP_VERSION
+
+        echo "Determining whether to deploy node or java application (will be node if ZIP_URL is set: '$ZIP_URL')"
+        if [[ ${ZIP_URL} ]]; then
+            echo "Deploying Node.js app from '${ZIP_URL}'"
+            prepare_node_app_for_deploy
+        else
+            echo "Deploying Java app from '${APP_URL}' using manifest from '${MANIFEST_URL}'"
+            prepare_java_app_for_deploy
+        fi
+
+        export SMOKE_TESTS=${CD_SCRIPTS_DIR}/deploy_smoke_test.sh
+        source ${SCRIPT_DIR}/deploy.sh
+        check_exit_status $? "Deployment to ${CF_SPACE}"
+
+        cd ${WORKING_DIR}
+    fi
+}
+
 prepare_compatibility_tests(){
     if [ "$GITHUB_REPO_SLUG" == "DepartmentOfHealth-htbhf/htbhf-applicant-web-ui" ]; then
         echo "Deploying $GITHUB_REPO_SLUG - using the version of the compatibility tests in $APP_VERSION"
