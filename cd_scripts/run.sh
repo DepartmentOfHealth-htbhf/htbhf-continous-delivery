@@ -15,12 +15,12 @@ export COMPATIBILITY_TESTS_DIR=${WORKING_DIR}/compatibility_tests
 
 source ${CD_SCRIPTS_DIR}/cd_functions.sh
 
-check_variable_is_set PERF_TESTS_URL
-check_variable_is_set PERF_TESTS_VERSION
-check_variable_is_set GH_WRITE_TOKEN
-check_variable_is_set TRAVIS_REPO_SLUG
-check_variable_is_set APP_HOST_STAGING
-check_variable_is_set APP_HOST_PRODUCTION
+check_variable_is_set PERF_TESTS_URL "E.g. https://dl.bintray.com/departmentofhealth-htbhf/maven/uk/gov/dhsc/htbhf/htbhf-performance-tests/"
+check_variable_is_set PERF_TESTS_VERSION "The current version of the perf tests, as released to bintray"
+check_variable_is_set GH_WRITE_TOKEN "A Github Personal access token with permissions to write to the repo"
+check_variable_is_set TRAVIS_REPO_SLUG "E.g. DepartmentOfHealth-htbhf/htbhf-applicant-web-ui"
+check_variable_is_set APP_HOST_STAGING "E.g. help-to-buy-healthy-foods-staging.london.cloudapps.digital"
+check_variable_is_set APP_HOST_PRODUCTION "E.g. help-to-buy-healthy-foods.london.cloudapps.digital"
 
 download_deploy_scripts
 
