@@ -5,24 +5,22 @@ git checkout gh-pages
 
 export TEST_RESULTS_DIR=${WORKING_DIR}/docs
 
-# clear compatibility test results
-rm -r -f ${TEST_RESULTS_DIR}/compatibility-report
-
 # move compatibility test results to docs directory if we ran them
 if [ ! -z "${COMPATIBILITY_RESULTS_DIRECTORY}" ]; then
+  # clear existing compatibility test results first
+  rm -r -f ${TEST_RESULTS_DIR}/compatibility-report
   echo "copying compatibility test results from ${COMPATIBILITY_RESULTS_DIRECTORY} to ${TEST_RESULTS_DIR}"
   mv ${COMPATIBILITY_RESULTS_DIRECTORY} ${TEST_RESULTS_DIR}
 else
   echo "no COMPATIBILITY_RESULTS_DIRECTORY found"
 fi
 
-# clear performance test results
-export PERFORMANCE_TEST_RESULTS=${TEST_RESULTS_DIR}/performance_results
-rm -r -f ${PERFORMANCE_TEST_RESULTS}
-mkdir -p ${PERFORMANCE_TEST_RESULTS}
-
 # move performance test results to docs directory if we ran them
 if [ ! -z "${PERFORMANCE_RESULTS_DIRECTORY}" ]; then
+  # clear existing performance test results first
+  export PERFORMANCE_TEST_RESULTS=${TEST_RESULTS_DIR}/performance_results
+  rm -r -f ${PERFORMANCE_TEST_RESULTS}
+  mkdir -p ${PERFORMANCE_TEST_RESULTS}
   echo "copying performance test results from ${PERFORMANCE_RESULTS_DIRECTORY} to ${PERFORMANCE_TEST_RESULTS}"
   for f in ${PERFORMANCE_RESULTS_DIRECTORY}/*simulation*; do
     mv ${f}/* ${PERFORMANCE_TEST_RESULTS};

@@ -51,6 +51,12 @@ if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
     npm run test:compatibility
     RESULT=$?
 
+    if [[ ${RESULT} != 0 ]]; then
+        echo "First attempt at compatibility tests failed - re-running"
+        npm run test:compatibility
+        RESULT=$?
+    fi
+
     echo "Removing temporary route"
     remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
 
