@@ -72,12 +72,20 @@ fi
 
 
 if [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
-    download_performance_tests
+
+    echo "Creating temporary route for performance tests"
+    create_random_route_name
+    HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
+    cf map-route ${HTBHF_APP} ${CF_PUBLIC_DOMAIN} --hostname ${ROUTE}
 
     echo "Running performance tests"
     export PERFORMANCE_RESULTS_DIRECTORY=`pwd`/performance_tests_results
-    source ${PERF_TESTS_DIR}/run_performance_tests.sh
+    export APP_BASE_URL="https://${ROUTE}.${CF_PUBLIC_DOMAIN}"
+    run_performance_tests
     RESULT=$?
+
+    echo "Removing temporary route"
+    remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
 
     check_exit_status $RESULT "Performance tests"
 

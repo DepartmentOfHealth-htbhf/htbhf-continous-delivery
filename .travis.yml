@@ -6,6 +6,9 @@ cache:
   - bin/
   - performance_tests/
 
+before_install:
+- sudo apt-get install -y sshpass
+
 install:
 - git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
 - git fetch
