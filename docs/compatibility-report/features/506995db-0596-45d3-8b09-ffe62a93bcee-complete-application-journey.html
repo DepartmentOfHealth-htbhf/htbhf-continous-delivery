@@ -563,7 +563,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                 Passed
                             </p>
                         </td>
-                        <td class="percentage">100.00 %</td>
+                        <td class="percentage">0.00 %</td>
                     </tr>
                     <tr>
                         <td>
@@ -572,7 +572,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                 Failed
                             </p>
                         </td>
-                        <td class="percentage">0.00 %</td>
+                        <td class="percentage">100.00 %</td>
                     
                     
                     </tr>
@@ -644,8 +644,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                     
                     
-                    <i class="fa fa-chrome fa-lg">
-                        <span>chrome</span>
+                    <i class="fa fa-safari fa-lg">
+                        <span>safari</span>
                     </i>
                     latest
                 </span>
@@ -670,7 +670,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
               
                       
         </div>
-        <h2>Scenario: <small>Valid application details can be checked (BrowserStack session id: 1fe47d9b538e5cedf9073f81c85743d6e21a25e6)</small></h2>
+        <h2>Scenario: <small>Valid application details can be checked (BrowserStack session id: 86368b8063634022452fb0a1e99bba1dc54fd3b8)</small></h2>
 
             <ul class="nav navbar-right panel_toolbox">
                 <li>
@@ -681,14 +681,20 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
           
               
                   
-                      
-                          
-                            <li>
-                              <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">
-                        5
+                    <li>
+                      <span class="step skipped-background" data-toggle="tooltip" title="Scenario is skipped">
+                        4
                     </span>
-                            </li>
-                            
+                    </li>
+                    
+                      
+                        <li>
+                          <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">
+                        1
+                    </span>
+                        </li>
+                        
+                          
                               
                 
             </ul>
@@ -710,10 +716,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             <div class="scenario-step-container">
               
                 
-                  <div class="label" title="Success">
-                    <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                  </div>
-                  
+                    <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed">
+                      <i class="fa fa-exclamation-circle fa-2x failed-color"></i>
+                    </div>
+                    
                               
 
                 <div class="text">
@@ -726,6 +732,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                   
 
                                       
+                                        <a href="#error01-error" data-toggle="collapse">+ Show Error</a>
+                                        
 
                                           
 
@@ -739,6 +747,14 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
 
             
               
+                <div id="error01-error" class="scenario-step-collapse collapse">
+                  <pre class=info>Error: TimeoutError: Waiting for element to be located By(css selector, h1)
+Wait timed out after 5070ms
+    at EnterName.findByCSS (/home/travis/build/DepartmentOfHealth-htbhf/htbhf-continous-delivery/compatibility_tests/src/test/common/page/page.js:73:13)
+    at (anonymous)
+    at process._tickCallback (internal/process/next_tick.js:188:7)</pre>
+                </div>
+                
 
                   
 
@@ -761,10 +777,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             <div class="scenario-step-container">
               
                 
-                  <div class="label" title="Success">
-                    <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                  </div>
-                  
+                      <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+                        <i class="fa fa-arrow-circle-right fa-2x skipped-color"></i>
+                      </div>
+                      
                               
 
                 <div class="text">
@@ -812,10 +828,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             <div class="scenario-step-container">
               
                 
-                  <div class="label" title="Success">
-                    <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                  </div>
-                  
+                      <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+                        <i class="fa fa-arrow-circle-right fa-2x skipped-color"></i>
+                      </div>
+                      
                               
 
                 <div class="text">
@@ -863,10 +879,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             <div class="scenario-step-container">
               
                 
-                  <div class="label" title="Success">
-                    <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                  </div>
-                  
+                      <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+                        <i class="fa fa-arrow-circle-right fa-2x skipped-color"></i>
+                      </div>
+                      
                               
 
                 <div class="text">
@@ -914,10 +930,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             <div class="scenario-step-container">
               
                 
-                  <div class="label" title="Success">
-                    <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                  </div>
-                  
+                      <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+                        <i class="fa fa-arrow-circle-right fa-2x skipped-color"></i>
+                      </div>
+                      
                               
 
                 <div class="text">
@@ -1010,8 +1026,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     ],
                     datasets: [{
                         data: [
-                            1,
                             0,
+                            1,
                             0,
                             0,
                             0,
