@@ -136,13 +136,22 @@ write_perf_test_manifest(){
     echo "    PERF_TEST_END_NUMBER_OF_USERS: ${PERF_TEST_END_NUMBER_OF_USERS}" >> ${manifest}
     echo "    THRESHOLD_95TH_PERCENTILE_MILLIS: ${THRESHOLD_95TH_PERCENTILE_MILLIS}" >> ${manifest}
     echo "    THRESHOLD_MEAN_MILLIS: ${THRESHOLD_MEAN_MILLIS}" >> ${manifest}
+
+    echo "Performance test configuration:"
+    echo "PERF_TEST_START_NUMBER_OF_USERS: ${PERF_TEST_START_NUMBER_OF_USERS}"
+    echo "PERF_TEST_END_NUMBER_OF_USERS: ${PERF_TEST_END_NUMBER_OF_USERS}"
+    echo "THRESHOLD_95TH_PERCENTILE_MILLIS: ${THRESHOLD_95TH_PERCENTILE_MILLIS}"
+    echo "THRESHOLD_MEAN_MILLIS: ${THRESHOLD_MEAN_MILLIS}"
 }
 
 wait_for_perf_tests_to_complete() {
     echo "Waiting for performance tests to complete"
     # follow the logs until we see 'Finished running gatling tests'
-    PT_RESULT=$( (cf logs ${PERF_TEST_APP_NAME} &) | grep -q "Finished running gatling tests - result=" | cut -d= -f2 )
+    (cf logs ${PERF_TEST_APP_NAME} &) | grep -q "Finished running gatling tests"
+    PT_RESULT=$( cf logs ${PERF_TEST_APP_NAME} --recent | grep "Finished running gatling tests - result=" | cut -d= -f2 )
     echo "Performance tests complete, result=${PT_RESULT}"
+    echo "Last 100 lines of the performance logs:"
+    cf logs ${PERF_TEST_APP_NAME} --recent | tail -100
     return ${PT_RESULT}
 }
 
