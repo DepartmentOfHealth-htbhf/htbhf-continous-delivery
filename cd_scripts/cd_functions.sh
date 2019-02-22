@@ -37,6 +37,7 @@ download_deploy_scripts(){
 }
 
 deploy_application(){
+    cf_login
     if [ -z "$GITHUB_REPO_SLUG" ]; then
         echo "GITHUB_REPO_SLUG is empty/not set - not deploying any app";
     else
