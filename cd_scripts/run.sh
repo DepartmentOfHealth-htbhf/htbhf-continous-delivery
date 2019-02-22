@@ -30,6 +30,8 @@ check_variable_is_set SCRIPT_DIR
 source ${SCRIPT_DIR}/cf_deployment_functions.sh
 export PATH=$PATH:${SCRIPT_DIR}
 
+/bin/bash ${SCRIPT_DIR}/install_cf_cli.sh;
+
 echo "****** Deploy to staging ******"
 export CF_SPACE=staging
 export APP_HOST=${APP_HOST_STAGING}
