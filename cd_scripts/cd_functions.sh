@@ -87,12 +87,11 @@ download_compatibility_tests(){
 }
 
 download_performance_tests(){
-    if [[ ! -e ${PERF_TESTS_DIR}/performance_tests_${PERF_TESTS_VERSION} ]]; then
+    if [[ ! -e ${PERF_TESTS_DIR}/htbhf-performance-tests-${PERF_TESTS_VERSION}.jar ]]; then
         echo "Downloading performance tests"
         mkdir -p ${PERF_TESTS_DIR}
         cd ${PERF_TESTS_DIR}
-        wget "${PERF_TESTS_URL}/${PERF_TESTS_VERSION}/htbhf-performance-tests-${PERF_TESTS_VERSION}-sources.jar" -q -O perf_tests.jar && jar -xf perf_tests.jar && rm perf_tests.jar
-        touch performance_tests_${PERF_TESTS_VERSION}
+        wget "${PERF_TESTS_URL}/${PERF_TESTS_VERSION}/htbhf-performance-tests-${PERF_TESTS_VERSION}.jar" -q
         cd ${WORKING_DIR}
     fi
 }
@@ -119,4 +118,63 @@ prepare_java_app_for_deploy(){
     # extract the manifest into the current directory
     jar -xf manifest.jar
     export APP_PATH=artefact.jar
+}
+
+write_perf_test_manifest(){
+    manifest=$1
+    echo "---" > ${manifest}
+    echo "applications:" >> ${manifest}
+    echo "- name: ${PERF_TEST_APP_NAME}" >> ${manifest}
+    echo "  memory: 1G" >> ${manifest}
+    echo "  buildpacks:" >> ${manifest}
+    echo "    - java_buildpack" >> ${manifest}
+    echo "  health-check-type: none" >> ${manifest}
+    echo "  no-route: true" >> ${manifest}
+    echo "  env:" >> ${manifest}
+    echo "    BASE_URL: ${APP_BASE_URL}" >> ${manifest}
+    echo "    PERF_TEST_START_NUMBER_OF_USERS: ${PERF_TEST_START_NUMBER_OF_USERS}" >> ${manifest}
+    echo "    PERF_TEST_END_NUMBER_OF_USERS: ${PERF_TEST_END_NUMBER_OF_USERS}" >> ${manifest}
+    echo "    THRESHOLD_95TH_PERCENTILE_MILLIS: ${THRESHOLD_95TH_PERCENTILE_MILLIS}" >> ${manifest}
+    echo "    THRESHOLD_MEAN_MILLIS: ${THRESHOLD_MEAN_MILLIS}" >> ${manifest}
+}
+
+wait_for_perf_tests_to_complete() {
+    echo "Waiting for performance tests to complete"
+    # follow the logs until we see 'Finished running gatling tests'
+    PT_RESULT=$( (cf logs ${PERF_TEST_APP_NAME} &) | grep -q "Finished running gatling tests - result=" | cut -d= -f2 )
+    echo "Performance tests complete, result=${PT_RESULT}"
+    return ${PT_RESULT}
+}
+
+download_perf_test_results(){
+    echo "Downloading performance test report"
+    GUID=$(cf app ${PERF_TEST_APP_NAME} --guid)
+    SSH_CODE=$(cf ssh-code)
+    sshpass -p ${SSH_CODE} scp -q -P 2222 -o StrictHostKeyChecking=no -o User=cf:${GUID}/0 ssh.london.cloud.service.gov.uk:/app/performance-test-results.zip .
+    mkdir -p ${PERFORMANCE_RESULTS_DIRECTORY}
+    unzip performance-test-results.zip -d ${PERFORMANCE_RESULTS_DIRECTORY}
+}
+
+run_performance_tests(){
+    download_performance_tests
+
+    cd ${PERF_TESTS_DIR}
+    export PERF_TEST_APP_NAME=htbhf-performance-tests
+
+    write_perf_test_manifest manifest.yml
+
+    echo "cf push -f manifest.yml -p htbhf-performance-tests-${PERF_TESTS_VERSION}.jar"
+    cf push -f manifest.yml -p htbhf-performance-tests-${PERF_TESTS_VERSION}.jar
+    wait_for_perf_tests_to_complete
+    PT_RESULT=$?
+
+    download_perf_test_results
+
+    echo "cf stop ${PERF_TEST_APP_NAME}"
+    cf stop ${PERF_TEST_APP_NAME}
+    echo "cf delete -f ${PERF_TEST_APP_NAME}"
+    cf delete -f ${PERF_TEST_APP_NAME}
+
+    cd ${WORKING_DIR}
+    return ${PT_RESULT}
 }
