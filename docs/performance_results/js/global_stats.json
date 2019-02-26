@@ -1,64 +1,64 @@
 {
     "name": "Global Information",
     "numberOfRequests": {
-        "total": 19968,
-        "ok": 19968,
+        "total": 18912,
+        "ok": 18912,
         "ko": 0
     },
     "minResponseTime": {
-        "total": 5,
-        "ok": 5,
+        "total": 3,
+        "ok": 3,
         "ko": 0
     },
     "maxResponseTime": {
-        "total": 4236,
-        "ok": 4236,
+        "total": 2838,
+        "ok": 2838,
         "ko": 0
     },
     "meanResponseTime": {
-        "total": 282,
-        "ok": 282,
+        "total": 47,
+        "ok": 47,
         "ko": 0
     },
     "standardDeviation": {
-        "total": 478,
-        "ok": 478,
+        "total": 153,
+        "ok": 153,
         "ko": 0
     },
     "percentiles1": {
-        "total": 57,
-        "ok": 57,
+        "total": 16,
+        "ok": 16,
         "ko": 0
     },
     "percentiles2": {
-        "total": 258,
-        "ok": 258,
+        "total": 30,
+        "ok": 30,
         "ko": 0
     },
     "percentiles3": {
-        "total": 1309,
-        "ok": 1309,
+        "total": 187,
+        "ok": 187,
         "ko": 0
     },
     "percentiles4": {
-        "total": 1998,
-        "ok": 1998,
+        "total": 360,
+        "ok": 360,
         "ko": 0
     },
     "group1": {
         "name": "t < 800 ms",
-        "count": 17207,
-        "percentage": 86
+        "count": 18822,
+        "percentage": 100
     },
     "group2": {
         "name": "800 ms < t < 1200 ms",
-        "count": 1525,
-        "percentage": 8
+        "count": 15,
+        "percentage": 0
     },
     "group3": {
         "name": "t > 1200 ms",
-        "count": 1236,
-        "percentage": 6
+        "count": 75,
+        "percentage": 0
     },
     "group4": {
         "name": "failed",
@@ -66,8 +66,8 @@
         "percentage": 0
     },
     "meanNumberOfRequestsPerSecond": {
-        "total": 302.54545454545456,
-        "ok": 302.54545454545456,
+        "total": 310.0327868852459,
+        "ok": 310.0327868852459,
         "ko": 0
     }
 }
