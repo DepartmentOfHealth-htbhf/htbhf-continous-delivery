@@ -175,13 +175,20 @@ run_performance_tests(){
 
     echo "cf push -f manifest.yml -p htbhf-performance-tests-${PERF_TESTS_VERSION}.jar"
     cf push -f manifest.yml -p htbhf-performance-tests-${PERF_TESTS_VERSION}.jar
-    wait_for_perf_tests_to_complete
-    PT_RESULT=$?
+    if [[ $? != 0 ]]; then
+        echo "Deployment of ${PERF_TEST_APP_NAME} to ${CF_SPACE} failed. Logs from deployment:"
+        cf logs  ${PERF_TEST_APP_NAME} --recent
+        PT_RESULT=1
+    else
+        wait_for_perf_tests_to_complete
+        PT_RESULT=$?
 
-    download_perf_test_results
+        download_perf_test_results
 
-    echo "cf stop ${PERF_TEST_APP_NAME}"
-    cf stop ${PERF_TEST_APP_NAME}
+        echo "cf stop ${PERF_TEST_APP_NAME}"
+        cf stop ${PERF_TEST_APP_NAME}
+    fi
+
     echo "cf delete -f ${PERF_TEST_APP_NAME}"
     cf delete -f ${PERF_TEST_APP_NAME}
 
