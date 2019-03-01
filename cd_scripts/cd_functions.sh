@@ -135,6 +135,7 @@ write_perf_test_manifest(){
     echo "    BASE_URL: ${APP_BASE_URL}" >> ${manifest}
     echo "    PERF_TEST_START_NUMBER_OF_USERS: ${PERF_TEST_START_NUMBER_OF_USERS}" >> ${manifest}
     echo "    PERF_TEST_END_NUMBER_OF_USERS: ${PERF_TEST_END_NUMBER_OF_USERS}" >> ${manifest}
+    echo "    PERF_TEST_SOAK_TEST_DURATION_MINUTES: ${PERF_TEST_SOAK_TEST_DURATION_MINUTES}" >> ${manifest}
     echo "    THRESHOLD_95TH_PERCENTILE_MILLIS: ${THRESHOLD_95TH_PERCENTILE_MILLIS}" >> ${manifest}
     echo "    THRESHOLD_MEAN_MILLIS: ${THRESHOLD_MEAN_MILLIS}" >> ${manifest}
 
