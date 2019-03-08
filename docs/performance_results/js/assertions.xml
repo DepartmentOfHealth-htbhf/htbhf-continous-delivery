@@ -1,11 +1,11 @@
-<testsuite name="uk.gov.dhsc.htbhf.ClaimSimulation" tests="3" errors="0" failures="0" time="0">
+<testsuite name="uk.gov.dhsc.htbhf.ClaimSimulation" tests="3" errors="0" failures="2" time="0">
 <testcase name="Global: percentage of successful requests is 100.0" status="true" time="0">
   <system-out>Global: percentage of successful requests is 100.0</system-out>
 </testcase>
-<testcase name="Global: 95th percentile of response time is less than 2000.0" status="true" time="0">
-  <system-out>Global: 95th percentile of response time is less than 2000.0</system-out>
+<testcase name="Global: 95th percentile of response time is less than 2000.0" status="false" time="0">
+  <failure type="Global">Actual value: 2208.0</failure>
 </testcase>
-<testcase name="Global: mean of response time is less than 500.0" status="true" time="0">
-  <system-out>Global: mean of response time is less than 500.0</system-out>
+<testcase name="Global: mean of response time is less than 500.0" status="false" time="0">
+  <failure type="Global">Actual value: 630.0</failure>
 </testcase>
 </testsuite>
