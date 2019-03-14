@@ -117,7 +117,7 @@ prepare_java_app_for_deploy(){
     wget -q -O artefact.jar ${APP_URL}
     wget -q -O manifest.jar ${MANIFEST_URL}
     # extract the manifest into the current directory
-    jar -xf manifest.jar
+    unzip manifest.jar "manifest.yml"
     export APP_PATH=artefact.jar
 }
 
@@ -158,7 +158,7 @@ wait_for_perf_tests_to_complete() {
 }
 
 download_perf_test_results(){
-    echo "Downloading performance test report"
+    echo "Downloading performance test report to ${PERFORMANCE_RESULTS_DIRECTORY}"
     GUID=$(cf app ${PERF_TEST_APP_NAME} --guid)
     SSH_CODE=$(cf ssh-code)
     sshpass -p ${SSH_CODE} scp -q -P 2222 -o StrictHostKeyChecking=no -o User=cf:${GUID}/0 ssh.london.cloud.service.gov.uk:/app/performance-test-results.zip .
