@@ -117,7 +117,7 @@ prepare_java_app_for_deploy(){
     wget -q -O artefact.jar ${APP_URL}
     wget -q -O manifest.jar ${MANIFEST_URL}
     # extract the manifest into the current directory
-    jar -xf manifest.jar
+    unzip manifest.jar "manifest.yml"
     export APP_PATH=artefact.jar
 }
 
