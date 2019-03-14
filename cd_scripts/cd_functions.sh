@@ -11,7 +11,7 @@ check_variable_is_set(){
 check_exit_status(){
     if [[ ${1} != 0 ]]; then
         echo "$2 failed, exiting"
-        if [ "$RUN_COMPATIBILITY_TESTS" == "true" ] || [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
+        if [ "$RUN_TESTS" == "true" ]; then
             echo "(publishing test results first)"
             source ${CD_SCRIPTS_DIR}/publish_test_results.sh
         fi
@@ -149,7 +149,7 @@ write_perf_test_manifest(){
 wait_for_perf_tests_to_complete() {
     echo "Waiting for performance tests to complete"
     # follow the logs until we see 'Finished running gatling tests'
-    (cf logs ${PERF_TEST_APP_NAME} &) | grep -q "Finished running gatling tests"
+    (timeout 300 cf logs ${PERF_TEST_APP_NAME} &) | grep -q "Finished running gatling tests"
     PT_RESULT=$( cf logs ${PERF_TEST_APP_NAME} --recent | grep "Finished running gatling tests - result=" | cut -d= -f2 )
     echo "Performance tests complete, result=${PT_RESULT}"
     echo "Last 100 lines of the performance logs:"

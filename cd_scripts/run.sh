@@ -39,6 +39,8 @@ deploy_application
 
 
 if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
+    export RUN_TESTS="true"
+
     prepare_compatibility_tests
 
     echo "Creating temporary route for compatibility tests"
@@ -74,6 +76,7 @@ fi
 
 
 if [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
+    export RUN_TESTS="true"
 
     echo "Creating temporary route for performance tests"
     create_random_route_name
@@ -96,17 +99,17 @@ else
 fi
 
 
-if [ "$RUN_COMPATIBILITY_TESTS" == "true" ] || [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
+if [ "$RUN_TESTS" == "true" ]; then
     echo "Publishing test results"
     source ${CD_SCRIPTS_DIR}/publish_test_results.sh
 fi
 
 
-if [ -z "$GITHUB_REPO_SLUG" ]; then
-    echo "Staging build successful";
+echo "Staging build successful";
 
-else
-    echo "Staging build successful - Creating a release in GitHub for ${GITHUB_REPO_SLUG}"
+
+if [ ! -z "$GITHUB_REPO_SLUG" ] && [ "$RUN_TESTS" == "true" ]; then
+    echo "Creating a release in GitHub for ${GITHUB_REPO_SLUG}"
     body="{\"tag_name\": \"v${APP_VERSION}\", \"name\": \"v${APP_VERSION}\"}"
     curl -H "Authorization: token ${GH_WRITE_TOKEN}" -H "Content-Type: application/json" -d "${body}" https://api.github.com/repos/${GITHUB_REPO_SLUG}/releases
 fi
