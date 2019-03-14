@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ${WORKING_DIR}
+
 git fetch
 git checkout gh-pages
 
