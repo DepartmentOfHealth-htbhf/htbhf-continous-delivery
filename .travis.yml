@@ -13,6 +13,13 @@ install:
 - git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
 - git fetch
 
+
 notifications:
-  slack:
-    secure: kz8wp3+yBGAjlLDwLIw56tr5gDJuUTe5p4MVsy6ZIAhb0OIiiCVImr/Iyoo7wUYEPanVlcqRpjr8Vf3laNtLz5r3aJRNbpCDt8SwbZqGSXzik6SItUxExeoRZeopg1QIH3o2uEz9zZG/AQX5XvuOUBXgBwg+NJZ1pLU3Muwusr5wLsOwtSEgR/j3pAhqT65x6ICeTR08fw01/vy3ZJgUlMN0SCMUc1+gg0oyCYE1Ni3lGQT2LAy3kiLJFTWxVQx9YKC27SHMtJRmJ4565CvokfcngZdEQwqPko7Y0nFCAGVBHlLaMZE/hxVgEc4MnO7zrtKg/BBDePzEo9u59Osf6DKeoWUWdhuY+Y59PLiUFKrgL1pCtDN6mWMW9bxZYZjfXyFXdldWYh26idIGV3Vk1/UtbyFBVmMWvp+N7w0nGBZiMLJFSCsDLY74nf1+sWAOW4Efx5c2yJ/2xH0VbAdaniB7/p51Tm00yazk5Z0nl4l1YbybC9Xip977N0JGt78OMrouTv+5/EnH5tYncer75GeecTNUpIbRYswToXq3Y9Vtgp0C2hJrh09fGKFhOH3DRuzjDphwI9MCQkH5WpGIlCftzTW2n0oE6y2dwx4LbkUwp7PKUn1CRJavmQH7mDK37ICHcPlaaDR48Geha6HL7IN4xjKsCHJAq7P0pzd16MI=
+  email:
+    recipients:
+      - msmith@equalexperts.com
+      - mike.smith@equalexperts.com
+      - dwybourn@equalexperts.com
+      - gjones@equalexperts.com
+    on_success: change
+    on_failure: always
