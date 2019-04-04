@@ -7,6 +7,9 @@ git checkout gh-pages
 
 export TEST_RESULTS_DIR=${WORKING_DIR}/docs
 
+# copy Integration test report
+mv ${COMPATIBILITY_TESTS_DIR}/build/reports/integration-report.html ${TEST_RESULTS_DIR}
+
 # move compatibility test results to docs directory if we ran them
 if [ ! -z "${COMPATIBILITY_RESULTS_DIRECTORY}" ]; then
   # clear existing compatibility test results first

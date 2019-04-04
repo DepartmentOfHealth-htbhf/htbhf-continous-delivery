@@ -37,12 +37,29 @@ export CF_SPACE=staging
 export APP_HOST=${APP_HOST_STAGING}
 deploy_application
 
+echo "Creating temporary route for integration tests"
+create_random_route_name
+HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
+cf map-route ${HTBHF_APP} ${CF_PUBLIC_DOMAIN} --hostname ${ROUTE}
+
+prepare_compatibility_tests
+
+echo "Running integration tests"
+export APP_BASE_URL="https://${ROUTE}.${CF_PUBLIC_DOMAIN}"
+cd ${COMPATIBILITY_TESTS_DIR}
+npm install
+npm run test:integration
+
+RESULT=$?
+
+echo "Removing temporary route for integration tests"
+remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
+
+npm run test:integration:report
+
+check_exit_status $RESULT "Performance tests"
 
 if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
-    export RUN_TESTS="true"
-
-    prepare_compatibility_tests
-
     echo "Creating temporary route for compatibility tests"
     create_random_route_name
     HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
@@ -61,7 +78,7 @@ if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
         RESULT=$?
     fi
 
-    echo "Removing temporary route"
+    echo "Removing temporary route for compatibility tests"
     remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
 
     npm run test:compatibility:report
@@ -76,8 +93,6 @@ fi
 
 
 if [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
-    export RUN_TESTS="true"
-
     echo "Creating temporary route for performance tests"
     create_random_route_name
     HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
@@ -89,7 +104,7 @@ if [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
     run_performance_tests
     RESULT=$?
 
-    echo "Removing temporary route"
+    echo "Removing temporary route for performance tests"
     remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
 
     check_exit_status $RESULT "Performance tests"
@@ -98,17 +113,13 @@ else
     echo "RUN_PERFORMANCE_TESTS=$RUN_PERFORMANCE_TESTS - skipping performance tests"
 fi
 
-
-if [ "$RUN_TESTS" == "true" ]; then
-    echo "Publishing test results"
-    source ${CD_SCRIPTS_DIR}/publish_test_results.sh
-fi
-
+echo "Publishing test results"
+source ${CD_SCRIPTS_DIR}/publish_test_results.sh
 
 echo "Staging build successful";
 
 
-if [ ! -z "$GITHUB_REPO_SLUG" ] && [ "$RUN_TESTS" == "true" ]; then
+if [ ! -z "$GITHUB_REPO_SLUG" ] ; then
     echo "Creating a release in GitHub for ${GITHUB_REPO_SLUG}"
     body="{\"tag_name\": \"v${APP_VERSION}\", \"name\": \"v${APP_VERSION}\"}"
     curl -H "Authorization: token ${GH_WRITE_TOKEN}" -H "Content-Type: application/json" -d "${body}" https://api.github.com/repos/${GITHUB_REPO_SLUG}/releases
