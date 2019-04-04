@@ -57,7 +57,7 @@ remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
 
 npm run test:integration:report
 
-check_exit_status $RESULT "Performance tests"
+check_exit_status $RESULT "Integration tests"
 
 if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
     echo "Creating temporary route for compatibility tests"
