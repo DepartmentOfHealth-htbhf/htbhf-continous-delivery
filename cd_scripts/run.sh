@@ -11,7 +11,7 @@ export WORKING_DIR=$(pwd)
 export BIN_DIR=${WORKING_DIR}/bin
 export PERF_TESTS_DIR=${WORKING_DIR}/performance_tests
 export CD_SCRIPTS_DIR=${WORKING_DIR}/cd_scripts
-export COMPATIBILITY_TESTS_DIR=${WORKING_DIR}/compatibility_tests
+export WEB_TESTS_DIR=${WORKING_DIR}/web_tests
 
 source ${CD_SCRIPTS_DIR}/cd_functions.sh
 
@@ -42,11 +42,11 @@ create_random_route_name
 HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
 cf map-route ${HTBHF_APP} ${CF_PUBLIC_DOMAIN} --hostname ${ROUTE}
 
-prepare_compatibility_tests
+prepare_web_tests
 
 echo "Running integration tests"
 export APP_BASE_URL="https://${ROUTE}.${CF_PUBLIC_DOMAIN}"
-cd ${COMPATIBILITY_TESTS_DIR}
+cd ${WEB_TESTS_DIR}
 npm install
 npm run test:integration
 
@@ -67,7 +67,7 @@ if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
 
     echo "Running compatibility tests"
     export APP_BASE_URL="https://${ROUTE}.${CF_PUBLIC_DOMAIN}"
-    cd ${COMPATIBILITY_TESTS_DIR}
+    cd ${WEB_TESTS_DIR}
     npm install
     npm run test:compatibility
     RESULT=$?
@@ -82,7 +82,7 @@ if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
     remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
 
     npm run test:compatibility:report
-    export COMPATIBILITY_RESULTS_DIRECTORY=${COMPATIBILITY_TESTS_DIR}/build/reports/compatibility-report
+    export COMPATIBILITY_RESULTS_DIRECTORY=${WEB_TESTS_DIR}/build/reports/compatibility-report
 
     check_exit_status $RESULT "Browser compatibility tests"
     cd ${WORKING_DIR}
