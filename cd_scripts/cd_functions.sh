@@ -198,3 +198,18 @@ run_performance_tests(){
     cd ${WORKING_DIR}
     return ${PT_RESULT}
 }
+
+write_app_versions(){
+    EXPORT APP_VERSIONS_FILE="${CF_SPACE}_app_versions.txt"
+    rm -f $APP_VERSIONS_FILE
+    # get a list of the names of all apps in the current space
+    TEMP_APP_NAMES=$(cf apps | grep '[0-9]/[0-9]' | awk '{print $1}')
+    # Iterate the apps to get the version number
+    for appName in $TEMP_APP_NAMES; do
+        appVersion=$(cf env $appName | grep 'APP_VERSION' | awk '{print $2}')
+        # add an entry to the file if we have an app version
+        if [ ! -z "${appVersion}" ]; then
+            echo "${appName}:   ${appVersion}" >> $APP_VERSIONS_FILE
+        fi
+    done
+}
