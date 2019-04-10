@@ -39,9 +39,10 @@ fi
 
 # publish
 git add ${WORKING_DIR}/docs
+git status
 git config --local user.email "travis@travis-ci.org"
 git config --local user.name "Travis CI"
-git commit -m "Publishing test results"
+git commit -m "Publishing test results for ${APP_NAME} ${APP_VERSION}"
 git push https://${GH_WRITE_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
 
 git checkout master

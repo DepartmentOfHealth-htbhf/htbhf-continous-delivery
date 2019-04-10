@@ -200,8 +200,11 @@ run_performance_tests(){
 }
 
 write_app_versions(){
+    echo "Listing app versions deployed in ${CF_SPACE}:"
+
     export APP_VERSIONS_FILE="${CF_SPACE}_app_versions.txt"
     rm -f $APP_VERSIONS_FILE
+
     # get a list of the names of all apps in the current space
     TEMP_APP_NAMES=$(cf apps | grep '[0-9]/[0-9]' | awk '{print $1}')
     # Iterate the apps to get the version number
@@ -212,4 +215,9 @@ write_app_versions(){
             echo "${appName}:   ${appVersion}" >> $APP_VERSIONS_FILE
         fi
     done
+
+    # sort the file
+    sort -o $APP_VERSIONS_FILE $APP_VERSIONS_FILE
+    # echo the contents
+    cat $APP_VERSIONS_FILE
 }
