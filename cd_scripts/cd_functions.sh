@@ -200,7 +200,7 @@ run_performance_tests(){
 }
 
 write_app_versions(){
-    EXPORT APP_VERSIONS_FILE="${CF_SPACE}_app_versions.txt"
+    export APP_VERSIONS_FILE="${CF_SPACE}_app_versions.txt"
     rm -f $APP_VERSIONS_FILE
     # get a list of the names of all apps in the current space
     TEMP_APP_NAMES=$(cf apps | grep '[0-9]/[0-9]' | awk '{print $1}')
