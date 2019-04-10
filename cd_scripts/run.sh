@@ -37,6 +37,8 @@ export CF_SPACE=staging
 export APP_HOST=${APP_HOST_STAGING}
 deploy_application
 
+write_app_versions
+
 echo "Creating temporary route for integration tests"
 create_random_route_name
 HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
@@ -113,10 +115,6 @@ else
     echo "RUN_PERFORMANCE_TESTS=$RUN_PERFORMANCE_TESTS - skipping performance tests"
 fi
 
-echo "App versions deployed in ${CF_SPACE}:"
-write_app_versions
-cat $APP_VERSIONS_FILE
-
 echo "Staging build successful";
 
 
@@ -133,9 +131,7 @@ if [ "$DEPLOY_TO_PROD" == "true" ]; then
     export APP_HOST=${APP_HOST_PRODUCTION}
     deploy_application
 
-    echo "App versions deployed in ${CF_SPACE}:"
     write_app_versions
-    cat $APP_VERSIONS_FILE
 
     echo "Production build successful"
 else
