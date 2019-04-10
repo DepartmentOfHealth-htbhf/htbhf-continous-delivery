@@ -113,8 +113,9 @@ else
     echo "RUN_PERFORMANCE_TESTS=$RUN_PERFORMANCE_TESTS - skipping performance tests"
 fi
 
-echo "Publishing test results"
-source ${CD_SCRIPTS_DIR}/publish_test_results.sh
+echo "App versions deployed in ${CF_SPACE}:"
+write_app_versions
+cat $APP_VERSIONS_FILE
 
 echo "Staging build successful";
 
@@ -131,7 +132,15 @@ if [ "$DEPLOY_TO_PROD" == "true" ]; then
     export CF_SPACE=production
     export APP_HOST=${APP_HOST_PRODUCTION}
     deploy_application
+
+    echo "App versions deployed in ${CF_SPACE}:"
+    write_app_versions
+    cat $APP_VERSIONS_FILE
+
     echo "Production build successful"
 else
     echo "DEPLOY_TO_PROD='$DEPLOY_TO_PROD' - not deploying to production"
 fi
+
+echo "Publishing test results"
+source ${CD_SCRIPTS_DIR}/publish_test_results.sh
