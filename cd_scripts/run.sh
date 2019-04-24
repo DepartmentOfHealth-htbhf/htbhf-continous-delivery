@@ -49,6 +49,10 @@ prepare_web_tests
 echo "Running integration tests"
 export APP_BASE_URL="https://${ROUTE}.${CF_PUBLIC_DOMAIN}"
 cd ${WEB_TESTS_DIR}
+echo "******Downloading and overriding version of chromedriver to 74.0.3729.6******"
+wget https://chromedriver.storage.googleapis.com/74.0.3729.6/chromedriver_linux64.zip -P /home/travis/build/DepartmentOfHealth-htbhf/htbhf-continuous-delivery
+unzip /home/travis/build/DepartmentOfHealth-htbhf/htbhf-continuous-delivery/chromedriver_linux64.zip
+npm install chromedriver --chromedriver_filepath=/home/travis/build/DepartmentOfHealth-htbhf/htbhf-continuous-delivery/chromedriver_linux64.zip
 npm install
 npm run test:integration
 
