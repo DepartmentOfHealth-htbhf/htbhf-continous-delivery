@@ -1,73 +1,73 @@
 {
     "name": "Global Information",
     "numberOfRequests": {
-        "total": 28750,
-        "ok": 28700,
-        "ko": 50
+        "total": 28800,
+        "ok": 28800,
+        "ko": 0
     },
     "minResponseTime": {
         "total": 4,
         "ok": 4,
-        "ko": 9
+        "ko": 0
     },
     "maxResponseTime": {
-        "total": 6918,
-        "ok": 5063,
-        "ko": 6918
+        "total": 849,
+        "ok": 849,
+        "ko": 0
     },
     "meanResponseTime": {
-        "total": 23,
-        "ok": 19,
-        "ko": 2530
+        "total": 14,
+        "ok": 14,
+        "ko": 0
     },
     "standardDeviation": {
-        "total": 194,
-        "ok": 127,
-        "ko": 2474
+        "total": 22,
+        "ok": 22,
+        "ko": 0
     },
     "percentiles1": {
         "total": 9,
         "ok": 9,
-        "ko": 2696
+        "ko": 0
     },
     "percentiles2": {
         "total": 12,
         "ok": 12,
-        "ko": 4428
+        "ko": 0
     },
     "percentiles3": {
-        "total": 48,
-        "ok": 48,
-        "ko": 6522
+        "total": 50,
+        "ok": 50,
+        "ko": 0
     },
     "percentiles4": {
-        "total": 66,
+        "total": 64,
         "ok": 64,
-        "ko": 6825
+        "ko": 0
     },
     "group1": {
         "name": "t < 800 ms",
-        "count": 28639,
+        "count": 28798,
         "percentage": 100
     },
     "group2": {
         "name": "800 ms < t < 1200 ms",
-        "count": 23,
+        "count": 2,
         "percentage": 0
     },
     "group3": {
         "name": "t > 1200 ms",
-        "count": 38,
+        "count": 0,
         "percentage": 0
     },
     "group4": {
         "name": "failed",
-        "count": 50,
+        "count": 0,
         "percentage": 0
     },
     "meanNumberOfRequestsPerSecond": {
-        "total": 237.60330578512398,
-        "ok": 237.1900826446281,
-        "ko": 0.4132231404958678
+        "total": 238.01652892561984,
+        "ok": 238.01652892561984,
+        "ko": 0
     }
 }
