@@ -16,53 +16,53 @@ stats: {
         "ko": "-"
     },
     "maxResponseTime": {
-        "total": "5087",
-        "ok": "5087",
+        "total": "588",
+        "ok": "588",
         "ko": "-"
     },
     "meanResponseTime": {
-        "total": "30",
-        "ok": "30",
+        "total": "15",
+        "ok": "15",
         "ko": "-"
     },
     "standardDeviation": {
-        "total": "152",
-        "ok": "152",
+        "total": "17",
+        "ok": "17",
         "ko": "-"
     },
     "percentiles1": {
-        "total": "13",
-        "ok": "13",
+        "total": "10",
+        "ok": "10",
         "ko": "-"
     },
     "percentiles2": {
-        "total": "23",
-        "ok": "23",
+        "total": "15",
+        "ok": "15",
         "ko": "-"
     },
     "percentiles3": {
-        "total": "76",
-        "ok": "76",
+        "total": "49",
+        "ok": "49",
         "ko": "-"
     },
     "percentiles4": {
-        "total": "152",
-        "ok": "152",
+        "total": "71",
+        "ok": "71",
         "ko": "-"
     },
     "group1": {
         "name": "t < 800 ms",
-        "count": 28732,
+        "count": 28800,
         "percentage": 100
     },
     "group2": {
         "name": "800 ms < t < 1200 ms",
-        "count": 9,
+        "count": 0,
         "percentage": 0
     },
     "group3": {
         "name": "t > 1200 ms",
-        "count": 59,
+        "count": 0,
         "percentage": 0
     },
     "group4": {
@@ -90,43 +90,43 @@ stats: {
         "ko": "0"
     },
     "minResponseTime": {
-        "total": "11",
-        "ok": "11",
+        "total": "9",
+        "ok": "9",
         "ko": "-"
     },
     "maxResponseTime": {
-        "total": "307",
-        "ok": "307",
+        "total": "88",
+        "ok": "88",
         "ko": "-"
     },
     "meanResponseTime": {
-        "total": "28",
-        "ok": "28",
+        "total": "18",
+        "ok": "18",
         "ko": "-"
     },
     "standardDeviation": {
-        "total": "19",
-        "ok": "19",
+        "total": "6",
+        "ok": "6",
         "ko": "-"
     },
     "percentiles1": {
-        "total": "22",
-        "ok": "22",
+        "total": "17",
+        "ok": "17",
         "ko": "-"
     },
     "percentiles2": {
-        "total": "31",
-        "ok": "31",
+        "total": "20",
+        "ok": "20",
         "ko": "-"
     },
     "percentiles3": {
-        "total": "64",
-        "ok": "64",
+        "total": "29",
+        "ok": "29",
         "ko": "-"
     },
     "percentiles4": {
-        "total": "111",
-        "ok": "111",
+        "total": "44",
+        "ok": "44",
         "ko": "-"
     },
     "group1": {
@@ -173,38 +173,38 @@ stats: {
         "ko": "-"
     },
     "maxResponseTime": {
-        "total": "177",
-        "ok": "177",
+        "total": "118",
+        "ok": "118",
         "ko": "-"
     },
     "meanResponseTime": {
-        "total": "17",
-        "ok": "17",
+        "total": "10",
+        "ok": "10",
         "ko": "-"
     },
     "standardDeviation": {
-        "total": "20",
-        "ok": "20",
+        "total": "7",
+        "ok": "7",
         "ko": "-"
     },
     "percentiles1": {
+        "total": "9",
+        "ok": "9",
+        "ko": "-"
+    },
+    "percentiles2": {
         "total": "11",
         "ok": "11",
         "ko": "-"
     },
-    "percentiles2": {
-        "total": "16",
-        "ok": "16",
-        "ko": "-"
-    },
     "percentiles3": {
-        "total": "48",
-        "ok": "48",
+        "total": "19",
+        "ok": "19",
         "ko": "-"
     },
     "percentiles4": {
-        "total": "118",
-        "ok": "118",
+        "total": "39",
+        "ok": "39",
         "ko": "-"
     },
     "group1": {
@@ -251,38 +251,38 @@ stats: {
         "ko": "-"
     },
     "maxResponseTime": {
-        "total": "167",
-        "ok": "167",
+        "total": "138",
+        "ok": "138",
         "ko": "-"
     },
     "meanResponseTime": {
-        "total": "18",
-        "ok": "18",
+        "total": "11",
+        "ok": "11",
         "ko": "-"
     },
     "standardDeviation": {
-        "total": "20",
-        "ok": "20",
+        "total": "7",
+        "ok": "7",
         "ko": "-"
     },
     "percentiles1": {
+        "total": "10",
+        "ok": "10",
+        "ko": "-"
+    },
+    "percentiles2": {
         "total": "12",
         "ok": "12",
         "ko": "-"
     },
-    "percentiles2": {
-        "total": "18",
-        "ok": "18",
-        "ko": "-"
-    },
     "percentiles3": {
-        "total": "49",
-        "ok": "49",
+        "total": "20",
+        "ok": "20",
         "ko": "-"
     },
     "percentiles4": {
-        "total": "119",
-        "ok": "119",
+        "total": "36",
+        "ok": "36",
         "ko": "-"
     },
     "group1": {
@@ -324,43 +324,43 @@ stats: {
         "ko": "0"
     },
     "minResponseTime": {
-        "total": "5",
-        "ok": "5",
+        "total": "4",
+        "ok": "4",
         "ko": "-"
     },
     "maxResponseTime": {
-        "total": "228",
-        "ok": "228",
+        "total": "101",
+        "ok": "101",
         "ko": "-"
     },
     "meanResponseTime": {
-        "total": "17",
-        "ok": "17",
+        "total": "10",
+        "ok": "10",
         "ko": "-"
     },
     "standardDeviation": {
-        "total": "20",
-        "ok": "20",
+        "total": "6",
+        "ok": "6",
         "ko": "-"
     },
     "percentiles1": {
+        "total": "9",
+        "ok": "9",
+        "ko": "-"
+    },
+    "percentiles2": {
         "total": "11",
         "ok": "11",
         "ko": "-"
     },
-    "percentiles2": {
-        "total": "16",
-        "ok": "16",
-        "ko": "-"
-    },
     "percentiles3": {
-        "total": "43",
-        "ok": "43",
+        "total": "18",
+        "ok": "18",
         "ko": "-"
     },
     "percentiles4": {
-        "total": "124",
-        "ok": "124",
+        "total": "33",
+        "ok": "33",
         "ko": "-"
     },
     "group1": {
@@ -402,43 +402,43 @@ stats: {
         "ko": "0"
     },
     "minResponseTime": {
-        "total": "6",
-        "ok": "6",
+        "total": "5",
+        "ok": "5",
         "ko": "-"
     },
     "maxResponseTime": {
-        "total": "288",
-        "ok": "288",
+        "total": "107",
+        "ok": "107",
         "ko": "-"
     },
     "meanResponseTime": {
-        "total": "19",
-        "ok": "19",
-        "ko": "-"
-    },
-    "standardDeviation": {
-        "total": "20",
-        "ok": "20",
-        "ko": "-"
-    },
-    "percentiles1": {
         "total": "12",
         "ok": "12",
         "ko": "-"
     },
+    "standardDeviation": {
+        "total": "7",
+        "ok": "7",
+        "ko": "-"
+    },
+    "percentiles1": {
+        "total": "10",
+        "ok": "10",
+        "ko": "-"
+    },
     "percentiles2": {
-        "total": "18",
-        "ok": "18",
+        "total": "13",
+        "ok": "13",
         "ko": "-"
     },
     "percentiles3": {
-        "total": "48",
-        "ok": "48",
+        "total": "21",
+        "ok": "21",
         "ko": "-"
     },
     "percentiles4": {
-        "total": "115",
-        "ok": "115",
+        "total": "36",
+        "ok": "36",
         "ko": "-"
     },
     "group1": {
@@ -480,43 +480,43 @@ stats: {
         "ko": "0"
     },
     "minResponseTime": {
+        "total": "4",
+        "ok": "4",
+        "ko": "-"
+    },
+    "maxResponseTime": {
+        "total": "73",
+        "ok": "73",
+        "ko": "-"
+    },
+    "meanResponseTime": {
+        "total": "10",
+        "ok": "10",
+        "ko": "-"
+    },
+    "standardDeviation": {
         "total": "5",
         "ok": "5",
         "ko": "-"
     },
-    "maxResponseTime": {
-        "total": "173",
-        "ok": "173",
-        "ko": "-"
-    },
-    "meanResponseTime": {
-        "total": "16",
-        "ok": "16",
-        "ko": "-"
-    },
-    "standardDeviation": {
-        "total": "18",
-        "ok": "18",
-        "ko": "-"
-    },
     "percentiles1": {
+        "total": "9",
+        "ok": "9",
+        "ko": "-"
+    },
+    "percentiles2": {
         "total": "11",
         "ok": "11",
         "ko": "-"
     },
-    "percentiles2": {
-        "total": "16",
-        "ok": "16",
-        "ko": "-"
-    },
     "percentiles3": {
-        "total": "42",
-        "ok": "42",
+        "total": "17",
+        "ok": "17",
         "ko": "-"
     },
     "percentiles4": {
-        "total": "116",
-        "ok": "116",
+        "total": "28",
+        "ok": "28",
         "ko": "-"
     },
     "group1": {
@@ -563,38 +563,38 @@ stats: {
         "ko": "-"
     },
     "maxResponseTime": {
-        "total": "206",
-        "ok": "206",
+        "total": "132",
+        "ok": "132",
         "ko": "-"
     },
     "meanResponseTime": {
-        "total": "19",
-        "ok": "19",
+        "total": "12",
+        "ok": "12",
         "ko": "-"
     },
     "standardDeviation": {
-        "total": "20",
-        "ok": "20",
+        "total": "7",
+        "ok": "7",
         "ko": "-"
     },
     "percentiles1": {
+        "total": "11",
+        "ok": "11",
+        "ko": "-"
+    },
+    "percentiles2": {
         "total": "13",
         "ok": "13",
         "ko": "-"
     },
-    "percentiles2": {
-        "total": "19",
-        "ok": "19",
-        "ko": "-"
-    },
     "percentiles3": {
-        "total": "48",
-        "ok": "48",
+        "total": "22",
+        "ok": "22",
         "ko": "-"
     },
     "percentiles4": {
-        "total": "127",
-        "ok": "127",
+        "total": "35",
+        "ok": "35",
         "ko": "-"
     },
     "group1": {
@@ -636,43 +636,43 @@ stats: {
         "ko": "0"
     },
     "minResponseTime": {
-        "total": "7",
-        "ok": "7",
+        "total": "6",
+        "ok": "6",
         "ko": "-"
     },
     "maxResponseTime": {
-        "total": "198",
-        "ok": "198",
+        "total": "88",
+        "ok": "88",
         "ko": "-"
     },
     "meanResponseTime": {
-        "total": "20",
-        "ok": "20",
+        "total": "13",
+        "ok": "13",
         "ko": "-"
     },
     "standardDeviation": {
-        "total": "20",
-        "ok": "20",
+        "total": "6",
+        "ok": "6",
         "ko": "-"
     },
     "percentiles1": {
+        "total": "11",
+        "ok": "11",
+        "ko": "-"
+    },
+    "percentiles2": {
         "total": "14",
         "ok": "14",
         "ko": "-"
     },
-    "percentiles2": {
-        "total": "19",
-        "ok": "19",
-        "ko": "-"
-    },
     "percentiles3": {
-        "total": "50",
-        "ok": "49",
+        "total": "22",
+        "ok": "22",
         "ko": "-"
     },
     "percentiles4": {
-        "total": "124",
-        "ok": "124",
+        "total": "37",
+        "ok": "37",
         "ko": "-"
     },
     "group1": {
@@ -719,38 +719,38 @@ stats: {
         "ko": "-"
     },
     "maxResponseTime": {
-        "total": "199",
-        "ok": "199",
+        "total": "95",
+        "ok": "95",
         "ko": "-"
     },
     "meanResponseTime": {
-        "total": "17",
-        "ok": "17",
+        "total": "10",
+        "ok": "10",
         "ko": "-"
     },
     "standardDeviation": {
-        "total": "19",
-        "ok": "19",
+        "total": "6",
+        "ok": "6",
         "ko": "-"
     },
     "percentiles1": {
+        "total": "9",
+        "ok": "9",
+        "ko": "-"
+    },
+    "percentiles2": {
         "total": "11",
         "ok": "11",
         "ko": "-"
     },
-    "percentiles2": {
-        "total": "16",
-        "ok": "16",
-        "ko": "-"
-    },
     "percentiles3": {
-        "total": "47",
-        "ok": "47",
+        "total": "18",
+        "ok": "18",
         "ko": "-"
     },
     "percentiles4": {
-        "total": "114",
-        "ok": "114",
+        "total": "33",
+        "ok": "33",
         "ko": "-"
     },
     "group1": {
@@ -797,38 +797,38 @@ stats: {
         "ko": "-"
     },
     "maxResponseTime": {
-        "total": "212",
-        "ok": "212",
+        "total": "122",
+        "ok": "122",
         "ko": "-"
     },
     "meanResponseTime": {
-        "total": "19",
-        "ok": "19",
+        "total": "12",
+        "ok": "12",
         "ko": "-"
     },
     "standardDeviation": {
-        "total": "21",
-        "ok": "21",
+        "total": "6",
+        "ok": "6",
         "ko": "-"
     },
     "percentiles1": {
+        "total": "11",
+        "ok": "11",
+        "ko": "-"
+    },
+    "percentiles2": {
         "total": "13",
         "ok": "13",
         "ko": "-"
     },
-    "percentiles2": {
-        "total": "19",
-        "ok": "19",
-        "ko": "-"
-    },
     "percentiles3": {
-        "total": "50",
-        "ok": "50",
+        "total": "20",
+        "ok": "20",
         "ko": "-"
     },
     "percentiles4": {
-        "total": "129",
-        "ok": "129",
+        "total": "33",
+        "ok": "33",
         "ko": "-"
     },
     "group1": {
@@ -870,59 +870,59 @@ stats: {
         "ko": "0"
     },
     "minResponseTime": {
+        "total": "32",
+        "ok": "32",
+        "ko": "-"
+    },
+    "maxResponseTime": {
+        "total": "588",
+        "ok": "588",
+        "ko": "-"
+    },
+    "meanResponseTime": {
+        "total": "57",
+        "ok": "57",
+        "ko": "-"
+    },
+    "standardDeviation": {
         "total": "36",
         "ok": "36",
         "ko": "-"
     },
-    "maxResponseTime": {
-        "total": "5087",
-        "ok": "5087",
-        "ko": "-"
-    },
-    "meanResponseTime": {
-        "total": "156",
-        "ok": "156",
-        "ko": "-"
-    },
-    "standardDeviation": {
-        "total": "507",
-        "ok": "507",
-        "ko": "-"
-    },
     "percentiles1": {
-        "total": "60",
-        "ok": "60",
+        "total": "51",
+        "ok": "51",
         "ko": "-"
     },
     "percentiles2": {
-        "total": "80",
-        "ok": "80",
+        "total": "58",
+        "ok": "58",
         "ko": "-"
     },
     "percentiles3": {
-        "total": "285",
-        "ok": "285",
+        "total": "85",
+        "ok": "85",
         "ko": "-"
     },
     "percentiles4": {
-        "total": "3474",
-        "ok": "3474",
+        "total": "184",
+        "ok": "184",
         "ko": "-"
     },
     "group1": {
         "name": "t < 800 ms",
-        "count": 2332,
-        "percentage": 97
+        "count": 2400,
+        "percentage": 100
     },
     "group2": {
         "name": "800 ms < t < 1200 ms",
-        "count": 9,
+        "count": 0,
         "percentage": 0
     },
     "group3": {
         "name": "t > 1200 ms",
-        "count": 59,
-        "percentage": 2
+        "count": 0,
+        "percentage": 0
     },
     "group4": {
         "name": "failed",
@@ -953,38 +953,38 @@ stats: {
         "ko": "-"
     },
     "maxResponseTime": {
-        "total": "199",
-        "ok": "199",
+        "total": "89",
+        "ok": "89",
         "ko": "-"
     },
     "meanResponseTime": {
-        "total": "18",
-        "ok": "18",
+        "total": "11",
+        "ok": "11",
         "ko": "-"
     },
     "standardDeviation": {
-        "total": "20",
-        "ok": "20",
+        "total": "6",
+        "ok": "6",
         "ko": "-"
     },
     "percentiles1": {
+        "total": "10",
+        "ok": "10",
+        "ko": "-"
+    },
+    "percentiles2": {
         "total": "12",
         "ok": "12",
         "ko": "-"
     },
-    "percentiles2": {
-        "total": "18",
-        "ok": "18",
-        "ko": "-"
-    },
     "percentiles3": {
-        "total": "50",
-        "ok": "50",
+        "total": "20",
+        "ok": "20",
         "ko": "-"
     },
     "percentiles4": {
-        "total": "122",
-        "ok": "122",
+        "total": "36",
+        "ok": "36",
         "ko": "-"
     },
     "group1": {
