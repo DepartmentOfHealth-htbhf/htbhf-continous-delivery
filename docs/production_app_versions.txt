@@ -1,5 +1,5 @@
 help-to-buy-healthy-foods:   0.1.181
 htbhf-card-services-api:   0.0.10
-htbhf-claimant-service:   0.0.134
+htbhf-claimant-service:   0.0.135
 htbhf-dwp-api:   0.0.21
 htbhf-hmrc-api:   0.0.9
