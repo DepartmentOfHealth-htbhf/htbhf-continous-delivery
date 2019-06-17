@@ -46,8 +46,8 @@ cf map-route ${HTBHF_APP} ${CF_PUBLIC_DOMAIN} --hostname ${ROUTE}
 
 prepare_web_tests
 
-echo "Running integration tests"
 export APP_BASE_URL="https://${ROUTE}.${CF_PUBLIC_DOMAIN}"
+echo "Running integration tests against ${APP_BASE_URL}"
 cd ${WEB_TESTS_DIR}
 npm install
 npm run test:integration
