@@ -7,9 +7,6 @@ git checkout gh-pages
 
 export TEST_RESULTS_DIR=${WORKING_DIR}/docs
 
-# copy Integration test report
-mv ${WEB_TESTS_DIR}/build/reports/integration-report.html ${TEST_RESULTS_DIR}
-
 # move app version files
 mv *_app_versions.txt ${TEST_RESULTS_DIR}
 

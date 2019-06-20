@@ -69,7 +69,7 @@ prepare_web_tests(){
 }
 
 download_web_tests(){
-    # download the latest release of web ui (containing the compatibility and integration tests) and extract to ${WEB_TESTS_DIR} (the directory will be deleted first)
+    # download the latest release of web ui (containing the compatibility tests) and extract to ${WEB_TESTS_DIR} (the directory will be deleted first)
     check_variable_is_set WEB_TESTS_DIR
     echo "Downloading latest release of web ui for tests"
     rm -rf ${WEB_TESTS_DIR}
