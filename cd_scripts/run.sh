@@ -39,27 +39,7 @@ deploy_application
 
 write_app_versions
 
-echo "Creating temporary route for integration tests"
-create_random_route_name
-HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
-cf map-route ${HTBHF_APP} ${CF_PUBLIC_DOMAIN} --hostname ${ROUTE}
-
 prepare_web_tests
-
-export APP_BASE_URL="https://${ROUTE}.${CF_PUBLIC_DOMAIN}"
-echo "Running integration tests against ${APP_BASE_URL}"
-cd ${WEB_TESTS_DIR}
-npm install
-npm run test:integration
-
-RESULT=$?
-
-echo "Removing temporary route for integration tests"
-remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
-
-npm run test:integration:report
-
-check_exit_status $RESULT "Integration tests"
 
 if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
     echo "Creating temporary route for compatibility tests"
