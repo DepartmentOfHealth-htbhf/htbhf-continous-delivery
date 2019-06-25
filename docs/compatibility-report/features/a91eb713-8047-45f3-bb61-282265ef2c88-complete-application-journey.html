@@ -563,7 +563,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                 Passed
                             </p>
                         </td>
-                        <td class="percentage">100.00 %</td>
+                        <td class="percentage">0.00 %</td>
                     </tr>
                     <tr>
                         <td>
@@ -572,7 +572,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                 Failed
                             </p>
                         </td>
-                        <td class="percentage">0.00 %</td>
+                        <td class="percentage">100.00 %</td>
                     
                     
                     </tr>
@@ -613,14 +613,14 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                     
                     
-                    <i class="fa fa-question-circle not-defined-color fa-lg">
-                        <span>question-circle not-defined-color</span>
+                    <i class="fa fa-mobile fa-lg">
+                        <span>mobile</span>
                     </i>
                 </span>
             </li>
             <li>
                 <span class="meta-data-title">Device</span>
-                <span class="meta-data-data">iPad Mini 4</span>
+                <span class="meta-data-data">Samsung Galaxy S8</span>
             </li>
             <li>
                 <span class="meta-data-title">OS</span>
@@ -629,10 +629,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                     
                     
-                    <i class="fa fa-question-circle not-defined-color fa-lg">
-                        <span>question-circle not-defined-color</span>
+                    <i class="fa fa-android fa-lg">
+                        <span>android</span>
                     </i>
-                    11.0
+                    7.0
                 </span>
             </li>
             
@@ -645,7 +645,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                     
                     <i class="fa fa-question-circle not-defined-color fa-lg">
-                        <span>ipad</span>
+                        <span>android</span>
                     </i>
                     
                 </span>
@@ -670,7 +670,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
               
                       
         </div>
-        <h2>Scenario: <small>Valid application details can be checked (BrowserStack session id: 284b9966c93f7707b434a2800280bbdfaea6ea58)</small></h2>
+        <h2>Scenario: <small>Valid application details can be checked (BrowserStack session id: 91330037d84937ad9f542efa3ebf5f9a47d346cd)</small></h2>
 
             <ul class="nav navbar-right panel_toolbox">
                 <li>
@@ -681,11 +681,23 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
           
               
                   
+                    <li>
+                      <span class="step skipped-background" data-toggle="tooltip" title="Scenario is skipped">
+                        3
+                    </span>
+                    </li>
+                    
                       
+                        <li>
+                          <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">
+                        1
+                    </span>
+                        </li>
+                        
                           
                             <li>
                               <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">
-                        6
+                        2
                     </span>
                             </li>
                             
@@ -812,10 +824,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             <div class="scenario-step-container">
               
                 
-                  <div class="label" title="Success">
-                    <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                  </div>
-                  
+                    <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed">
+                      <i class="fa fa-exclamation-circle fa-2x failed-color"></i>
+                    </div>
+                    
                               
 
                 <div class="text">
@@ -828,6 +840,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                                   
 
                                       
+                                        <a href="#error03-error" data-toggle="collapse">+ Show Error</a>
+                                        
 
                                           
 
@@ -841,6 +855,14 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
 
             
               
+                <div id="error03-error" class="scenario-step-collapse collapse">
+                  <pre class=info>Error: Error: TimeoutError: Waiting for element to be located By(css selector, .govuk-body)
+Wait timed out after 5264ms
+    at Check.getSendApplicationHelperText (/home/travis/build/DepartmentOfHealth-htbhf/htbhf-continous-delivery/web_tests/src/test/common/page/check.js:64:13)
+    at (anonymous)
+    at process._tickCallback (internal/process/next_tick.js:188:7)</pre>
+                </div>
+                
 
                   
 
@@ -863,15 +885,15 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             <div class="scenario-step-container">
               
                 
-                  <div class="label" title="Success">
-                    <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                  </div>
-                  
+                      <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+                        <i class="fa fa-arrow-circle-right fa-2x skipped-color"></i>
+                      </div>
+                      
                               
 
                 <div class="text">
                     <span class="keyword highlight">And </span>
-                    I accept the terms and conditions and submit my application
+                    I submit my application
                     
                 </div>
 
@@ -914,10 +936,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             <div class="scenario-step-container">
               
                 
-                  <div class="label" title="Success">
-                    <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                  </div>
-                  
+                      <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+                        <i class="fa fa-arrow-circle-right fa-2x skipped-color"></i>
+                      </div>
+                      
                               
 
                 <div class="text">
@@ -965,10 +987,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             <div class="scenario-step-container">
               
                 
-                  <div class="label" title="Success">
-                    <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
-                  </div>
-                  
+                      <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+                        <i class="fa fa-arrow-circle-right fa-2x skipped-color"></i>
+                      </div>
+                      
                               
 
                 <div class="text">
@@ -1061,8 +1083,8 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     ],
                     datasets: [{
                         data: [
-                            1,
                             0,
+                            1,
                             0,
                             0,
                             0,
