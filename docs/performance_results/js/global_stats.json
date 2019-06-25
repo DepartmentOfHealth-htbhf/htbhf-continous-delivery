@@ -1,54 +1,54 @@
 {
     "name": "Global Information",
     "numberOfRequests": {
-        "total": 25427,
-        "ok": 9879,
-        "ko": 15548
+        "total": 25350,
+        "ok": 9750,
+        "ko": 15600
     },
     "minResponseTime": {
         "total": 3,
         "ok": 3,
-        "ko": 4
+        "ko": 3
     },
     "maxResponseTime": {
-        "total": 305,
-        "ok": 305,
-        "ko": 258
+        "total": 227,
+        "ok": 227,
+        "ko": 68
     },
     "meanResponseTime": {
-        "total": 20,
-        "ok": 22,
-        "ko": 19
-    },
-    "standardDeviation": {
-        "total": 28,
-        "ok": 29,
-        "ko": 27
-    },
-    "percentiles1": {
         "total": 10,
         "ok": 11,
-        "ko": 10
+        "ko": 9
+    },
+    "standardDeviation": {
+        "total": 6,
+        "ok": 7,
+        "ko": 4
+    },
+    "percentiles1": {
+        "total": 8,
+        "ok": 9,
+        "ko": 8
     },
     "percentiles2": {
-        "total": 17,
-        "ok": 20,
-        "ko": 15
+        "total": 11,
+        "ok": 13,
+        "ko": 10
     },
     "percentiles3": {
-        "total": 82,
-        "ok": 87,
-        "ko": 77
+        "total": 20,
+        "ok": 24,
+        "ko": 16
     },
     "percentiles4": {
-        "total": 149,
-        "ok": 151,
-        "ko": 148
+        "total": 32,
+        "ok": 40,
+        "ko": 25
     },
     "group1": {
         "name": "t < 800 ms",
-        "count": 9879,
-        "percentage": 39
+        "count": 9750,
+        "percentage": 38
     },
     "group2": {
         "name": "800 ms < t < 1200 ms",
@@ -62,12 +62,12 @@
     },
     "group4": {
         "name": "failed",
-        "count": 15548,
-        "percentage": 61
+        "count": 15600,
+        "percentage": 62
     },
     "meanNumberOfRequestsPerSecond": {
-        "total": 210.1404958677686,
-        "ok": 81.64462809917356,
-        "ko": 128.49586776859505
+        "total": 209.50413223140495,
+        "ok": 80.57851239669421,
+        "ko": 128.92561983471074
     }
 }
