@@ -42,12 +42,14 @@ deploy_application
 write_app_versions
 
 prepare_web_tests
+cd ${WEB_TESTS_DIR}
+npm install
+
+deploy_session_details_app
 
 create_temporary_route "Integration tests"
 
 echo "Running integration tests against ${APP_BASE_URL}"
-cd ${WEB_TESTS_DIR}
-npm install
 npm run test:integration
 
 RESULT=$?
@@ -60,7 +62,6 @@ if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
     create_temporary_route "Compatibility tests"
 
     echo "Running compatibility tests against ${APP_BASE_URL}"
-    cd ${WEB_TESTS_DIR}
     npm run test:compatibility
     RESULT=$?
 
@@ -82,11 +83,12 @@ if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
     export COMPATIBILITY_RESULTS_DIRECTORY=${WEB_TESTS_DIR}/build/reports/compatibility-report
 
     check_exit_status $RESULT "Browser compatibility tests"
-    cd ${WORKING_DIR}
 
 else
     echo "RUN_COMPATIBILITY_TESTS=$RUN_COMPATIBILITY_TESTS - skipping compatibility tests"
 fi
+
+cd ${WORKING_DIR}
 
 
 if [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
@@ -104,6 +106,8 @@ if [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
 else
     echo "RUN_PERFORMANCE_TESTS=$RUN_PERFORMANCE_TESTS - skipping performance tests"
 fi
+
+destroy_session_details_app
 
 echo "Staging build successful";
 
