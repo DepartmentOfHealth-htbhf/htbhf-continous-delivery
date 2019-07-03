@@ -69,7 +69,7 @@ prepare_web_tests(){
 }
 
 download_web_tests(){
-    # download the latest release of web ui (containing the compatibility tests) and extract to ${WEB_TESTS_DIR} (the directory will be deleted first)
+    # download the latest release of web ui (containing the compatibility and integration tests) and extract to ${WEB_TESTS_DIR} (the directory will be deleted first)
     check_variable_is_set WEB_TESTS_DIR
     echo "Downloading latest release of web ui for tests"
     rm -rf ${WEB_TESTS_DIR}
@@ -217,4 +217,17 @@ write_app_versions(){
     sort -o $APP_VERSIONS_FILE $APP_VERSIONS_FILE
     # echo the contents
     cat $APP_VERSIONS_FILE
+}
+
+create_temporary_route(){
+    echo "Creating temporary route for ${1} (to ${HTBHF_APP})"
+    create_random_route_name
+    cf map-route ${HTBHF_APP} ${CF_PUBLIC_DOMAIN} --hostname ${ROUTE}
+
+    export APP_BASE_URL="https://${ROUTE}.${CF_PUBLIC_DOMAIN}"
+}
+
+remove_temporary_route(){
+    echo "Removing temporary route for ${1}"
+    remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
 }
