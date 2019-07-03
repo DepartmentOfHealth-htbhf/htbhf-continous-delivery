@@ -35,22 +35,32 @@ export PATH=$PATH:${SCRIPT_DIR}
 echo "****** Deploy to staging ******"
 export CF_SPACE=staging
 export APP_HOST=${APP_HOST_STAGING}
+export HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
+
 deploy_application
 
 write_app_versions
 
 prepare_web_tests
 
-if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
-    echo "Creating temporary route for compatibility tests"
-    create_random_route_name
-    HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
-    cf map-route ${HTBHF_APP} ${CF_PUBLIC_DOMAIN} --hostname ${ROUTE}
+create_temporary_route "Integration tests"
 
-    echo "Running compatibility tests"
-    export APP_BASE_URL="https://${ROUTE}.${CF_PUBLIC_DOMAIN}"
+echo "Running integration tests against ${APP_BASE_URL}"
+cd ${WEB_TESTS_DIR}
+npm install
+npm run test:integration
+
+RESULT=$?
+
+remove_temporary_route "Integration tests"
+
+check_exit_status $RESULT "Integration tests"
+
+if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
+    create_temporary_route "Compatibility tests"
+
+    echo "Running compatibility tests against ${APP_BASE_URL}"
     cd ${WEB_TESTS_DIR}
-    npm install
     npm run test:compatibility
     RESULT=$?
 
@@ -60,8 +70,13 @@ if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
         RESULT=$?
     fi
 
-    echo "Removing temporary route for compatibility tests"
-    remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
+    if [[ ${RESULT} != 0 ]]; then
+        echo "Second attempt at compatibility tests failed - re-running"
+        npm run test:compatibility
+        RESULT=$?
+    fi
+
+    remove_temporary_route "Compatibility tests"
 
     npm run test:compatibility:report
     export COMPATIBILITY_RESULTS_DIRECTORY=${WEB_TESTS_DIR}/build/reports/compatibility-report
@@ -75,19 +90,14 @@ fi
 
 
 if [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
-    echo "Creating temporary route for performance tests"
-    create_random_route_name
-    HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
-    cf map-route ${HTBHF_APP} ${CF_PUBLIC_DOMAIN} --hostname ${ROUTE}
+    create_temporary_route "Performance tests"
 
     echo "Running performance tests"
     export PERFORMANCE_RESULTS_DIRECTORY=`pwd`/performance_tests_results
-    export APP_BASE_URL="https://${ROUTE}.${CF_PUBLIC_DOMAIN}"
     run_performance_tests
     RESULT=$?
 
-    echo "Removing temporary route for performance tests"
-    remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
+    remove_temporary_route "Performance tests"
 
     check_exit_status $RESULT "Performance tests"
 
