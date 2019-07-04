@@ -231,3 +231,20 @@ remove_temporary_route(){
     echo "Removing temporary route for ${1}"
     remove_route ${ROUTE} ${CF_PUBLIC_DOMAIN} ${HTBHF_APP}
 }
+
+deploy_session_details_app() {
+    export SESSION_DETAILS_APP=htbhf-session-details-${CF_SPACE}
+    echo "Deploying ${SESSION_DETAILS_APP}"
+    cf push -f src/test/session-details-provider/session-details-manifest.yml --var session_details_app_name=${SESSION_DETAILS_APP} --var session_secret=secret_${SESSION_SECRET}
+    RESULT=$?
+    if [[ ${RESULT} != 0 ]]; then
+        cf logs ${SESSION_DETAILS_APP} --recent
+        echo "cf push of session-details-app failed - exiting now"
+        exit 1
+    fi
+    export SESSION_DETAILS_BASE_URL="https://${SESSION_DETAILS_APP}/"
+}
+
+destroy_session_details_app(){
+    cf delete -f -r ${SESSION_DETAILS_APP}
+}
