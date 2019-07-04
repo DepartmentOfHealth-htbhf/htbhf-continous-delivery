@@ -242,7 +242,8 @@ deploy_session_details_app() {
         echo "cf push of session-details-app failed - exiting now"
         exit 1
     fi
-    export SESSION_DETAILS_BASE_URL="https://${SESSION_DETAILS_APP}/"
+    export SESSION_DETAILS_BASE_URL="https://${SESSION_DETAILS_APP}.${CF_PUBLIC_DOMAIN}/"
+    echo "Session details app accessible at ${SESSION_DETAILS_BASE_URL}"
 }
 
 destroy_session_details_app(){
