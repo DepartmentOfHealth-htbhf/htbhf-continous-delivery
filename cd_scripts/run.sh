@@ -45,21 +45,18 @@ prepare_web_tests
 cd ${WEB_TESTS_DIR}
 npm install
 
-deploy_session_details_app
+create_temporary_route "staging tests"
 
-create_temporary_route "Integration tests"
+deploy_session_details_app
 
 echo "Running integration tests against ${APP_BASE_URL}"
 npm run test:integration
 
 RESULT=$?
 
-remove_temporary_route "Integration tests"
-
 check_exit_status $RESULT "Integration tests"
 
 if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
-    create_temporary_route "Compatibility tests"
 
     echo "Running compatibility tests against ${APP_BASE_URL}"
     npm run test:compatibility
@@ -77,8 +74,6 @@ if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
         RESULT=$?
     fi
 
-    remove_temporary_route "Compatibility tests"
-
     npm run test:compatibility:report
     export COMPATIBILITY_RESULTS_DIRECTORY=${WEB_TESTS_DIR}/build/reports/compatibility-report
 
@@ -92,14 +87,11 @@ cd ${WORKING_DIR}
 
 
 if [ "$RUN_PERFORMANCE_TESTS" == "true" ]; then
-    create_temporary_route "Performance tests"
 
     echo "Running performance tests"
     export PERFORMANCE_RESULTS_DIRECTORY=`pwd`/performance_tests_results
     run_performance_tests
     RESULT=$?
-
-    remove_temporary_route "Performance tests"
 
     check_exit_status $RESULT "Performance tests"
 
@@ -108,6 +100,8 @@ else
 fi
 
 destroy_session_details_app
+
+remove_temporary_route "staging tests"
 
 echo "Staging build successful";
 

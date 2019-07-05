@@ -12,6 +12,7 @@ check_exit_status(){
     if [[ ${1} != 0 ]]; then
         echo "$2 failed, exiting (publishing test results first)"
         source ${CD_SCRIPTS_DIR}/publish_test_results.sh
+        remove_temporary_route "cleanup after build failure"
         exit ${1}
     fi
 }
@@ -234,8 +235,8 @@ remove_temporary_route(){
 
 deploy_session_details_app() {
     export SESSION_DETAILS_APP=htbhf-session-details-${CF_SPACE}
-    SESSION_DETAILS_HOST="${HTBHF_APP}.${CF_PUBLIC_DOMAIN}"
-    echo "Deploying ${SESSION_DETAILS_APP} to SESSION_DETAILS_HOST"
+    SESSION_DETAILS_HOST="${ROUTE}.${CF_PUBLIC_DOMAIN}"
+    echo "Deploying ${SESSION_DETAILS_APP} to ${SESSION_DETAILS_HOST}"
     cf push -f src/test/session-details-provider/session-details-manifest.yml --var session_details_app_name=${SESSION_DETAILS_APP} --var session_secret=secret_${SESSION_SECRET} --var session_details_host_name=${SESSION_DETAILS_HOST}
     RESULT=$?
     if [[ ${RESULT} != 0 ]]; then
@@ -244,7 +245,7 @@ deploy_session_details_app() {
         exit 1
     fi
     export SESSION_DETAILS_BASE_URL="https://${SESSION_DETAILS_HOST}"
-    echo "Session details app accessible at ${SESSION_DETAILS_BASE_URL}"
+    echo "Session details app accessible at ${SESSION_DETAILS_BASE_URL}/session-details"
 }
 
 destroy_session_details_app(){
