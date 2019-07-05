@@ -234,15 +234,16 @@ remove_temporary_route(){
 
 deploy_session_details_app() {
     export SESSION_DETAILS_APP=htbhf-session-details-${CF_SPACE}
-    echo "Deploying ${SESSION_DETAILS_APP}"
-    cf push -f src/test/session-details-provider/session-details-manifest.yml --var session_details_app_name=${SESSION_DETAILS_APP} --var session_secret=secret_${SESSION_SECRET}
+    SESSION_DETAILS_HOST="${HTBHF_APP}.${CF_PUBLIC_DOMAIN}"
+    echo "Deploying ${SESSION_DETAILS_APP} to SESSION_DETAILS_HOST"
+    cf push -f src/test/session-details-provider/session-details-manifest.yml --var session_details_app_name=${SESSION_DETAILS_APP} --var session_secret=secret_${SESSION_SECRET} --var session_details_host_name=${SESSION_DETAILS_HOST}
     RESULT=$?
     if [[ ${RESULT} != 0 ]]; then
         cf logs ${SESSION_DETAILS_APP} --recent
         echo "cf push of session-details-app failed - exiting now"
         exit 1
     fi
-    export SESSION_DETAILS_BASE_URL="https://${SESSION_DETAILS_APP}.${CF_PUBLIC_DOMAIN}/"
+    export SESSION_DETAILS_BASE_URL="https://${SESSION_DETAILS_HOST}"
     echo "Session details app accessible at ${SESSION_DETAILS_BASE_URL}"
 }
 
