@@ -12,8 +12,8 @@ check_exit_status(){
     if [[ ${1} != 0 ]]; then
         echo "$2 failed, exiting (publishing test results first)"
         source ${CD_SCRIPTS_DIR}/publish_test_results.sh
-        remove_temporary_route "cleanup after build failure"
         destroy_session_details_app
+        remove_temporary_route "cleanup after build failure"
         exit ${1}
     fi
 }
