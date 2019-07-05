@@ -12,6 +12,7 @@ check_exit_status(){
     if [[ ${1} != 0 ]]; then
         echo "$2 failed, exiting (publishing test results first)"
         source ${CD_SCRIPTS_DIR}/publish_test_results.sh
+        destroy_session_details_app
         remove_temporary_route "cleanup after build failure"
         exit ${1}
     fi
@@ -138,6 +139,7 @@ write_perf_test_manifest(){
     echo "    PERF_TEST_SOAK_TEST_DURATION_MINUTES: ${PERF_TEST_SOAK_TEST_DURATION_MINUTES}" >> ${manifest}
     echo "    THRESHOLD_95TH_PERCENTILE_MILLIS: ${THRESHOLD_95TH_PERCENTILE_MILLIS}" >> ${manifest}
     echo "    THRESHOLD_MEAN_MILLIS: ${THRESHOLD_MEAN_MILLIS}" >> ${manifest}
+    echo "    SESSION_DETAILS_BASE_URL: ${SESSION_DETAILS_BASE_URL}" >> ${manifest}
 
     echo "Performance test configuration:"
     echo "PERF_TEST_START_NUMBER_OF_USERS: ${PERF_TEST_START_NUMBER_OF_USERS}"
