@@ -11,38 +11,38 @@
         "ko": 0
     },
     "maxResponseTime": {
-        "total": 411,
-        "ok": 411,
+        "total": 491,
+        "ok": 491,
         "ko": 0
     },
     "meanResponseTime": {
-        "total": 10,
-        "ok": 10,
-        "ko": 0
-    },
-    "standardDeviation": {
         "total": 12,
         "ok": 12,
         "ko": 0
     },
+    "standardDeviation": {
+        "total": 13,
+        "ok": 13,
+        "ko": 0
+    },
     "percentiles1": {
-        "total": 7,
-        "ok": 7,
+        "total": 9,
+        "ok": 9,
         "ko": 0
     },
     "percentiles2": {
-        "total": 10,
-        "ok": 10,
+        "total": 11,
+        "ok": 11,
         "ko": 0
     },
     "percentiles3": {
-        "total": 20,
-        "ok": 20,
+        "total": 23,
+        "ok": 23,
         "ko": 0
     },
     "percentiles4": {
-        "total": 70,
-        "ok": 70,
+        "total": 72,
+        "ok": 72,
         "ko": 0
     },
     "group1": {
