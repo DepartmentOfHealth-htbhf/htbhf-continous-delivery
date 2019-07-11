@@ -1,5 +1,5 @@
 help-to-buy-healthy-foods-staging:   0.1.270
 htbhf-card-services-api-staging:   0.0.11
-htbhf-claimant-service-staging:   0.0.189
-htbhf-dwp-api-staging:   0.0.23
+htbhf-claimant-service-staging:   0.0.190
+htbhf-dwp-api-staging:   0.0.24
 htbhf-hmrc-api-staging:   0.0.11
