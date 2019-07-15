@@ -1,7 +1,7 @@
 {
   "simulation": "uk.gov.dhsc.htbhf.ClaimSimulation",
   "simulationId": "claimsimulation",
-  "start": 1562928434093,
+  "start": 1563160600495,
   "description": "Web-UI performance tests",
   "scenarios": ["Scottish Scenario", "Full scenarios"],
   "assertions": [
