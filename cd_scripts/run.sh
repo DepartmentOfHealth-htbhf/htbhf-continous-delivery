@@ -62,18 +62,6 @@ if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
     npm run test:compatibility
     RESULT=$?
 
-    if [[ ${RESULT} != 0 ]]; then
-        echo "First attempt at compatibility tests failed - re-running"
-        npm run test:compatibility
-        RESULT=$?
-    fi
-
-    if [[ ${RESULT} != 0 ]]; then
-        echo "Second attempt at compatibility tests failed - re-running"
-        npm run test:compatibility
-        RESULT=$?
-    fi
-
     npm run test:compatibility:report
     export COMPATIBILITY_RESULTS_DIRECTORY=${WEB_TESTS_DIR}/build/reports/compatibility-report
 
