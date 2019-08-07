@@ -613,14 +613,14 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                     
                     
-                    <i class="fa fa-desktop fa-lg">
-                        <span>desktop</span>
+                    <i class="fa fa-mobile fa-lg">
+                        <span>mobile</span>
                     </i>
                 </span>
             </li>
             <li>
                 <span class="meta-data-title">Device</span>
-                <span class="meta-data-data">Windows</span>
+                <span class="meta-data-data">Google Pixel 3</span>
             </li>
             <li>
                 <span class="meta-data-title">OS</span>
@@ -629,10 +629,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                     
                     
-                    <i class="fa fa-windows fa-lg">
-                        <span>windows</span>
+                    <i class="fa fa-android fa-lg">
+                        <span>android</span>
                     </i>
-                    10
+                    9.0
                 </span>
             </li>
             
@@ -644,10 +644,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
                     
                     
                     
-                    <i class="fa fa-edge fa-lg">
-                        <span>edge</span>
+                    <i class="fa fa-question-circle not-defined-color fa-lg">
+                        <span>android</span>
                     </i>
-                    18.0
+                    
                 </span>
             </li>
             
@@ -670,7 +670,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
               
                       
         </div>
-        <h2>Scenario: <small>Valid application details can be checked (BrowserStack session id: 93c878a90d3845141a787797664c483758a7281e)</small></h2>
+        <h2>Scenario: <small>Valid application details can be checked (BrowserStack session id: 12e2053c3e09b806d73c01a79d0a334a6f1fed6b)</small></h2>
 
             <ul class="nav navbar-right panel_toolbox">
                 <li>
@@ -805,11 +805,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before
             
               
                 <div id="error02-error" class="scenario-step-collapse collapse">
-                  <pre class=info>Error: function timed out, ensure the promise resolves within 120000 milliseconds
-    at Timeout._time.default.setTimeout [as _onTimeout] (/home/travis/build/DepartmentOfHealth-htbhf/htbhf-continous-delivery/web_tests/node_modules/cucumber/lib/user_code_runner.js:81:20)
-    at ontimeout (timers.js:475:11)
-    at tryOnTimeout (timers.js:310:5)
-    at Timer.listOnTimeout (timers.js:270:5)</pre>
+                  <pre class=info>AssertionError: Unexpected error caught trying to select 'Yes' for 'Do you have children under four years old?' and submit the page - Error: Error: ETIMEDOUT connect ETIMEDOUT 207.254.8.2:443
+    at selectYesOnDoYouHaveChildrenPage (/home/travis/build/DepartmentOfHealth-htbhf/htbhf-continous-delivery/web_tests/src/test/common/steps/common-steps.js:136:12)
+    at (anonymous)
+    at process._tickCallback (internal/process/next_tick.js:189:7)</pre>
                 </div>
                 
 
