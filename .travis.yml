@@ -26,5 +26,6 @@ notifications:
       - mike.smith@equalexperts.com
       - dwybourn@equalexperts.com
       - gjones@equalexperts.com
+      - bmason@equalexperts.com
     on_success: change
     on_failure: always
