@@ -24,7 +24,7 @@ download_deploy_scripts(){
     mkdir -p ${BIN_DIR}
     rm -rf ${BIN_DIR}/deployment-scripts
     mkdir ${BIN_DIR}/deployment-scripts
-    curl -H "Authorization: token ${GH_WRITE_TOKEN}" -s https://api.github.com/repos/DepartmentOfHealth-htbhf/htbhf-deployment-scripts/releases/latest \
+    curl -s https://api.github.com/repos/DepartmentOfHealth-htbhf/htbhf-deployment-scripts/releases/latest \
         | grep zipball_url \
         | cut -d'"' -f4 \
         | wget -qO deployment-scripts.zip -i -
@@ -68,6 +68,12 @@ prepare_web_tests(){
     else
         download_web_tests
     fi
+
+    set_feature_toggles
+}
+
+set_feature_toggles(){
+  export FEATURE_TOGGLES=`cat "${WEB_TESTS_DIR}"/features.json`
 }
 
 download_web_tests(){
@@ -76,7 +82,7 @@ download_web_tests(){
     echo "Downloading latest release of web ui for tests"
     rm -rf ${WEB_TESTS_DIR}
     mkdir ${WEB_TESTS_DIR}
-    curl -H "Authorization: token ${GH_WRITE_TOKEN}" -s https://api.github.com/repos/DepartmentOfHealth-htbhf/htbhf-applicant-web-ui/releases/latest \
+    curl -s https://api.github.com/repos/DepartmentOfHealth-htbhf/htbhf-applicant-web-ui/releases/latest \
         | grep zipball_url \
         | cut -d'"' -f4 \
         | wget -qO web-tests-tmp.zip -i -
