@@ -156,7 +156,7 @@ write_perf_test_manifest(){
 
 wait_for_perf_tests_to_complete() {
     echo "Waiting for performance tests to complete"
-    # follow the logs until we see 'Finished running gatling tests', or we've been waiting for 9 minutes (travis will kill the build after 10 minutes without response)
+    # follow the logs until we see 'Finished running gatling tests', or we've been waiting for 9 minutes (circleci will kill the build after 10 minutes without response)
     (timeout 540 cf logs ${PERF_TEST_APP_NAME} &) | grep -q "Finished running gatling tests"
     PT_RESULT=$( cf logs ${PERF_TEST_APP_NAME} --recent | grep "Finished running gatling tests - result=" | cut -d= -f2 )
     echo "Performance tests complete, result=${PT_RESULT}"

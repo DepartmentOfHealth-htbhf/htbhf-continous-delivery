@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# if this is a pull request or branch (non-master) build, then just exit
-echo "TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST, TRAVIS_BRANCH=$TRAVIS_BRANCH"
-if [[ "$TRAVIS_PULL_REQUEST" != "false"  || "$TRAVIS_BRANCH" != "master" ]]; then
-   echo "Not deploying pull request or branch build"
+# if this is not a triggered api build, then exit
+echo "CD_BUILD=$CD_BUILD"
+if [[ "$CD_BUILD" != "true" ]]; then
+   echo "Not running cd build."
    exit
 fi
 
@@ -18,7 +18,7 @@ source ${CD_SCRIPTS_DIR}/cd_functions.sh
 check_variable_is_set PERF_TESTS_URL "E.g. https://dl.bintray.com/departmentofhealth-htbhf/maven/uk/gov/dhsc/htbhf/htbhf-performance-tests/"
 check_variable_is_set PERF_TESTS_VERSION "The current version of the perf tests, as released to bintray"
 check_variable_is_set GH_WRITE_TOKEN "A Github Personal access token with permissions to write to the repo"
-check_variable_is_set TRAVIS_REPO_SLUG "E.g. DepartmentOfHealth-htbhf/htbhf-applicant-web-ui"
+check_variable_is_set CIRCLECI_REPO_SLUG "E.g. DepartmentOfHealth-htbhf/htbhf-applicant-web-ui"
 check_variable_is_set APP_HOST_STAGING "E.g. help-to-buy-healthy-foods-staging.london.cloudapps.digital"
 check_variable_is_set APP_HOST_PRODUCTION "E.g. help-to-buy-healthy-foods.london.cloudapps.digital"
 
