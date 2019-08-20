@@ -1,58 +1,58 @@
 {
     "name": "Global Information",
     "numberOfRequests": {
-        "total": 46500,
-        "ok": 46500,
-        "ko": 0
+        "total": 43500,
+        "ok": 40500,
+        "ko": 3000
     },
     "minResponseTime": {
         "total": 11,
         "ok": 11,
-        "ko": 0
+        "ko": 12
     },
     "maxResponseTime": {
-        "total": 1177,
-        "ok": 1177,
-        "ko": 0
+        "total": 1110,
+        "ok": 1110,
+        "ko": 608
     },
     "meanResponseTime": {
-        "total": 146,
-        "ok": 146,
-        "ko": 0
+        "total": 93,
+        "ok": 93,
+        "ko": 95
     },
     "standardDeviation": {
-        "total": 132,
-        "ok": 132,
-        "ko": 0
+        "total": 85,
+        "ok": 85,
+        "ko": 85
     },
     "percentiles1": {
-        "total": 103,
-        "ok": 103,
-        "ko": 0
+        "total": 64,
+        "ok": 64,
+        "ko": 66
     },
     "percentiles2": {
-        "total": 219,
-        "ok": 219,
-        "ko": 0
+        "total": 121,
+        "ok": 121,
+        "ko": 125
     },
     "percentiles3": {
-        "total": 412,
-        "ok": 412,
-        "ko": 0
+        "total": 270,
+        "ok": 270,
+        "ko": 268
     },
     "percentiles4": {
-        "total": 540,
-        "ok": 540,
-        "ko": 0
+        "total": 410,
+        "ok": 409,
+        "ko": 414
     },
     "group1": {
         "name": "t < 800 ms",
-        "count": 46469,
-        "percentage": 100
+        "count": 40498,
+        "percentage": 93
     },
     "group2": {
         "name": "800 ms < t < 1200 ms",
-        "count": 31,
+        "count": 2,
         "percentage": 0
     },
     "group3": {
@@ -62,12 +62,12 @@
     },
     "group4": {
         "name": "failed",
-        "count": 0,
-        "percentage": 0
+        "count": 3000,
+        "percentage": 7
     },
     "meanNumberOfRequestsPerSecond": {
-        "total": 325.1748251748252,
-        "ok": 325.1748251748252,
-        "ko": 0
+        "total": 302.0833333333333,
+        "ok": 281.25,
+        "ko": 20.833333333333332
     }
 }
