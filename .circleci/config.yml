@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    environment:
+      CIRCLECI_REPO_SLUG: DepartmentOfHealth-htbhf/htbhf-continous-delivery
+    docker:
+      - image: circleci/node:10.16.0-browsers
+    steps:
+      - checkout
+      - run:
+          name: start chrome
+          command: google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+      - run:
+          name: install sshpass
+          command: sudo apt-get install -y sshpass
+      - run:
+          name: git config
+          command: git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+      - run:
+          name: git fetch
+          command: git fetch
+      - run:
+          name: run cd
+          command: chmod +x .circleci/do-exclusively.sh && .circleci/do-exclusively.sh cd_scripts/run.sh
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
