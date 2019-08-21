@@ -34,12 +34,14 @@ else
   echo "no PERFORMANCE_RESULTS_DIRECTORY found"
 fi
 
+CD_REPO_SLUG=${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}
+
 # publish
 git add ${WORKING_DIR}/docs
 git status
 git config --local user.email "dhsc-htbhf-support@equalexperts.com"
 git config --local user.name "ci-build"
-git commit -m "Publishing test results for ${APP_NAME} ${APP_VERSION}"
-git push https://${GH_WRITE_TOKEN}@github.com/${GITHUB_REPO_SLUG}.git
+git commit -m "Publishing test results for ${APP_NAME} ${APP_VERSION} to ${CD_REPO_SLUG}"
+git push https://${GH_WRITE_TOKEN}@github.com/${CD_REPO_SLUG}.git
 
 git checkout master
