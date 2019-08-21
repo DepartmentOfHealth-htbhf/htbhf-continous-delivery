@@ -100,6 +100,7 @@ download_web_tests(){
 }
 
 download_performance_tests(){
+    check_variable_is_set PERF_TESTS_VERSION "The current version of the perf tests, as released to bintray. This should be set in test_versions.properties in web-ui."
     if [[ ! -e ${PERF_TESTS_DIR}/htbhf-performance-tests-${PERF_TESTS_VERSION}.jar ]]; then
         echo "Downloading performance tests version ${PERF_TESTS_VERSION}"
         mkdir -p ${PERF_TESTS_DIR}
