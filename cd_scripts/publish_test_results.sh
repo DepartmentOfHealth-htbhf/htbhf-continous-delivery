@@ -41,7 +41,7 @@ git add ${WORKING_DIR}/docs
 git status
 git config --local user.email "dhsc-htbhf-support@equalexperts.com"
 git config --local user.name "ci-build"
-git commit -m "Publishing test results for ${APP_NAME} ${APP_VERSION} to ${CD_REPO_SLUG} [ci-skip]"
+git commit -m "Publishing test results for ${APP_NAME} ${APP_VERSION} to ${CD_REPO_SLUG} [ci skip]"
 git push https://${GH_WRITE_TOKEN}@github.com/${CD_REPO_SLUG}.git
 
 git checkout master

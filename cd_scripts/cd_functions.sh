@@ -70,10 +70,17 @@ prepare_web_tests(){
     fi
 
     set_feature_toggles
+    set_web_test_versions
 }
 
 set_feature_toggles(){
   export FEATURE_TOGGLES=`cat "${WEB_TESTS_DIR}"/features.json`
+}
+
+set_web_test_versions(){
+  echo "Versions of web test scripts to use:"
+  cat ${WEB_TESTS_DIR}/test_versions.properties
+  source ${WEB_TESTS_DIR}/test_versions.properties
 }
 
 download_web_tests(){
@@ -94,7 +101,7 @@ download_web_tests(){
 
 download_performance_tests(){
     if [[ ! -e ${PERF_TESTS_DIR}/htbhf-performance-tests-${PERF_TESTS_VERSION}.jar ]]; then
-        echo "Downloading performance tests"
+        echo "Downloading performance tests version ${PERF_TESTS_VERSION}"
         mkdir -p ${PERF_TESTS_DIR}
         cd ${PERF_TESTS_DIR}
         wget "${PERF_TESTS_URL}/${PERF_TESTS_VERSION}/htbhf-performance-tests-${PERF_TESTS_VERSION}.jar" -q
