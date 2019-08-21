@@ -16,7 +16,6 @@ export WEB_TESTS_DIR=${WORKING_DIR}/web_tests
 source ${CD_SCRIPTS_DIR}/cd_functions.sh
 
 check_variable_is_set PERF_TESTS_URL "E.g. https://dl.bintray.com/departmentofhealth-htbhf/maven/uk/gov/dhsc/htbhf/htbhf-performance-tests/"
-check_variable_is_set PERF_TESTS_VERSION "The current version of the perf tests, as released to bintray"
 check_variable_is_set GH_WRITE_TOKEN "A Github Personal access token with permissions to write to the repo"
 check_variable_is_set CIRCLECI_REPO_SLUG "E.g. DepartmentOfHealth-htbhf/htbhf-applicant-web-ui"
 check_variable_is_set APP_HOST_STAGING "E.g. apply-for-healthy-start-staging.london.cloudapps.digital"
@@ -95,7 +94,7 @@ echo "Staging build successful";
 
 
 if [ ! -z "$GITHUB_REPO_SLUG" ] ; then
-    echo "Creating a release in GitHub for ${GITHUB_REPO_SLUG}"
+    echo "Creating a release in GitHub for ${GITHUB_REPO_SLUG} version ${APP_VERSION}"
     body="{\"tag_name\": \"v${APP_VERSION}\", \"name\": \"v${APP_VERSION}\"}"
     curl -H "Authorization: token ${GH_WRITE_TOKEN}" -H "Content-Type: application/json" -d "${body}" https://api.github.com/repos/${GITHUB_REPO_SLUG}/releases
 fi
