@@ -19,8 +19,8 @@ check_variable_is_set PERF_TESTS_URL "E.g. https://dl.bintray.com/departmentofhe
 check_variable_is_set PERF_TESTS_VERSION "The current version of the perf tests, as released to bintray"
 check_variable_is_set GH_WRITE_TOKEN "A Github Personal access token with permissions to write to the repo"
 check_variable_is_set CIRCLECI_REPO_SLUG "E.g. DepartmentOfHealth-htbhf/htbhf-applicant-web-ui"
-check_variable_is_set APP_HOST_STAGING "E.g. help-to-buy-healthy-foods-staging.london.cloudapps.digital"
-check_variable_is_set APP_HOST_PRODUCTION "E.g. help-to-buy-healthy-foods.london.cloudapps.digital"
+check_variable_is_set APP_HOST_STAGING "E.g. apply-for-healthy-start-staging.london.cloudapps.digital"
+check_variable_is_set APP_HOST_PRODUCTION "E.g. apply-for-healthy-start.london.cloudapps.digital"
 
 download_deploy_scripts
 
@@ -35,7 +35,7 @@ export PATH=$PATH:${SCRIPT_DIR}
 echo "****** Deploy to staging ******"
 export CF_SPACE=staging
 export APP_HOST=${APP_HOST_STAGING}
-export HTBHF_APP="help-to-buy-healthy-foods-${CF_SPACE}"
+export HTBHF_APP="apply-for-healthy-start-${CF_SPACE}"
 
 deploy_application
 
