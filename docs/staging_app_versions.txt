@@ -1,5 +1,5 @@
-apply-for-healthy-start-staging:   0.1.369
+apply-for-healthy-start-staging:   0.1.370
 htbhf-card-services-api-staging:   0.0.12
 htbhf-claimant-service-staging:   0.0.201
 htbhf-dwp-api-staging:   0.0.26
-htbhf-hmrc-api-staging:   0.0.15
+htbhf-hmrc-api-staging:   0.0.16
