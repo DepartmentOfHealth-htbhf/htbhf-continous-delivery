@@ -232,6 +232,8 @@ write_app_versions(){
 
     # sort the file
     sort -o $APP_VERSIONS_FILE $APP_VERSIONS_FILE
+    # remove the space name from app names
+    sed -i "s/-${CF_SPACE}//g" $APP_VERSIONS_FILE
     # echo the contents
     cat $APP_VERSIONS_FILE
 }
