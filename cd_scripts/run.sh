@@ -18,8 +18,6 @@ source ${CD_SCRIPTS_DIR}/cd_functions.sh
 check_variable_is_set PERF_TESTS_URL "E.g. https://dl.bintray.com/departmentofhealth-htbhf/maven/uk/gov/dhsc/htbhf/htbhf-performance-tests/"
 check_variable_is_set GH_WRITE_TOKEN "A Github Personal access token with permissions to write to the repo"
 check_variable_is_set CIRCLECI_REPO_SLUG "E.g. DepartmentOfHealth-htbhf/htbhf-applicant-web-ui"
-check_variable_is_set APP_HOST_STAGING "E.g. apply-for-healthy-start-staging.london.cloudapps.digital"
-check_variable_is_set APP_HOST_PRODUCTION "E.g. apply-for-healthy-start.london.cloudapps.digital"
 
 download_deploy_scripts
 
@@ -33,7 +31,6 @@ export PATH=$PATH:${SCRIPT_DIR}
 
 echo "****** Deploy to staging ******"
 export CF_SPACE=staging
-export APP_HOST=${APP_HOST_STAGING}
 export HTBHF_APP="apply-for-healthy-start-${CF_SPACE}"
 
 deploy_application
@@ -103,7 +100,6 @@ fi
 if [ "$DEPLOY_TO_PROD" == "true" ]; then
     echo "****** Deploy to production ******"
     export CF_SPACE=production
-    export APP_HOST=${APP_HOST_PRODUCTION}
     deploy_application
 
     write_app_versions
