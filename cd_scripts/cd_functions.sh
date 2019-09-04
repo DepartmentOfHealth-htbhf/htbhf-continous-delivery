@@ -106,7 +106,7 @@ download_acceptance_tests(){
       echo "Downloading acceptance tests version ${ACCEPTANCE_TESTS_VERSION}"
       rm -rf ${ACCEPTANCE_TESTS_DIR}
       mkdir ${ACCEPTANCE_TESTS_DIR}
-      curl -L -O acceptance-tests-tmp.zip https://github.com/DepartmentOfHealth-htbhf/htbhf-acceptance-tests/archive/v${ACCEPTANCE_TESTS_VERSION}.zip
+      curl -L -o acceptance-tests-tmp.zip https://github.com/DepartmentOfHealth-htbhf/htbhf-acceptance-tests/archive/v${ACCEPTANCE_TESTS_VERSION}.zip
       unzip acceptance-tests-tmp.zip
       mv -f htbhf-acceptance-tests-${ACCEPTANCE_TESTS_VERSION}/* ${ACCEPTANCE_TESTS_DIR}
       rm -rf htbhf-acceptance-tests-${ACCEPTANCE_TESTS_VERSION}
