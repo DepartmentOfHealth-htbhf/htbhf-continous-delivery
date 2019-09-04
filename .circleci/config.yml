@@ -8,7 +8,7 @@ jobs:
       CF_API: api.london.cloud.service.gov.uk
       PERF_TESTS_URL: https://dl.bintray.com/departmentofhealth-htbhf/maven/uk/gov/dhsc/htbhf/htbhf-performance-tests/
     docker:
-      - image: circleci/node:10.16.0-browsers
+      - image: circleci/openjdk:11.0.4-jdk-stretch-node-browsers
     steps:
       - checkout
       - attach_workspace:
