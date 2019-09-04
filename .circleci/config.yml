@@ -8,9 +8,13 @@ jobs:
       CF_API: api.london.cloud.service.gov.uk
       PERF_TESTS_URL: https://dl.bintray.com/departmentofhealth-htbhf/maven/uk/gov/dhsc/htbhf/htbhf-performance-tests/
     docker:
-      - image: circleci/node:10.16.0-browsers
+      - image: circleci/openjdk:11.0.4-jdk-stretch-node-browsers
     steps:
       - checkout
+      - attach_workspace:
+          at: ./acceptance_tests
+      - attach_workspace:
+          at: ./performance_tests
       - run:
           name: start chrome
           command: google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
@@ -26,6 +30,11 @@ jobs:
       - run:
           name: run cd
           command: chmod +x .circleci/do-exclusively.sh && .circleci/do-exclusively.sh cd_scripts/run.sh
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./acceptance_tests
+            - ./performance_tests
 
 workflows:
   version: 2

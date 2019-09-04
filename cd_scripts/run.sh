@@ -12,6 +12,7 @@ export BIN_DIR=${WORKING_DIR}/bin
 export PERF_TESTS_DIR=${WORKING_DIR}/performance_tests
 export CD_SCRIPTS_DIR=${WORKING_DIR}/cd_scripts
 export WEB_TESTS_DIR=${WORKING_DIR}/web_tests
+export ACCEPTANCE_TESTS_DIR=${WORKING_DIR}/acceptance_tests
 
 source ${CD_SCRIPTS_DIR}/cd_functions.sh
 
@@ -55,11 +56,11 @@ check_exit_status $RESULT "Integration tests"
 if [ "$RUN_COMPATIBILITY_TESTS" == "true" ]; then
 
     echo "Running compatibility tests against ${APP_BASE_URL}"
-    npm run test:compatibility
+    download_acceptance_tests
+    run_compatibility_tests
     RESULT=$?
 
-    npm run test:compatibility:report
-    export COMPATIBILITY_RESULTS_DIRECTORY=${WEB_TESTS_DIR}/build/reports/compatibility-report
+    export COMPATIBILITY_RESULTS_DIRECTORY=${ACCEPTANCE_TESTS_DIR}/build/reports/compatibility-report
 
     check_exit_status $RESULT "Browser compatibility tests"
 

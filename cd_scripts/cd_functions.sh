@@ -99,6 +99,29 @@ download_web_tests(){
     rm web-tests-tmp.zip
 }
 
+download_acceptance_tests(){
+    check_variable_is_set ACCEPTANCE_TESTS_VERSION "The current version of the acceptance tests, as tagged in GitHub. This should be set in test_versions.properties in web-ui."
+    check_variable_is_set ACCEPTANCE_TESTS_DIR
+    if [[ ! -e ${ACCEPTANCE_TESTS_DIR}/version_${ACCEPTANCE_TESTS_VERSION}.info ]]; then
+      echo "Downloading acceptance tests version ${ACCEPTANCE_TESTS_VERSION}"
+      rm -rf ${ACCEPTANCE_TESTS_DIR}
+      mkdir ${ACCEPTANCE_TESTS_DIR}
+      curl -L -O acceptance-tests-tmp.zip https://github.com/DepartmentOfHealth-htbhf/htbhf-acceptance-tests/archive/v${ACCEPTANCE_TESTS_VERSION}.zip
+      unzip acceptance-tests-tmp.zip
+      mv -f htbhf-acceptance-tests-${ACCEPTANCE_TESTS_VERSION}/* ${ACCEPTANCE_TESTS_DIR}
+      rm -rf htbhf-acceptance-tests-${ACCEPTANCE_TESTS_VERSION}
+      rm acceptance-tests-tmp.zip
+      touch ${ACCEPTANCE_TESTS_DIR}/version_${ACCEPTANCE_TESTS_VERSION}.info
+    fi
+}
+
+run_compatibility_tests() {
+    cd ${ACCEPTANCE_TESTS_DIR}
+    export SESSION_DETAILS_URL="${SESSION_DETAILS_BASE_URL}/session-details/confirmation-code"
+    ./gradlew compatibility
+    return $?
+}
+
 download_performance_tests(){
     check_variable_is_set PERF_TESTS_VERSION "The current version of the perf tests, as released to bintray. This should be set in test_versions.properties in web-ui."
     if [[ ! -e ${PERF_TESTS_DIR}/htbhf-performance-tests-${PERF_TESTS_VERSION}.jar ]]; then
