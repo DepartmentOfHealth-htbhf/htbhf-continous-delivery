@@ -177,7 +177,8 @@ write_perf_test_manifest(){
     echo "    THRESHOLD_95TH_PERCENTILE_MILLIS: ${THRESHOLD_95TH_PERCENTILE_MILLIS}" >> ${manifest}
     echo "    THRESHOLD_MEAN_MILLIS: ${THRESHOLD_MEAN_MILLIS}" >> ${manifest}
     echo "    SESSION_DETAILS_BASE_URL: ${SESSION_DETAILS_BASE_URL}" >> ${manifest}
-    echo "    FEATURE_TOGGLES: ${FEATURE_TOGGLES}" >> ${manifest}
+    features=$(echo ${FEATURE_TOGGLES} | tr '\r\n' ' ')
+    echo "    FEATURE_TOGGLES: '${features}'" >> ${manifest}
 
     echo "Performance test configuration:"
     echo "PERF_TEST_START_NUMBER_OF_USERS: ${PERF_TEST_START_NUMBER_OF_USERS}"
