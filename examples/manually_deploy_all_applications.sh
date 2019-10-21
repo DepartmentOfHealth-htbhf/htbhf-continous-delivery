@@ -13,6 +13,13 @@ pause(){
     read -p "Press [Enter] key to continue..."
 }
 
+check_variable_is_set(){
+    if [[ -z ${!1} ]]; then
+        echo "$1 must be set and non empty. ($2)"
+        exit 1
+    fi
+}
+
 manual_deploy_java_app() {
   check_variable_is_set APP_NAME
   check_variable_is_set APP_VERSION
@@ -47,7 +54,7 @@ manual_deploy_node_app() {
 # Variable definition
 #####################
 check_variable_is_set CF_SPACE
-check_variable_is_set BASE_DIR "The directory containing the continuous delivery project, e.g. ~/htbhf-continous-delivery"
+check_variable_is_set BASE_DIR "The parent directory of the continuous delivery project"
 export CD_SCRIPTS_DIR="${BASE_DIR}/htbhf-continous-delivery/cd_scripts"
 export WORKING_DIR="${BASE_DIR}/temp-deploy"
 export BIN_DIR="${WORKING_DIR}/bin"
@@ -55,6 +62,10 @@ export BINTRAY_ROOT_URL=https://dl.bintray.com/departmentofhealth-htbhf/maven/uk
 
 
 # get versions of code to deploy from: https://departmentofhealth-htbhf.github.io/htbhf-continous-delivery/docs/production_app_versions.txt
+wget -q https://departmentofhealth-htbhf.github.io/htbhf-continous-delivery/docs/production_app_versions.txt
+cat production_app_versions.txt | tr '-' '_' | tr '[:lower:]' '[:upper:]' | sed -e 's/\([A-Z0-9_]*\):\s*/export \1_VERSION=/g' > set_app_versions.sh
+source ./set_app_versions.sh
+
 check_variable_is_set APPLY_FOR_HEALTHY_START_VERSION
 check_variable_is_set HTBHF_CARD_SERVICES_API_VERSION
 check_variable_is_set HTBHF_CLAIMANT_SERVICE_VERSION
