@@ -1,64 +1,64 @@
 {
     "name": "Global Information",
     "numberOfRequests": {
-        "total": 65100,
-        "ok": 65100,
+        "total": 48300,
+        "ok": 48300,
         "ko": 0
     },
     "minResponseTime": {
-        "total": 4,
-        "ok": 4,
+        "total": 3,
+        "ok": 3,
         "ko": 0
     },
     "maxResponseTime": {
-        "total": 14618,
-        "ok": 14618,
+        "total": 2386,
+        "ok": 2386,
         "ko": 0
     },
     "meanResponseTime": {
-        "total": 1247,
-        "ok": 1247,
+        "total": 53,
+        "ok": 53,
         "ko": 0
     },
     "standardDeviation": {
-        "total": 1607,
-        "ok": 1607,
+        "total": 104,
+        "ok": 104,
         "ko": 0
     },
     "percentiles1": {
-        "total": 777,
-        "ok": 777,
+        "total": 20,
+        "ok": 20,
         "ko": 0
     },
     "percentiles2": {
-        "total": 1801,
-        "ok": 1801,
+        "total": 57,
+        "ok": 57,
         "ko": 0
     },
     "percentiles3": {
-        "total": 3988,
-        "ok": 3988,
+        "total": 191,
+        "ok": 191,
         "ko": 0
     },
     "percentiles4": {
-        "total": 8436,
-        "ok": 8436,
+        "total": 493,
+        "ok": 493,
         "ko": 0
     },
     "group1": {
         "name": "t < 800 ms",
-        "count": 33014,
-        "percentage": 51
+        "count": 48138,
+        "percentage": 100
     },
     "group2": {
         "name": "800 ms < t < 1200 ms",
-        "count": 7004,
-        "percentage": 11
+        "count": 104,
+        "percentage": 0
     },
     "group3": {
         "name": "t > 1200 ms",
-        "count": 25082,
-        "percentage": 39
+        "count": 58,
+        "percentage": 0
     },
     "group4": {
         "name": "failed",
@@ -66,8 +66,8 @@
         "percentage": 0
     },
     "meanNumberOfRequestsPerSecond": {
-        "total": 264.6341463414634,
-        "ok": 264.6341463414634,
+        "total": 335.4166666666667,
+        "ok": 335.4166666666667,
         "ko": 0
     }
 }
