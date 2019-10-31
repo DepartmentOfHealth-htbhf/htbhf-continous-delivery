@@ -1,7 +1,7 @@
 {
   "simulation": "uk.gov.dhsc.htbhf.ClaimSimulation",
   "simulationId": "claimsimulation",
-  "start": 1572518582302,
+  "start": 1572527201866,
   "description": "Web-UI performance tests",
   "scenarios": ["Scottish Scenario", "Full scenarios"],
   "assertions": [
@@ -19,18 +19,18 @@
   "target": "95th percentile of response time",
   "condition": "is less than",
   "expectedValues": [2000.0],
-  "result": false,
+  "result": true,
   "message": "Global: 95th percentile of response time is less than 2000.0",
-  "actualValue": [2614.0]
+  "actualValue": [143.0]
 },
 {
   "path": "Global",
   "target": "mean of response time",
   "condition": "is less than",
   "expectedValues": [750.0],
-  "result": false,
+  "result": true,
   "message": "Global: mean of response time is less than 750.0",
-  "actualValue": [790.0]
+  "actualValue": [49.0]
 }
   ]
 }
