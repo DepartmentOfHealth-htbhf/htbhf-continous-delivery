@@ -1,73 +1,73 @@
 {
     "name": "Global Information",
     "numberOfRequests": {
-        "total": 65100,
-        "ok": 65100,
-        "ko": 0
+        "total": 65029,
+        "ok": 65007,
+        "ko": 22
     },
     "minResponseTime": {
         "total": 11,
         "ok": 11,
-        "ko": 0
+        "ko": 221
     },
     "maxResponseTime": {
-        "total": 3163,
-        "ok": 3163,
-        "ko": 0
+        "total": 13088,
+        "ok": 13088,
+        "ko": 2416
     },
     "meanResponseTime": {
-        "total": 130,
-        "ok": 130,
-        "ko": 0
+        "total": 447,
+        "ok": 447,
+        "ko": 902
     },
     "standardDeviation": {
-        "total": 216,
-        "ok": 216,
-        "ko": 0
+        "total": 992,
+        "ok": 992,
+        "ko": 428
     },
     "percentiles1": {
-        "total": 43,
-        "ok": 43,
-        "ko": 0
+        "total": 99,
+        "ok": 99,
+        "ko": 755
     },
     "percentiles2": {
-        "total": 134,
-        "ok": 134,
-        "ko": 0
+        "total": 412,
+        "ok": 412,
+        "ko": 1098
     },
     "percentiles3": {
-        "total": 550,
-        "ok": 550,
-        "ko": 0
+        "total": 1974,
+        "ok": 1974,
+        "ko": 1337
     },
     "percentiles4": {
-        "total": 1046,
-        "ok": 1046,
-        "ko": 0
+        "total": 5496,
+        "ok": 5497,
+        "ko": 2190
     },
     "group1": {
         "name": "t < 800 ms",
-        "count": 63656,
-        "percentage": 98
+        "count": 55558,
+        "percentage": 85
     },
     "group2": {
         "name": "800 ms < t < 1200 ms",
-        "count": 1034,
-        "percentage": 2
+        "count": 3301,
+        "percentage": 5
     },
     "group3": {
         "name": "t > 1200 ms",
-        "count": 410,
-        "percentage": 1
+        "count": 6148,
+        "percentage": 9
     },
     "group4": {
         "name": "failed",
-        "count": 0,
+        "count": 22,
         "percentage": 0
     },
     "meanNumberOfRequestsPerSecond": {
-        "total": 314.4927536231884,
-        "ok": 314.4927536231884,
-        "ko": 0
+        "total": 308.1943127962085,
+        "ok": 308.09004739336496,
+        "ko": 0.10426540284360189
     }
 }
