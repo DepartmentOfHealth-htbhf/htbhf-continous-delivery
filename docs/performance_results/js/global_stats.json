@@ -11,18 +11,18 @@
         "ko": 0
     },
     "maxResponseTime": {
-        "total": 2094,
-        "ok": 2094,
+        "total": 1199,
+        "ok": 1199,
         "ko": 0
     },
     "meanResponseTime": {
-        "total": 43,
-        "ok": 43,
+        "total": 47,
+        "ok": 47,
         "ko": 0
     },
     "standardDeviation": {
-        "total": 89,
-        "ok": 89,
+        "total": 61,
+        "ok": 61,
         "ko": 0
     },
     "percentiles1": {
@@ -31,33 +31,33 @@
         "ko": 0
     },
     "percentiles2": {
-        "total": 36,
-        "ok": 36,
+        "total": 41,
+        "ok": 41,
         "ko": 0
     },
     "percentiles3": {
-        "total": 100,
-        "ok": 100,
+        "total": 150,
+        "ok": 150,
         "ko": 0
     },
     "percentiles4": {
-        "total": 379,
-        "ok": 379,
+        "total": 328,
+        "ok": 328,
         "ko": 0
     },
     "group1": {
         "name": "t < 800 ms",
-        "count": 64799,
+        "count": 65080,
         "percentage": 100
     },
     "group2": {
         "name": "800 ms < t < 1200 ms",
-        "count": 220,
+        "count": 20,
         "percentage": 0
     },
     "group3": {
         "name": "t > 1200 ms",
-        "count": 81,
+        "count": 0,
         "percentage": 0
     },
     "group4": {
@@ -66,8 +66,8 @@
         "percentage": 0
     },
     "meanNumberOfRequestsPerSecond": {
-        "total": 316.0194174757282,
-        "ok": 316.0194174757282,
+        "total": 317.5609756097561,
+        "ok": 317.5609756097561,
         "ko": 0
     }
 }
