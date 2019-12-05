@@ -1,7 +1,7 @@
 {
   "simulation": "uk.gov.dhsc.htbhf.ClaimSimulation",
   "simulationId": "claimsimulation",
-  "start": 1575540756908,
+  "start": 1575541728355,
   "description": "Web-UI performance tests",
   "scenarios": ["Scottish Scenario", "Full scenarios"],
   "assertions": [
@@ -10,9 +10,9 @@
   "target": "percentage of successful requests",
   "condition": "is",
   "expectedValues": [100.0],
-  "result": false,
+  "result": true,
   "message": "Global: percentage of successful requests is 100.0",
-  "actualValue": [99.96995097263957]
+  "actualValue": [100.0]
 },
 {
   "path": "Global",
@@ -21,16 +21,16 @@
   "expectedValues": [2000.0],
   "result": false,
   "message": "Global: 95th percentile of response time is less than 2000.0",
-  "actualValue": [7236.0]
+  "actualValue": [2017.0]
 },
 {
   "path": "Global",
   "target": "mean of response time",
   "condition": "is less than",
   "expectedValues": [750.0],
-  "result": false,
+  "result": true,
   "message": "Global: mean of response time is less than 750.0",
-  "actualValue": [1304.0]
+  "actualValue": [585.0]
 }
   ]
 }
