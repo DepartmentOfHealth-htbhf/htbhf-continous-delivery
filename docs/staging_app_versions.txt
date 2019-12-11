@@ -2,5 +2,5 @@ apply-for-healthy-start:   0.1.529
 htbhf-card-services-api:   0.0.13
 htbhf-claimant-service:   0.0.372
 htbhf-dwp-api:   0.0.49
-htbhf-eligibility-service:   0.0.54
+htbhf-eligibility-service:   0.0.55
 htbhf-hmrc-api:   0.0.17
