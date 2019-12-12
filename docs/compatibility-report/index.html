@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Test results</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        td.pass-true {
+            color: darkgreen;
+        }
+        td.pass-false {
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+<h1>Compatibility Test Summary</h1>
+
+<table border="1">
+    <tr>
+        <th>Test</th>
+        <th>Attempt</th>
+        <th>Result</th>
+        <th>Start Time</th>
+        <th>Finished Time</th>
+        <th>Duration</th>
+        <th>Session Id</th>
+        <th></th>
+    </tr>
+            <tr>
+            <th>mac mojave chrome</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:42:39</td>
+            <td>2019-12-12 13:43:07</td>
+            <td>00:27</td>
+            <td>5fb46e4b1ba6fc6770ae4f9a1f45d51066ad441c</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>mac mojave firefox</th>
+            <td>1</td>
+            <td class="pass-false"> Fail </td>
+            <td>2019-12-12 13:42:05</td>
+            <td>2019-12-12 13:42:54</td>
+            <td>00:48</td>
+            <td>ef90a863bc280959df299e7769a65f080fca0248</td>
+            <td> <details><summary>Failure details</summary>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be "GOV.UK - Application successful". Current title: "GOV.UK - Application not successful" (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'd07227a850e1', ip: '172.24.0.3', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-1052-aws', java.version: '11.0.4'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: firefox, browserVersion: 69.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190827005903, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 67871, moz:profile: /var/folders/3y/zz_w6_s56sl..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: MAC, platformName: MAC, platformVersion: 18.7.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: ef90a863bc280959df299e7769a...}
+Session ID: ef90a863bc280959df299e7769a65f080fca0248</details> </td>
+        </tr>
+            <tr>
+            <th><!--mac mojave firefox--></th>
+            <td>2</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:42:54</td>
+            <td>2019-12-12 13:43:28</td>
+            <td>00:33</td>
+            <td>a1ffb1b385bf3378b6e100fc97244e183bd299b8</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>mac mojave safari</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:42:00</td>
+            <td>2019-12-12 13:42:27</td>
+            <td>00:27</td>
+            <td>0304ef90cb2173e55e790e2edbe71bba1c059884</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>mobile android galaxys8</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:43:40</td>
+            <td>2019-12-12 13:46:03</td>
+            <td>02:22</td>
+            <td>b79e68d479c43bdcdc874886260e0fa63e4631e3</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>mobile android nexus6</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:41:14</td>
+            <td>2019-12-12 13:43:40</td>
+            <td>02:25</td>
+            <td>c318784d03d6cc018b2aa409a2ede166a63b3a6e</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>mobile android pixel</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:41:14</td>
+            <td>2019-12-12 13:42:39</td>
+            <td>01:24</td>
+            <td>6468ff652d8558dd64340e381fe661dbec50d4b3</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>mobile ios iphone8</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:41:14</td>
+            <td>2019-12-12 13:42:05</td>
+            <td>00:50</td>
+            <td>1ca68c5a2ae2873e7feb48196151365cdfbfdc46</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>mobile ios iphonexs</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:43:55</td>
+            <td>2019-12-12 13:44:42</td>
+            <td>00:46</td>
+            <td>320b8907fecae7d5b74f2c9da80b3ed25f5121ea</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>tablet ios ipad mini4</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:42:27</td>
+            <td>2019-12-12 13:44:57</td>
+            <td>02:29</td>
+            <td>c5c45e0c253643cd26769feade4ca58f64489a35</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>tablet ios ipad pro 11</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:44:09</td>
+            <td>2019-12-12 13:44:52</td>
+            <td>00:43</td>
+            <td>c82ee8e816baa713215db67b61a84cacdd4276c4</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>tablet ios ipad6</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:43:07</td>
+            <td>2019-12-12 13:43:55</td>
+            <td>00:48</td>
+            <td>daee139adba952f8a9a7a2eda6d553124352af52</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>windows win10 chrome</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:43:28</td>
+            <td>2019-12-12 13:44:09</td>
+            <td>00:40</td>
+            <td>fea74d06d7f54356b9ca85b8859a882673876abd</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>windows win10 edge</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:43:03</td>
+            <td>2019-12-12 13:44:19</td>
+            <td>01:15</td>
+            <td>74096dde5ce14180d2f615b27df0abb0caf0e731</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>windows win10 firefox</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:41:14</td>
+            <td>2019-12-12 13:42:00</td>
+            <td>00:45</td>
+            <td>6a470e96a6a324a35b511bd1300136673023db89</td>
+            <td></td>
+        </tr>
+            <tr>
+            <th>windows win10 ie</th>
+            <td>1</td>
+            <td class="pass-true"> Pass </td>
+            <td>2019-12-12 13:41:14</td>
+            <td>2019-12-12 13:43:03</td>
+            <td>01:48</td>
+            <td>ddcc85d8ee4d18ac0667573d59b975ba1a3df502</td>
+            <td></td>
+        </tr>
+    </table>
+
+</body>
