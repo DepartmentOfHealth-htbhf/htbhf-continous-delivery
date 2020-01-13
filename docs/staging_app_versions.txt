@@ -1,4 +1,4 @@
-apply-for-healthy-start:   0.1.552
+apply-for-healthy-start:   0.1.553
 htbhf-card-services-api:   0.0.13
 htbhf-claimant-service:   0.0.403
 htbhf-dwp-api:   0.0.50
