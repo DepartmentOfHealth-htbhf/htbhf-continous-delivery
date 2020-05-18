@@ -1,7 +1,7 @@
 {
   "simulation": "uk.gov.dhsc.htbhf.ClaimSimulation",
   "simulationId": "claimsimulation",
-  "start": 1589513323367,
+  "start": 1589772506251,
   "description": "Web-UI performance tests",
   "scenarios": ["Scottish Scenario", "Full scenarios"],
   "assertions": [
@@ -30,7 +30,7 @@
   "expectedValues": [750.0],
   "result": true,
   "message": "Global: mean of response time is less than 750.0",
-  "actualValue": [37.0]
+  "actualValue": [36.0]
 }
   ]
 }
